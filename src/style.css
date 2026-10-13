@@ -90,3 +90,15 @@
 .wildcard-review-dropdown .wildcard-use p{font-size:19px;line-height:1.35;margin:8px 0 0;color:#e3d9c8}
 @media(max-width:800px){.claimcard,.claimcard.revealed-card{height:390px;min-height:390px;flex-basis:390px}.timer{margin:12px 0 18px}}
 @media(max-width:600px){.claimcard,.claimcard.revealed-card{height:350px;min-height:350px;flex-basis:350px}.timer{width:100%;margin:10px 0 16px}.full-context p{font-size:20px}}
+/* Review and reveal fit refinements */
+.game:has(.claimcard.revealed-card) .gamehead{border-bottom-color:transparent}
+.full-context{padding:7px 8px 9px}
+.truth-category{font-size:clamp(27px,2.6vw,32px);margin-bottom:8px}
+.full-context p{font-size:clamp(17px,1.45vw,19px);line-height:1.28;margin:0 0 9px}
+.full-context a{font-size:17px}
+.full-context small{font-size:14px;padding-top:7px}
+.final>details{display:block;text-align:left;border:0;border-top:1px solid #756d58;padding:12px 8px;margin:0}
+.final>details:last-child{border-bottom:1px solid #756d58}
+.final>details summary{cursor:pointer;font-size:21px}
+.review{border:1px solid #756d58}
+@media(max-width:600px){.full-context p{font-size:17px}.truth-category{font-size:29px}}
