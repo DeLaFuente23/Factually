@@ -15,4 +15,5 @@ Create a Pages project connected to this repository. Set the build command to `n
 
 ## Prototype notes
 
-Daily challenges are deterministically selected from the bundled JSON library using the UTC date. The client-side data can be inspected by visitors. Game progress and personal results are stored locally in the browser (versioned key `factually.v1`); they do not sync across devices. The initial library has 18 records drawn from the supplied Factually_Final.txt.
+Daily challenges are deterministically selected from the bundled JSON library using the UTC date. Card order is randomized and saved per browser. The client-side data can be inspected by visitors. Game progress and personal results are stored locally in the browser (versioned key `factually.v2`); they do not sync across devices. The initial library has 18 records drawn from the supplied Factually_Final.txt.
+
