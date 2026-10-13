@@ -68,3 +68,25 @@
 @keyframes context-in{from{opacity:.45;transform:rotateY(8deg) scale(.98)}to{opacity:1;transform:none}}
 @media(max-width:800px){.timer{margin:10px auto 18px}.claimcard.revealed-card{min-height:350px}}
 @media(max-width:600px){.gamehead{align-items:end}.timer{width:min(340px,82vw);margin:12px auto 20px}.claimcard.revealed-card{min-height:340px}.full-context p{font-size:20px}.truth-category{font-size:34px}}
+/* Final layout refinements */
+.timer{width:100%;max-width:none;margin:14px 0 20px}
+.timer-track{width:100%;height:5px}
+.timer-track i{height:5px}
+.claimcard,.claimcard.revealed-card{height:390px;min-height:390px;flex:0 0 390px}
+.claimcard.revealed-card{padding-top:28px}
+.reveal-summary{gap:10px}
+.verdict-word{font-size:clamp(23px,2vw,29px);line-height:1.1;letter-spacing:.08em}
+.earned-points{font-size:clamp(20px,1.7vw,25px);line-height:1.15}
+.reveal-summary p{font-size:clamp(17px,1.45vw,21px);line-height:1.25}
+.selectors button.wrong-choice,.selectors button.muted-wrong{opacity:.4!important}
+.full-context{padding-bottom:12px}
+.claimcard.revealed-card:has(.full-context) .selectors{display:none}
+.share-text{width:min(680px,100%);min-height:0;height:auto;overflow:hidden;resize:none;display:block;white-space:pre-wrap}
+.game:has(.final) .stats{display:none}
+.wildcard-review-dropdown{text-align:left;border-top:1px solid #756d58;border-bottom:1px solid #756d58;padding:12px 8px;margin-top:8px}
+.wildcard-review-dropdown summary{cursor:pointer;font-size:22px;color:#f4ebdd}
+.wildcard-review-dropdown .wildcard-use{margin:12px 0;padding:18px 20px;background:#122d42;border:1px solid #756d58}
+.wildcard-review-dropdown .wildcard-use>b{font-size:16px;letter-spacing:.1em;color:#c9b994}
+.wildcard-review-dropdown .wildcard-use p{font-size:19px;line-height:1.35;margin:8px 0 0;color:#e3d9c8}
+@media(max-width:800px){.claimcard,.claimcard.revealed-card{height:390px;min-height:390px;flex-basis:390px}.timer{margin:12px 0 18px}}
+@media(max-width:600px){.claimcard,.claimcard.revealed-card{height:350px;min-height:350px;flex-basis:350px}.timer{width:100%;margin:10px 0 16px}.full-context p{font-size:20px}}
