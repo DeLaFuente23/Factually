@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {makeChallenge,orderForPlayer,points,scoreRound} from './game';
+import {makeChallenge,orderForPlayer,points,scoreRound,formatScore} from './game';
 import claims from './claims.json';
 import type {Claim,Category} from './game';
 const library=claims as Claim[];
@@ -24,3 +24,5 @@ describe('Lifesaver scoring',()=>{
  it('keeps normal scoring when the protected answer is correct',()=>expect(scoreRound(sample,['FACT','KINDA','BULLSHIT'],0)).toEqual([6,6,6]));
  it('gives unanswered claims zero',()=>expect(scoreRound(sample,[null,'KINDA','BULLSHIT'],null)).toEqual([0,6,6]));
 });
+
+describe('decimal score display',()=>{it('uses clean decimal values instead of fractions',()=>{expect(formatScore(18)).toBe('3');expect(formatScore(15)).toBe('2.5');expect(formatScore(10)).toBe('1.67');expect(formatScore(2)).toBe('0.33');expect(formatScore(1)).toBe('0.17')})});
