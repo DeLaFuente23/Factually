@@ -9,7 +9,9 @@ The world is full of facts so ridiculous they sound made up, half-truths that hi
 Your job is to assign each one a verdict:
 
 FACT! — It's true, exactly as stated.
+
 KINDA? — There's some truth to it, but there's a catch.
+
 BULLSH1T — Sounds convincing. Completely wrong.
 
 There's exactly one of each verdict per round. Sounds easy? Don't get too confident.
