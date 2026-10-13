@@ -1,0 +1,290 @@
+[
+  {
+    "id": "fact-1",
+    "category": "FACT",
+    "claim": "A single rotation of Venus takes longer than a year on Venus.",
+    "explanation": "Venus rotates once every 243 Earth days and completes an orbit in about 225 days. The claim compares rotation to orbital year, not a sunrise-to-sunrise day.",
+    "sources": [
+      {
+        "url": "https://spaceplace.nasa.gov/all-about-venus/en/",
+        "title": "spaceplace.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-2",
+    "category": "FACT",
+    "claim": "The Sun holds 99.86% of all mass in the solar system.",
+    "explanation": "The Sun contains nearly all of the solar system's mass; Jupiter accounts for most of what remains.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter1-1/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-3",
+    "category": "FACT",
+    "claim": "Earth's inner core is roughly as hot as the surface of the Sun.",
+    "explanation": "Estimates put the inner core near 5,000–6,000°C, comparable to the Sun's visible surface temperature.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/faqs/how-hot-earths-interior",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-4",
+    "category": "FACT",
+    "claim": "A neutron star packs more than the Sun's mass into a city-sized sphere.",
+    "explanation": "A typical neutron star can have more than a solar mass compressed into a sphere only about 20 km across.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/universe/stories/quick-reads/neutron-stars-are-weird/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-5",
+    "category": "FACT",
+    "claim": "One teaspoon of neutron-star material weighs about six billion tons.",
+    "explanation": "Neutron stars are extraordinarily dense; this familiar spoonful comparison conveys their extreme density.",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/centers-and-facilities/goddard/new-nasa-mission-to-study-mysterious-neutron-stars-aid-in-deep-space-navigation/",
+        "title": "nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-6",
+    "category": "FACT",
+    "claim": "The sound of a whip crack is a miniature sonic boom.",
+    "explanation": "The tip of a cracking whip can exceed the speed of sound, creating a small sonic boom.",
+    "sources": [
+      {
+        "url": "https://www.discovermagazine.com/the-sciences/the-whip-like-physics-of-fly-fishing-1271",
+        "title": "discovermagazine.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "kinda-1",
+    "category": "KINDA",
+    "claim": "A pound of feathers weighs more than a pound of gold.",
+    "explanation": "Precious metals use troy weight: a pound of gold is 12 oz, while feathers use avoirdupois: 16 oz. The units differ.",
+    "sources": [
+      {
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9",
+        "title": "nist.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-2",
+    "category": "KINDA",
+    "claim": "Alaska is the northernmost, westernmost, and easternmost U.S. state.",
+    "explanation": "Alaska is northernmost and westernmost. Aleutian Islands cross the 180° meridian, putting part of Alaska in the Eastern Hemisphere.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/faqs/which-us-state-farthest-west",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-3",
+    "category": "KINDA",
+    "claim": "Mercury—not Venus—is Earth's closest planetary neighbor on average.",
+    "explanation": "Venus can come closest at a moment, but Mercury's smaller orbit keeps it nearer on average over time. “Closest” depends on the measure.",
+    "sources": [
+      {
+        "url": "https://physicstoday.aip.org/",
+        "title": "physicstoday.aip.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-4",
+    "category": "KINDA",
+    "claim": "France has more time zones than any other country: twelve.",
+    "explanation": "France's overseas territories span twelve time zones in some counts. The total depends on including overseas territories.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/country-with-the-most-time-zones",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-5",
+    "category": "KINDA",
+    "claim": "Mauna Kea is taller than Mount Everest.",
+    "explanation": "Measured from its ocean-floor base, Mauna Kea is taller; measured above sea level, Everest is higher. The baseline changes the answer.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/maunakea.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-6",
+    "category": "KINDA",
+    "claim": "Every planet in the solar system fits between Earth and the Moon.",
+    "explanation": "Combined planetary diameters fit within the average Earth–Moon distance, assuming the planets are lined edge-to-edge and using average distance.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/solar-system/moon/five-things-to-know-about-the-moon/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "bull-1",
+    "category": "BULLSHIT",
+    "claim": "Lemmings commit mass suicide by cliff-diving when overpopulated.",
+    "explanation": "Lemmings migrate but do not intentionally commit mass suicide. The famous mass cliff-diving footage was staged for a 1958 documentary.",
+    "sources": [
+      {
+        "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildlifenews.view_article&articles_id=56",
+        "title": "adfg.alaska.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-2",
+    "category": "BULLSHIT",
+    "claim": "Bulls charge at a matador's cape because it is red.",
+    "explanation": "Cattle lack human-like red color vision. The cape's movement, rather than its color, provokes a charge.",
+    "sources": [
+      {
+        "url": "https://www.livescience.com/animals/are-bulls-really-enraged-by-red",
+        "title": "livescience.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-3",
+    "category": "BULLSHIT",
+    "claim": "Bats are blind.",
+    "explanation": "All bats can see. Many species also use echolocation; it supplements vision rather than replacing it.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/faqs/are-bats-blind",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-4",
+    "category": "BULLSHIT",
+    "claim": "The tongue has separate zones for sweet, salty, sour, and bitter tastes.",
+    "explanation": "The popular tongue map is a misconception. Taste qualities are detected across the tongue; there are no exclusive taste zones.",
+    "sources": [
+      {
+        "url": "https://cst.ufl.edu/",
+        "title": "cst.ufl.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-5",
+    "category": "BULLSHIT",
+    "claim": "Daddy longlegs are the most venomous spiders, but their fangs are too short to bite humans.",
+    "explanation": "Harvestmen are not spiders and have no venom glands or fangs. The name can also mean cellar spiders, which are not known as dangerously venomous to humans.",
+    "sources": [
+      {
+        "url": "https://entomology.ucr.edu/news/2022/01/14/are-daddy-longlegs-really-most-venomous-spiders-world",
+        "title": "entomology.ucr.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-6",
+    "category": "BULLSHIT",
+    "claim": "Popeye eats spinach because it contains ten times more iron than any other green.",
+    "explanation": "Spinach is not uniquely rich in iron to that extent. A decimal-place error in an old analysis is often cited as the source of its exaggerated reputation.",
+    "sources": [
+      {
+        "url": "https://www.bmj.com/content/331/7531/1498",
+        "title": "bmj.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  }
+]
