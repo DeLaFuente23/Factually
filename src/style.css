@@ -8,3 +8,63 @@
 @media(max-width:800px){.timer{width:28vw}.stats{font-size:15px}}
 @media(max-width:600px){.site-footer{align-items:flex-start;flex-direction:column;text-align:left;font-size:11px}.timer{width:100%;order:3;align-self:stretch;margin:5px 0}.gamehead{display:grid;grid-template-columns:1fr auto;align-items:end}.gamehead>div:first-child{grid-column:1/-1}.stats{grid-column:1;grid-row:2;align-items:flex-start}.timer{grid-column:2;grid-row:2}.gamehead h2{font-size:32px}.timer-number{font-size:22px}.wild[data-tooltip]:hover::after,.wild[data-tooltip]:focus-visible::after{left:8px;transform:none}}
 .timer-track{gap:0}.wildcard-dropdown{border-top:1px solid #756d58;padding:12px 8px;text-align:left}.wildcard-dropdown:last-of-type{border-bottom:1px solid #756d58}.wildcard-dropdown summary{cursor:pointer;font-size:21px;color:#f4ebdd}.wildcard-use,.unused-wildcard{margin:12px 0 4px;padding:14px 16px;background:#122d42;border:1px solid #756d58;text-align:left}.wildcard-use p,.unused-wildcard{font-size:18px;color:#e3d9c8}.wildcard-use b{color:#c9b994}.wildcard-use p{margin:7px 0 0}
+/* Reveal interaction refinements */
+.gamehead{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,330px) minmax(0,1fr);align-items:end;column-gap:24px}
+.timer{grid-column:2;grid-row:1;width:100%;align-self:end;justify-self:center;margin:0 0 1px;text-align:center}
+.timer-number{margin-bottom:9px;font-size:25px;line-height:1.15}
+.timer-track{height:5px;gap:0;width:100%;overflow:hidden}
+.timer-track i{flex:1 1 50%;width:50%;height:5px}
+.stats{grid-column:3;grid-row:1;align-self:end}
+.claimcard:has(.flip-inner){padding:14px;overflow:hidden;perspective:1100px}
+.flip-inner{position:relative;z-index:1;width:100%;flex:1;min-height:320px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.flip-inner.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:22px 10px 10px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.card-front .cardno,.card-back .cardno{margin-top:3px;flex:none}
+.card-front .claimtext{flex:1;width:100%;min-height:90px;padding:12px 4px;font-size:clamp(21px,1.8vw,26px)}
+.credit{font-size:20px;letter-spacing:.03em;margin:2px 0 6px}
+.credit.good,.credit.partial,.credit.bad{color:var(--cream)}
+.flip-hint{border:0;background:none;color:#8fc9b5;text-decoration:underline;text-underline-offset:3px;font-size:17px;padding:5px 4px 10px;cursor:pointer}
+.flip-hint:hover{color:#c2eadc}
+.card-front .selectors{flex:none}
+.selectors button.selected,.selectors button.selected.KINDA,.selectors button.selected.BULLSHIT{background:#eadfc9;color:#10243a;font-weight:600}
+.selectors button.correct{background:#eadfc9!important;color:#10243a!important;opacity:1!important;font-weight:700}
+.selectors button.wrong-choice{background:#eadfc9!important;color:#10243a!important;opacity:.42!important}
+.card-face .selectors button:disabled{cursor:default}
+.card-back{transform:rotateY(180deg);padding:25px 15px 12px;overflow:auto;justify-content:center}
+.card-back h3{font-size:clamp(34px,3vw,48px);font-weight:600;margin:22px 0 12px;color:var(--cream)}
+.context-text{font-size:clamp(20px,1.9vw,25px);line-height:1.35;margin:0 0 16px;max-width:100%}
+.card-back a{font-size:19px;color:#a8d5c5;text-underline-offset:3px}
+.card-back small{margin:12px 0;color:#d8ccb5;font-size:16px}
+.card-back .flip-hint{margin-top:auto;padding-top:18px}
+.wildcard-note{margin:14px auto 0;max-width:760px;padding:9px 12px;border:1px solid #756d58;color:#e3d9c8}
+.cancel-wild{margin-left:10px;padding:5px 12px;background:transparent;border:1px solid #c9b994;color:var(--cream);font:inherit;touch-action:manipulation}
+.cancel-wild:hover{background:#1c4256}
+.wild{touch-action:manipulation}
+@media(max-width:800px){.gamehead{grid-template-columns:minmax(0,1fr) minmax(190px,28vw) minmax(0,1fr);column-gap:12px}.timer{width:100%;margin:0}.flip-inner{min-height:300px}.card-front .claimtext{font-size:20px}.card-front .selectors{flex-direction:column}.card-front .selectors button{min-height:36px}}
+@media(max-width:600px){.gamehead{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;column-gap:10px;row-gap:4px;align-items:end}.gamehead>div:first-child{grid-column:1;grid-row:1}.stats{grid-column:2;grid-row:1;align-items:flex-end;font-size:13px}.timer{grid-column:1/-1;grid-row:2;width:min(360px,88%);justify-self:center;margin:10px auto 2px}.timer-number{font-size:24px;margin-bottom:6px}.claimcard:has(.flip-inner){min-height:330px}.flip-inner{min-height:295px}.card-front .selectors{flex-direction:row}.card-front .selectors button{min-height:44px}.card-front .claimtext{font-size:25px}.card-back h3{font-size:40px}.context-text{font-size:22px}}
+.timer-track{justify-content:center}
+.timer-track i{flex:0 0 auto}
+/* Current round timer and card reveal layout */
+.gamehead{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.timer{display:block;width:min(280px,78vw);margin:12px auto 20px;text-align:center}
+.timer-number{display:block;margin:0 0 8px;font-size:24px;line-height:1.1}
+.timer-track{display:flex;justify-content:center;gap:0;width:100%;height:5px;border:0;overflow:hidden}
+.timer-track i{display:block;flex:0 0 auto;height:5px;background:var(--accent,#88bba8);transition:width .1s linear}
+.claimcard.revealed-card{cursor:pointer;min-height:390px}
+.claimcard.revealed-card .selectors{margin-top:auto}
+.reveal-summary{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;padding:14px 6px}
+.reveal-summary>b{font-size:clamp(23px,2vw,30px);color:var(--cream)}
+.reveal-summary p{margin:0;font-size:clamp(19px,1.65vw,24px);line-height:1.35}
+.full-context{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:14px 8px;animation:context-in .22s ease-out}
+.truth-category{font-size:clamp(30px,3vw,40px);line-height:1.1;margin-bottom:16px}
+.full-context p{font-size:clamp(20px,1.75vw,26px);line-height:1.4;margin:0 0 16px}
+.full-context a{font-size:19px;color:#a8d5c5;text-underline-offset:3px}
+.full-context small{margin-top:auto;padding-top:18px;font-size:16px;color:#d8ccb5}
+.selectors button.selected,.selectors button.correct{background:#eadfc9!important;color:#10243a!important;opacity:1!important;font-weight:700}
+.selectors button.wrong-choice{background:#eadfc9!important;color:#10243a!important;opacity:.38!important}
+.selectors button.muted-wrong{background:transparent!important;color:var(--cream)!important;opacity:.3!important}
+.wild[data-tooltip]::after{pointer-events:none}
+.wild{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@keyframes context-in{from{opacity:.45;transform:rotateY(8deg) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:800px){.timer{margin:10px auto 18px}.claimcard.revealed-card{min-height:350px}}
+@media(max-width:600px){.gamehead{align-items:end}.timer{width:min(340px,82vw);margin:12px auto 20px}.claimcard.revealed-card{min-height:340px}.full-context p{font-size:20px}.truth-category{font-size:34px}}
