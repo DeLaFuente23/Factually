@@ -38,7 +38,7 @@ function App(){
  async function share(){
   if(!game)return;
   const emoji=(n:number)=>n===6?'🟩':n===3?'🟨':n===2?'🟧':'🟥';
-  const grid=game.results.map(r=>r.earned.map(emoji).join('\n')).join('\n');
+  const grid=game.results.map(r=>r.earned.map(emoji).join('')).join('\n');
   const hearts='💙'.repeat(3-game.used.length)+'🩶'.repeat(game.used.length);
   const text=lang==='ES'?`Factually... 🤓\nObtuve ${fmt(game.score)}/10. ¿Puedes superarme?\n\n${grid}\n${hearts}\n\n${window.location.origin}`:`Factually... 🤓\nI scored ${fmt(game.score)}/10! Think you can beat me?\n\n${grid}\n${hearts}\n\n${window.location.origin}`;
   ST(text);
@@ -58,6 +58,7 @@ function App(){
  <footer className="site-footer"><span>{t('MADE FOR THE CURIOUS & THE OCCASIONALLY CERTAIN','PARA PERSONAS CURIOSAS Y OCASIONALMENTE SEGURAS')}</span><a href="https://namemc.com/profile/D_1901" target="_blank" rel="noopener noreferrer">{t('Powered by ADHD','Powered by ADHD')}</a></footer></main>
 }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
+
 
 
 
