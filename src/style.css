@@ -125,6 +125,10 @@
 .rules-play{display:block;margin:32px auto 8px;min-width:min(260px,100%)}
 @media (hover:none), (max-width:600px){.wild[data-tooltip]:hover::after,.wild[data-tooltip]:focus-visible::after{display:none!important}}
 @media(max-width:600px){.claim-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.claim-row:active{background:#122d42;box-shadow:none}}
-.language-toggle{margin-left:auto;min-width:48px;height:38px;padding:4px 10px;background:transparent;border:1px solid var(--line);color:var(--cream);font:18px 'EB Garamond',Georgia,serif;letter-spacing:.12em;cursor:pointer;transition:background .15s,color .15s}
+.language-toggle{display:flex;align-items:center;justify-content:center;text-align:center;line-height:1;margin-left:auto;min-width:48px;height:38px;padding:4px 10px;background:transparent;border:1px solid var(--line);color:var(--cream);font:18px 'EB Garamond',Georgia,serif;letter-spacing:.12em;cursor:pointer;transition:background .15s,color .15s;-webkit-tap-highlight-color:transparent}
 .language-toggle:hover{background:#eadfc9;color:#10243a}
 .language-toggle:focus-visible{outline:2px solid #92c9b9;outline-offset:4px}
+
+
+
+@media (hover:none), (max-width:600px){.language-toggle:hover,.language-toggle:active,.language-toggle:focus{background:transparent;color:var(--cream)}}
