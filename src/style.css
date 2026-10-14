@@ -124,3 +124,4 @@
 .rules h4{font-size:23px;font-style:italic;font-weight:500;margin:22px 0 4px;color:#eadfc9}
 .rules-play{display:block;margin:32px auto 8px;min-width:min(260px,100%)}
 @media (hover:none), (max-width:600px){.wild[data-tooltip]:hover::after,.wild[data-tooltip]:focus-visible::after{display:none!important}}
+@media(max-width:600px){.claim-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.claim-row:active{background:#122d42;box-shadow:none}}
