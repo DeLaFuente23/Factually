@@ -3,7 +3,7 @@
     "id": "fact-1",
     "category": "FACT",
     "claim": "A single rotation of Venus takes longer than a year on Venus.",
-    "explanation": "Venus rotates once every 243 Earth days and completes an orbit in about 225 days. The claim compares rotation to orbital year, not a sunrise-to-sunrise day.",
+    "explanation": "Venus spins once every 243 Earth days but orbits the Sun in 225. The slow spin beats the whole year. (See KINDA: its sunrise-to-sunrise \"day\" is only ~117 days.)",
     "sources": [
       {
         "url": "https://spaceplace.nasa.gov/all-about-venus/en/",
@@ -19,7 +19,7 @@
     "id": "fact-2",
     "category": "FACT",
     "claim": "The Sun holds 99.86% of all mass in the solar system.",
-    "explanation": "The Sun contains nearly all of the solar system's mass; Jupiter accounts for most of what remains.",
+    "explanation": "Every planet, moon, asteroid, and dust grain shares the leftover 0.14% — and Jupiter takes most of that.",
     "sources": [
       {
         "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter1-1/",
@@ -35,7 +35,7 @@
     "id": "fact-3",
     "category": "FACT",
     "claim": "Earth's inner core is roughly as hot as the surface of the Sun.",
-    "explanation": "Estimates put the inner core near 5,000–6,000°C, comparable to the Sun's visible surface temperature.",
+    "explanation": "Core temperatures reach ~5,000–6,000°C, comparable to the Sun's visible surface — but locked under immense pressure.",
     "sources": [
       {
         "url": "https://www.usgs.gov/faqs/how-hot-earths-interior",
@@ -51,7 +51,7 @@
     "id": "fact-4",
     "category": "FACT",
     "claim": "A neutron star packs more than the Sun's mass into a city-sized sphere.",
-    "explanation": "A typical neutron star can have more than a solar mass compressed into a sphere only about 20 km across.",
+    "explanation": "~1.4 solar masses compressed into ~20 km — densities impossible to reproduce anywhere on Earth.",
     "sources": [
       {
         "url": "https://science.nasa.gov/universe/stories/quick-reads/neutron-stars-are-weird/",
@@ -67,7 +67,7 @@
     "id": "fact-5",
     "category": "FACT",
     "claim": "One teaspoon of neutron-star material weighs about six billion tons.",
-    "explanation": "Neutron stars are extraordinarily dense; this familiar spoonful comparison conveys their extreme density.",
+    "explanation": "A sugar cube of this matter would outweigh every human being combined; a spoonful outweighs a mountain.",
     "sources": [
       {
         "url": "https://www.nasa.gov/centers-and-facilities/goddard/new-nasa-mission-to-study-mysterious-neutron-stars-aid-in-deep-space-navigation/",
@@ -83,7 +83,7 @@
     "id": "fact-6",
     "category": "FACT",
     "claim": "The sound of a whip crack is a miniature sonic boom.",
-    "explanation": "The tip of a cracking whip can exceed the speed of sound, creating a small sonic boom.",
+    "explanation": "The whip tip breaks the sound barrier; the crack is the resulting boom, making the bullwhip humanity's first supersonic invention.",
     "sources": [
       {
         "url": "https://www.discovermagazine.com/the-sciences/the-whip-like-physics-of-fly-fishing-1271",
@@ -96,10 +96,2314 @@
     ]
   },
   {
+    "id": "fact-7",
+    "category": "FACT",
+    "claim": "Tardigrades have survived the open vacuum of space.",
+    "explanation": "In 2007, tardigrades rode a satellite's exterior through vacuum, cosmic radiation, and freezing cold — then revived and reproduced on Earth.",
+    "sources": [
+      {
+        "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Futura/Exposure_to_space_and_Mars",
+        "title": "esa.int"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-8",
+    "category": "FACT",
+    "claim": "A distant planet likely rains molten iron.",
+    "explanation": "WASP-76b's dayside (~2,400°C) vaporizes iron that drifts to the cooler nightside, where it probably condenses into iron rain.",
+    "sources": [
+      {
+        "url": "https://www.eso.org/public/unitedkingdom/news/eso2005/",
+        "title": "eso.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-9",
+    "category": "FACT",
+    "claim": "Telescopes see fully grown galaxies from the universe's infancy.",
+    "explanation": "JWST spotted massive, mature-looking galaxies from the first few hundred million years — challenging how fast galaxies were thought to form.",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/universe/nasas-webb-uncovers-dense-cosmic-knot-in-the-early-universe/",
+        "title": "nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-10",
+    "category": "FACT",
+    "claim": "Sunlight is 8 minutes 20 seconds old when it reaches you.",
+    "explanation": "The Sun sits ~150 million km away; even light needs 8m20s to cross that, so you always see the Sun as it was.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/sun/facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-11",
+    "category": "FACT",
+    "claim": "The nearest star beyond the Sun is 4.2 light-years away.",
+    "explanation": "Proxima Centauri lies ~40 trillion km off. A light-year is a distance (~9.46 trillion km), not a duration.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/universe/stars/proxima-centauri/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-12",
+    "category": "FACT",
+    "claim": "Bananas are naturally radioactive — and occasionally emit antimatter.",
+    "explanation": "Potassium-40 in bananas decays now and then, releasing a positron; an average banana emits about one every 75 minutes.",
+    "sources": [
+      {
+        "url": "https://www.symmetrymagazine.org/2009/07/23/antimatter-from-bananas?language_content_entity=und",
+        "title": "symmetrymagazine.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-13",
+    "category": "FACT",
+    "claim": "Days on Earth are getting longer.",
+    "explanation": "Tidal friction from the Moon slows our spin: days lengthen ~1.8 ms per century; 1.4 billion years ago a day lasted just 18 hours 41 minutes.",
+    "sources": [
+      {
+        "url": "https://www.pnas.org/doi/10.1073/pnas.1818149116",
+        "title": "pnas.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-14",
+    "category": "FACT",
+    "claim": "Humans literally glow in the dark.",
+    "explanation": "Metabolic reactions emit visible light ~1,000x too faint for our eyes; ultra-sensitive cameras capture the glow, brightest on the face in late afternoon.",
+    "sources": [
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19649398/",
+        "title": "pubmed.ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-15",
+    "category": "FACT",
+    "claim": "Sharks are older than trees — and older than Saturn's rings debate; older than dinosaurs, period.",
+    "explanation": "Shark relatives appear ~450 million years ago in the fossil record; true trees arrived ~390 million years ago, dinosaurs ~230 million.",
+    "sources": [
+      {
+        "url": "https://www.si.edu/spotlight/sharks",
+        "title": "si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-16",
+    "category": "FACT",
+    "claim": "Wombats are the only animals that poop in cubes.",
+    "explanation": "Varying elasticity in the last stretch of intestine sculpts the droppings into blocks that stay put when used to mark territory.",
+    "sources": [
+      {
+        "url": "https://news.gatech.edu/2021/01/28/wombat-poop-cubes",
+        "title": "news.gatech.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-17",
+    "category": "FACT",
+    "claim": "Greenland sharks can live about 400 years.",
+    "explanation": "Radiocarbon dating of eye-lens proteins dated one shark to ~392 years (±120); they reach sexual maturity around 156.",
+    "sources": [
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27516602/",
+        "title": "pubmed.ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-18",
+    "category": "FACT",
+    "claim": "Wood frogs freeze solid in winter and thaw back to life.",
+    "explanation": "Their hearts stop and up to 65% of their body water turns to ice; glucose acts as antifreeze until spring revives them.",
+    "sources": [
+      {
+        "url": "https://www.nps.gov/dena/learn/nature/amphibians.htm",
+        "title": "nps.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-19",
+    "category": "FACT",
+    "claim": "Octopuses have three hearts and blue blood.",
+    "explanation": "Two hearts pump blood through the gills and one through the body; copper-based hemocyanin — not iron — gives the blue color.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses-they-have-three-hearts-big-brains-and-blue-blood-7625828/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-20",
+    "category": "FACT",
+    "claim": "Some lizards have green blood, green bones, and green muscles.",
+    "explanation": "New Guinea skinks carry extreme levels of biliverdin — the jaundice pigment — with no apparent harm.",
+    "sources": [
+      {
+        "url": "https://www.science.org/doi/10.1126/sciadv.aao5017",
+        "title": "science.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-21",
+    "category": "FACT",
+    "claim": "Slow lorises are the only venomous primates.",
+    "explanation": "They lick oil from elbow glands, mix it with saliva, and deliver a toxic bite that can trigger severe allergic reactions in humans.",
+    "sources": [
+      {
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/ajp.22576",
+        "title": "onlinelibrary.wiley.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-22",
+    "category": "FACT",
+    "claim": "Surinam toads give birth through holes in their backs.",
+    "explanation": "Eggs embed in pockets of the female's skin, hatch inside, and emerge as fully formed miniature toads.",
+    "sources": [
+      {
+        "url": "https://animals.sandiegozoo.org/animals/surinam-toad",
+        "title": "animals.sandiegozoo.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-23",
+    "category": "FACT",
+    "claim": "Male seahorses get pregnant and give birth.",
+    "explanation": "The female deposits eggs into the male's brood pouch, where he fertilizes, gestates, and eventually expels live young.",
+    "sources": [
+      {
+        "url": "https://ocean.si.edu/ocean-life/fish/seahorses",
+        "title": "ocean.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-24",
+    "category": "FACT",
+    "claim": "Male anglerfish permanently fuse into the female's body.",
+    "explanation": "In some deep-sea species the tiny male bites on, his tissues merge with hers, and he becomes a lifelong sperm-producing appendage.",
+    "sources": [
+      {
+        "url": "https://ocean.si.edu/ocean-life/fish/anglerfish",
+        "title": "ocean.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-25",
+    "category": "FACT",
+    "claim": "A fungus turns ants into zombies.",
+    "explanation": "Ophiocordyceps hijacks an ant's nervous system, drives it to clamp onto a high leaf, kills it, and sprouts spores from the corpse.",
+    "sources": [
+      {
+        "url": "https://www.psu.edu/news/research/story/how-zombie-ant-fungus-takes-over-its-host/",
+        "title": "psu.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-26",
+    "category": "FACT",
+    "claim": "Some people can give themselves goosebumps on command.",
+    "explanation": "Documented voluntary piloerection lets rare individuals contract their arrector pili muscles at will — no cold or emotion required.",
+    "sources": [
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30083447/",
+        "title": "pubmed.ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-27",
+    "category": "FACT",
+    "claim": "Rats laugh when they are tickled.",
+    "explanation": "They chirp at 50 kHz — far above human hearing — during play and tickling, a vocalization tied to positive emotion.",
+    "sources": [
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10996405/",
+        "title": "pubmed.ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-28",
+    "category": "FACT",
+    "claim": "Honeybees understand the concept of zero.",
+    "explanation": "Trained to pick \"fewer,\" bees chose blank images over single-dot ones — the first invertebrates shown to treat \"nothing\" as a number.",
+    "sources": [
+      {
+        "url": "https://www.frontiersin.org/journals/human-neuroscience",
+        "title": "frontiersin.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-29",
+    "category": "FACT",
+    "claim": "One species of fungus has 23,328 mating types.",
+    "explanation": "Split-gill mushrooms determine sex via two gene loci with many alleles — so almost any two individuals can mate.",
+    "sources": [
+      {
+        "url": "https://botit.botany.wisc.edu/toms_fungi/feb98.html",
+        "title": "botit.botany.wisc.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-30",
+    "category": "FACT",
+    "claim": "A cloud in space smells of rum and tastes of raspberries.",
+    "explanation": "Sagittarius B2 contains ethyl formate — the exact molecule behind rum's aroma and raspberries' flavor — in vast quantities.",
+    "sources": [
+      {
+        "url": "https://www.mpifr-bonn.mpg.de/pressreleases/2009/5",
+        "title": "mpifr-bonn.mpg.de"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-31",
+    "category": "FACT",
+    "claim": "Butterflies taste with their feet.",
+    "explanation": "Chemoreceptors on their feet sample leaves for food and check whether a plant is safe to lay eggs on.",
+    "sources": [
+      {
+        "url": "https://nationalzoo.si.edu/animals/news/how-do-butterflies-taste",
+        "title": "nationalzoo.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-32",
+    "category": "FACT",
+    "claim": "The smell of cut grass is a chemical distress call.",
+    "explanation": "Damaged grass releases green-leaf volatiles that warn neighboring plants and summon predatory insects against the attackers.",
+    "sources": [
+      {
+        "url": "https://agrilifeextension.tamu.edu/library/landscaping/the-smell-of-mowed-grass/",
+        "title": "agrilifeextension.tamu.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-33",
+    "category": "FACT",
+    "claim": "An average cumulus cloud weighs over one million pounds.",
+    "explanation": "A cubic kilometer of cloud holds ~500,000 kg of water droplets — afloat only because it is spread across a vast volume of air.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/special-topics/water-science-school/science/how-much-does-cloud-weigh",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-34",
+    "category": "FACT",
+    "claim": "Flamingo parents feed their chicks milk from their throats.",
+    "explanation": "Both sexes secrete nutrient-rich \"crop milk\" from the upper digestive tract; its pink color comes from the parents' diet.",
+    "sources": [
+      {
+        "url": "https://nationalzoo.si.edu/",
+        "title": "nationalzoo.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-35",
+    "category": "FACT",
+    "claim": "Sea otters use tools — and it saves their teeth.",
+    "explanation": "Otters crack shellfish with rocks; a 2024 study found tool-users suffer less tooth damage when prey get scarce and hard.",
+    "sources": [
+      {
+        "url": "https://news.ucsc.edu/2024/05/sea-otter-tool-use.html",
+        "title": "news.ucsc.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-36",
+    "category": "FACT",
+    "claim": "Axolotls regrow entire limbs, spinal cord, and parts of their brain.",
+    "explanation": "Instead of scarring, they regenerate near-perfect copies of complex body parts — a feat scientists are racing to understand.",
+    "sources": [
+      {
+        "url": "https://news.northeastern.edu/",
+        "title": "news.northeastern.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-37",
+    "category": "FACT",
+    "claim": "Elephants help grow the trees used for guitars and pianos.",
+    "explanation": "Elephants disperse ebony seeds in their dung; forests where elephants were wiped out had 68% fewer ebony saplings.",
+    "sources": [
+      {
+        "url": "https://newsroom.ucla.edu/releases/elephant-extinction-threatens-rainforests-trees-guitars-pianos",
+        "title": "newsroom.ucla.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-38",
+    "category": "FACT",
+    "claim": "Crows remember human faces — and teach the grudge to others.",
+    "explanation": "Crows scold and dive-bomb specific people for years, and crows who never met the target join in after learning from the flock.",
+    "sources": [
+      {
+        "url": "https://royalsocietypublishing.org/doi/10.1098/rspb.2011.0956",
+        "title": "royalsocietypublishing.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-39",
+    "category": "FACT",
+    "claim": "Pigeons can tell a Monet from a Picasso.",
+    "explanation": "Trained pigeons sorted the painters' styles and correctly categorized works they had never seen before.",
+    "sources": [
+      {
+        "url": "https://www.apa.org/monitor/2012/11/pigeons",
+        "title": "apa.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-40",
+    "category": "FACT",
+    "claim": "Pterodactyls were not dinosaurs.",
+    "explanation": "Pterosaurs were flying reptiles on a separate branch; \"dinosaur\" is defined by an upright, pillar-legged stance they lacked.",
+    "sources": [
+      {
+        "url": "https://www.amnh.org/explore/news-blogs/what-is-a-pterosaur",
+        "title": "amnh.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-41",
+    "category": "FACT",
+    "claim": "A man hiccupped nonstop for 68 years.",
+    "explanation": "Charles Osborne hiccupped from 1922 to 1990 — the longest recorded attack, roughly 430 million hiccups.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/longest-attack-of-hiccups",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-42",
+    "category": "FACT",
+    "claim": "The hyoid bone touches no other bone in the body.",
+    "explanation": "Suspended by muscles and ligaments in the throat, it anchors the tongue and makes human speech possible.",
+    "sources": [
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK539726/",
+        "title": "ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-43",
+    "category": "FACT",
+    "claim": "Your gut lining replaces itself every few days.",
+    "explanation": "Stem cells rebuild the intestinal epithelium in ~3–5 days to survive digestive acid, food abrasion, and microbes.",
+    "sources": [
+      {
+        "url": "https://www.niddk.nih.gov/",
+        "title": "niddk.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-44",
+    "category": "FACT",
+    "claim": "Identical twins do not share fingerprints.",
+    "explanation": "Genes set the general pattern, but fetal movement and womb conditions carve different ridge details on each twin.",
+    "sources": [
+      {
+        "url": "https://nij.ojp.gov/topics/articles/are-fingerprints-determined-genetics",
+        "title": "nij.ojp.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-45",
+    "category": "FACT",
+    "claim": "Your brain physically rewires itself when you learn.",
+    "explanation": "Neuroplasticity strengthens, weakens, and reorganizes synaptic connections in response to experience — the brain is never static.",
+    "sources": [
+      {
+        "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-understanding-sleep",
+        "title": "ninds.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-46",
+    "category": "FACT",
+    "claim": "Your pupils dilate with mental effort, not just light.",
+    "explanation": "Attention and cognitive load widen the pupils; researchers use this as one window into how hard the brain is working.",
+    "sources": [
+      {
+        "url": "https://www.frontiersin.org/journals/psychology",
+        "title": "frontiersin.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-47",
+    "category": "FACT",
+    "claim": "Some of your nerve cells are over a meter long.",
+    "explanation": "Sciatic-nerve axons run from the lower spine to the foot as single cells spanning half your body.",
+    "sources": [
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/",
+        "title": "ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-48",
+    "category": "FACT",
+    "claim": "Your brain runs on ~86 billion neurons — not the famous 100 billion.",
+    "explanation": "Actual counts came to ~86B neurons plus ~85B supporting cells; the rounder figure was a decades-old guess.",
+    "sources": [
+      {
+        "url": "https://www.frontiersin.org/journals/human-neuroscience",
+        "title": "frontiersin.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-49",
+    "category": "FACT",
+    "claim": "Your cells are roughly 70% water.",
+    "explanation": "Cells are not solid microscopic bricks — most of their mass is water, with proteins, fats, and DNA making up the rest.",
+    "sources": [
+      {
+        "url": "https://openstax.org/books/biology-2e/pages/3-2-biological-molecules",
+        "title": "openstax.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-50",
+    "category": "FACT",
+    "claim": "If you bleed deep underwater, your blood looks green.",
+    "explanation": "Water absorbs red light within ~30 feet; below that depth no red light reflects off blood, so it appears dark green or black.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/facts/red-color.html",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-51",
+    "category": "FACT",
+    "claim": "You can hear the difference between hot and cold water being poured.",
+    "explanation": "Hot water is less viscous and produces higher, splashier sounds; cold water pours with a lower, deeper note.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/article/can-you-hear-temperature/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-52",
+    "category": "FACT",
+    "claim": "Australia deployed the army against emus — and lost.",
+    "explanation": "In 1932, machine-gunners failed to cull crop-raiding emus, which scattered into fast, small groups; the operation was abandoned in defeat.",
+    "sources": [
+      {
+        "url": "https://www.nma.gov.au/defining-moments/resources/emu-war",
+        "title": "nma.gov.au"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-53",
+    "category": "FACT",
+    "claim": "A dead pope was put on trial.",
+    "explanation": "In 897, Pope Stephen VI exhumed Formosus, seated the corpse in court, had it convicted, and threw it into the Tiber.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/smart-news/when-a-pope-was-exhumed-and-put-on-trial-180981923/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-54",
+    "category": "FACT",
+    "claim": "The CIA once built a cyborg cat spy.",
+    "explanation": "Operation Acoustic Kitty wired a cat with a microphone and antenna; on its first mission it reportedly wandered into traffic and was hit by a car.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-55",
+    "category": "FACT",
+    "claim": "A medieval banquet collapsed into a giant toilet pit.",
+    "explanation": "At Erfurt in 1184, a floor gave way under dozens of nobles, dropping them into the monastery's sewage pit; many drowned.",
+    "sources": [
+      {
+        "url": "https://www.atlasobscura.com/places/erfurt-latrine-disaster",
+        "title": "atlasobscura.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-56",
+    "category": "FACT",
+    "claim": "Boston was once hit by a 25-foot molasses tsunami.",
+    "explanation": "The 1919 tank collapse sent 2.3 million gallons of molasses through the North End at 35 mph, killing 21 people.",
+    "sources": [
+      {
+        "url": "https://www.si.edu/",
+        "title": "si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-57",
+    "category": "FACT",
+    "claim": "The U.S. Air Force once proposed building a \"gay bomb.\"",
+    "explanation": "A 1994 document requested funds for an aphrodisiac weapon to disrupt enemy morale; it was never developed.",
+    "sources": [
+      {
+        "url": "https://www.bbc.com/news/10283307",
+        "title": "bbc.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-58",
+    "category": "FACT",
+    "claim": "The United States and Britain nearly went to war over a pig.",
+    "explanation": "An 1859 shooting of a Hudson's Bay Company pig escalated to 461 U.S. troops facing five British warships. Zero shots were fired.",
+    "sources": [
+      {
+        "url": "https://www.nps.gov/",
+        "title": "nps.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-59",
+    "category": "FACT",
+    "claim": "A parrot was thrown out of Andrew Jackson's funeral for swearing.",
+    "explanation": "Jackson's African grey, Poll, reportedly cursed so persistently during the 1845 service that mourners had it removed.",
+    "sources": [
+      {
+        "url": "https://www.si.edu/",
+        "title": "si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-60",
+    "category": "FACT",
+    "claim": "The Polish army officially enlisted a bear.",
+    "explanation": "Wojtek the Syrian brown bear held a service rank, drank beer with soldiers, and hauled artillery crates at Monte Cassino.",
+    "sources": [
+      {
+        "url": "https://www.si.edu/",
+        "title": "si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-61",
+    "category": "FACT",
+    "claim": "The 1904 Olympic marathon winner drank rat poison during the race.",
+    "explanation": "Trainers fed Thomas Hicks brandy laced with strychnine; the first finisher, Fred Lorz, had ridden in a car for 11 miles.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-62",
+    "category": "FACT",
+    "claim": "The U.S. sent an aircraft carrier group to cut down one tree.",
+    "explanation": "After two officers were killed pruning a poplar in the Korean DMZ, Operation Paul Bunyan felled it with bombers and warships on standby.",
+    "sources": [
+      {
+        "url": "https://www.politico.com/story/2018/08/18/us-forces-trim-tree-in-dmz-aug-18-1976-788099",
+        "title": "politico.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-63",
+    "category": "FACT",
+    "claim": "A pig was hanged for murder in medieval France.",
+    "explanation": "The sow of Falaise was tried in 1386, dressed in human clothes, and executed — animals regularly faced courts back then.",
+    "sources": [
+      {
+        "url": "https://www.bbc.com/news/uk-10651819",
+        "title": "bbc.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-64",
+    "category": "FACT",
+    "claim": "A rhinoceros was elected to city council in São Paulo.",
+    "explanation": "Protest voters gave Cacareco the zoo rhino ~100,000 write-in votes in 1959, beating all 540 human candidates; the result was annulled.",
+    "sources": [
+      {
+        "url": "https://time.com/",
+        "title": "time.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-65",
+    "category": "FACT",
+    "claim": "Britain's Parliament shut down because a river smelled too bad.",
+    "explanation": "The 1858 Great Stink — raw sewage in a heatwave — drove lawmakers from Westminster and finally funded London's sewer system.",
+    "sources": [
+      {
+        "url": "https://www.parliament.uk/about/living-heritage/transformingsociety/towncountry/towns/tyne-and-wear-case-study/about-the-group/public-health/the-great-stink/",
+        "title": "parliament.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-66",
+    "category": "FACT",
+    "claim": "Fidel Castro built a marble mausoleum for a cow.",
+    "explanation": "Ubre Blanca's record 109-liter milk day made her a national hero; Castro gave her an air-conditioned stall and a posthumous statue.",
+    "sources": [
+      {
+        "url": "https://www.wsj.com/",
+        "title": "wsj.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-67",
+    "category": "FACT",
+    "claim": "The shortest war in history lasted under an hour.",
+    "explanation": "The 1896 Anglo-Zanzibar War: British ships opened fire at 9:02 AM; the sultan surrendered by 9:40 — about 38–45 minutes.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/shortest-war",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-68",
+    "category": "FACT",
+    "claim": "NASA accidentally erased the original Apollo 11 moonwalk tapes.",
+    "explanation": "The pristine telemetry tapes were likely recorded over during a 1980s tape shortage; only TV-monitor footage survives.",
+    "sources": [
+      {
+        "url": "https://www.reuters.com/",
+        "title": "reuters.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-69",
+    "category": "FACT",
+    "claim": "A woman convinced doctors she was giving birth to rabbits.",
+    "explanation": "Mary Toft's 1726 hoax fooled the King's own surgeons until she confessed to inserting animal parts before examinations.",
+    "sources": [
+      {
+        "url": "https://www.gla.ac.uk/myglasgow/library/",
+        "title": "gla.ac.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-70",
+    "category": "FACT",
+    "claim": "A \"killer rabbit\" once attacked President Jimmy Carter.",
+    "explanation": "In 1979 a fleeing swamp rabbit swam at Carter's canoe, hissing; he splashed it away with a paddle, to national mockery.",
+    "sources": [
+      {
+        "url": "https://www.jimmycarterlibrary.gov/",
+        "title": "jimmycarterlibrary.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-71",
+    "category": "FACT",
+    "claim": "A $125 million Mars probe burned up because of a units mix-up.",
+    "explanation": "One team built thrusters in pound-seconds, the other navigated in newton-seconds; the orbiter skimmed in too low and was lost.",
+    "sources": [
+      {
+        "url": "https://www.jpl.nasa.gov/news/nasa-mars-climate-orbiter-team-finds-likely-cause-of-loss/",
+        "title": "jpl.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-72",
+    "category": "FACT",
+    "claim": "Michigan and Ohio once mobilized militias over Toledo.",
+    "explanation": "The 1835–36 \"Toledo War\" featured troop standoffs, arrested officials, and one stabbing; Michigan got the Upper Peninsula instead.",
+    "sources": [
+      {
+        "url": "https://ohiohistory.org/",
+        "title": "ohiohistory.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-73",
+    "category": "FACT",
+    "claim": "The U.S. and Britain once had a \"Pork and Beans War.\"",
+    "explanation": "The 1838–39 Maine border standoff took its name from the lumberjack troops' rations, not the dispute; it ended without battle.",
+    "sources": [
+      {
+        "url": "https://history.state.gov/",
+        "title": "history.state.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-74",
+    "category": "FACT",
+    "claim": "Britain fought a war named after a severed ear.",
+    "explanation": "Robert Jenkins displayed his pickled ear to Parliament in 1738; the outrage helped ignite the War of Jenkins' Ear in 1739.",
+    "sources": [
+      {
+        "url": "https://www.historyextra.com/",
+        "title": "historyextra.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-75",
+    "category": "FACT",
+    "claim": "A flood of beer once killed eight Londoners.",
+    "explanation": "The 1814 Horse Shoe Brewery vat collapse sent a porter wave through the St Giles slum, crushing homes — a real industrial disaster.",
+    "sources": [
+      {
+        "url": "https://www.cityoflondon.gov.uk/things-to-do/history-and-heritage/london-metropolitan-archives",
+        "title": "cityoflondon.gov.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-76",
+    "category": "FACT",
+    "claim": "Cleveland's mass balloon release became a disaster.",
+    "explanation": "Balloonfest '86 sent 1.5 million balloons back over the city, disrupting airports and hampering a Coast Guard search for two drowned boaters.",
+    "sources": [
+      {
+        "url": "https://www.history.com/",
+        "title": "history.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-77",
+    "category": "FACT",
+    "claim": "Sick horses made Boston's great fire worse.",
+    "explanation": "During the 1872 blaze, an equine epidemic disabled the fire department's horse-drawn engines; 776 buildings burned down.",
+    "sources": [
+      {
+        "url": "https://bostonfirehistory.org/",
+        "title": "bostonfirehistory.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-78",
+    "category": "FACT",
+    "claim": "Australia's governor-general fired the sitting prime minister.",
+    "explanation": "In 1975, Sir John Kerr dismissed Gough Whitlam amid a budget deadlock — a constitutional bombshell still debated today.",
+    "sources": [
+      {
+        "url": "https://www.aph.gov.au/",
+        "title": "aph.gov.au"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-79",
+    "category": "FACT",
+    "claim": "Britain helped win WWII using a corpse.",
+    "explanation": "Operation Mincemeat floated a dead man carrying fake invasion plans, diverting German forces from the real Sicily landings.",
+    "sources": [
+      {
+        "url": "https://www.nationalarchives.gov.uk/education/resources/operation-mincemeat/",
+        "title": "nationalarchives.gov.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-80",
+    "category": "FACT",
+    "claim": "Prohibition-era America saw a deadly black market for liquor.",
+    "explanation": "Denatured industrial alcohol, retouched by bootleggers, poisoned drinkers — a grim chapter of enforcement policy.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-81",
+    "category": "FACT",
+    "claim": "Sweden switched which side of the road it drives on — in one morning.",
+    "explanation": "On Dagen H (September 3, 1967), the entire nation flipped from left-hand to right-hand traffic in a single coordinated changeover.",
+    "sources": [
+      {
+        "url": "https://www.trafikverket.se/",
+        "title": "trafikverket.se"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-82",
+    "category": "FACT",
+    "claim": "Hundreds of people danced uncontrollably for days in 1518.",
+    "explanation": "The Strasbourg dancing plague sent citizens moving for weeks; mass psychogenic illness is the leading explanation — though records are murky.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-83",
+    "category": "FACT",
+    "claim": "The Hindenburg disaster created modern live trauma broadcasting.",
+    "explanation": "The 1937 fire was captured on film and radio; Herbert Morrison's \"Oh, the humanity!\" commentary made it instantly world-famous.",
+    "sources": [
+      {
+        "url": "https://airandspace.si.edu/",
+        "title": "airandspace.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-84",
+    "category": "FACT",
+    "claim": "Oxford University has no founding date.",
+    "explanation": "Teaching existed at Oxford by at least 1096, making it the oldest English-speaking university — but it grew gradually, with no charter or founding moment.",
+    "sources": [
+      {
+        "url": "https://www.ox.ac.uk/about/organisation/history",
+        "title": "ox.ac.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-85",
+    "category": "FACT",
+    "claim": "A musical performance that started in 2001 will finish in the year 2640.",
+    "explanation": "John Cage's \"As Slow As Possible\" is being played on a German church organ at a tempo stretching it to 639 years.",
+    "sources": [
+      {
+        "url": "https://www.bbc.com/news/entertainment-arts-15530521",
+        "title": "bbc.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-86",
+    "category": "FACT",
+    "claim": "Sweden texts blood donors when their blood saves a patient.",
+    "explanation": "Donors get a thank-you text at donation and a second message when their specific unit is transfused into a patient.",
+    "sources": [
+      {
+        "url": "https://www.independent.co.uk/news/world/europe/sweden-blood-donors-text-message-saves-lives-a6813856.html",
+        "title": "independent.co.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-87",
+    "category": "FACT",
+    "claim": "High heels were originally designed for men.",
+    "explanation": "15th-century Persian cavalry wore heels to lock into stirrups; European aristocrats then adopted them as a mark of masculine status.",
+    "sources": [
+      {
+        "url": "https://batashoemuseum.ca/",
+        "title": "batashoemuseum.ca"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-88",
+    "category": "FACT",
+    "claim": "Chainsaws were invented to assist childbirth.",
+    "explanation": "18th-century Scottish doctors built a hand-cranked chainsaw to cut the pelvic bone during obstructed labor, before safe C-sections existed.",
+    "sources": [
+      {
+        "url": "https://www.popularmechanics.com/",
+        "title": "popularmechanics.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-89",
+    "category": "FACT",
+    "claim": "Nintendo was founded while Jack the Ripper was still active.",
+    "explanation": "Nintendo began as a Kyoto playing-card company on September 23, 1889 — squarely within the Ripper's 1888–89 murder spree.",
+    "sources": [
+      {
+        "url": "https://www.nintendo.co.jp/corporate/en/",
+        "title": "nintendo.co.jp"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-90",
+    "category": "FACT",
+    "claim": "The lighter was invented before the match.",
+    "explanation": "Döbereiner's hydrogen \"lamp\" (1823) preceded John Walker's friction match (1826) by three years.",
+    "sources": [
+      {
+        "url": "https://time.com/",
+        "title": "time.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-91",
+    "category": "FACT",
+    "claim": "Betty White was born before sliced bread existed.",
+    "explanation": "White was born in 1922; Otto Rohwedder's commercial bread slicer debuted in Chillicothe, Missouri, in 1928.",
+    "sources": [
+      {
+        "url": "https://time.com/",
+        "title": "time.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-92",
+    "category": "FACT",
+    "claim": "Mammoths were still alive when the Great Pyramid was finished.",
+    "explanation": "A dwarf mammoth population survived on Wrangel Island until ~1650 BC — nearly 900 years after the pyramid's completion (~2560 BC).",
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/s41586-019-1681-2",
+        "title": "nature.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-93",
+    "category": "FACT",
+    "claim": "A jellyfish can reverse its own aging.",
+    "explanation": "Turritopsis dohrnii reverts to juvenile polyp stage after maturity, dodging senescence — though it can still be eaten or infected.",
+    "sources": [
+      {
+        "url": "https://ocean.si.edu/ocean-life/invertebrates/immortal-jellyfish",
+        "title": "ocean.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-94",
+    "category": "FACT",
+    "claim": "Some tumors can grow teeth, hair, and miniature organs.",
+    "explanation": "Teratomas arise from pluripotent stem cells and can contain skin, teeth, muscle, and even rudimentary brain tissue.",
+    "sources": [
+      {
+        "url": "https://my.clevelandclinic.org/health/diseases/24519-teratoma",
+        "title": "my.clevelandclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-95",
+    "category": "FACT",
+    "claim": "The quietest room on Earth causes hallucinations within 45 minutes.",
+    "explanation": "Orfield Labs' anechoic chamber (−9.4 dB) lets you hear your own heartbeat; total silence makes the brain manufacture phantom sounds.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/science-nature/what-is-worlds-quietest-room-180949940/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-96",
+    "category": "FACT",
+    "claim": "There is a cloud in space made of rum-and-raspberry molecules.",
+    "explanation": "Sagittarius B2 contains millions of billions of liters of ethyl formate — the flavor compound of raspberries, the scent of rum.",
+    "sources": [
+      {
+        "url": "https://www.mpifr-bonn.mpg.de/",
+        "title": "mpifr-bonn.mpg.de"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-97",
+    "category": "FACT",
+    "claim": "Maine is the closest U.S. state to Africa.",
+    "explanation": "Quoddy Head, Maine, sits ~3,150 miles from Morocco — closer than any point in Florida, because globes curve differently than flat maps suggest.",
+    "sources": [
+      {
+        "url": "https://www.worldatlas.com/articles/which-us-state-is-closest-to-africa.html",
+        "title": "worldatlas.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-98",
+    "category": "FACT",
+    "claim": "France's longest land border is with Brazil.",
+    "explanation": "French Guiana is an overseas department of France, sharing a 730 km border with Brazil — longer than France's border with Spain or Germany.",
+    "sources": [
+      {
+        "url": "https://www.worldatlas.com/articles/what-is-france-s-longest-border.html",
+        "title": "worldatlas.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-99",
+    "category": "FACT",
+    "claim": "Oxford University predates the Aztec Empire.",
+    "explanation": "Teaching at Oxford began by 1096; the Aztec capital Tenochtitlan was founded in 1325 and the empire's alliance formed in 1428.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-100",
+    "category": "FACT",
+    "claim": "Cleopatra lived closer to the iPhone than to the Great Pyramid.",
+    "explanation": "The pyramid rose ~2560 BC; Cleopatra died in 30 BC (2,530 years later); the iPhone arrived in 2007, just 2,037 years after her death.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/history/cleopatra-queen-egypt-180956928/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-101",
+    "category": "FACT",
+    "claim": "A T. rex lived closer in time to you than to a Stegosaurus.",
+    "explanation": "Stegosaurus (~150M years ago) and T. rex (~66M) are separated by ~84 million years — while humans sit ~66 million years from T. rex.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-102",
+    "category": "FACT",
+    "claim": "Saudi Arabia imports sand and camels.",
+    "explanation": "Its desert sand is too smooth for concrete, so it imports construction sand; its camels are reserved for racing, so it imports meat camels from Australia.",
+    "sources": [
+      {
+        "url": "https://www.bbc.com/news/magazine-30883082",
+        "title": "bbc.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-103",
+    "category": "FACT",
+    "claim": "There are more plastic flamingos than real ones on Earth.",
+    "explanation": "Don Featherstone's 1957 lawn ornament sold in the millions, outnumbering every living wild flamingo.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/arts-culture/brief-history-pink-plastic-flamingo-180959184/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-104",
+    "category": "FACT",
+    "claim": "Reno, Nevada is west of Los Angeles.",
+    "explanation": "The California coast bends southeast; L.A. sits at ~118.2°W while Reno lies farther west at ~119.8°W.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/longitude.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-105",
+    "category": "FACT",
+    "claim": "New York City is south of Rome.",
+    "explanation": "NYC sits at 40.7°N, Rome at 41.9°N — the Gulf Stream keeps snowy New York below mild Italy's latitude.",
+    "sources": [
+      {
+        "url": "https://www.nationalgeographic.com/",
+        "title": "nationalgeographic.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-106",
+    "category": "FACT",
+    "claim": "If you head due south from Detroit, you arrive in Canada.",
+    "explanation": "The Detroit River kinks around the border, placing Windsor, Ontario directly south of Detroit, Michigan.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-107",
+    "category": "FACT",
+    "claim": "The Eiffel Tower is up to six inches taller in summer.",
+    "explanation": "Heat expands the iron lattice; the tower physically grows ~15 cm on hot days and shrinks back in winter.",
+    "sources": [
+      {
+        "url": "https://www.toureiffel.paris/en/the-monument/faq",
+        "title": "toureiffel.paris"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-108",
+    "category": "FACT",
+    "claim": "The world's shortest commercial flight lasts about a minute.",
+    "explanation": "Loganair's Westray–Papa Westray hop covers 2.7 km; with a tailwind the scheduled flight takes ~53 seconds.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/shortest-commercial-flight",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-109",
+    "category": "FACT",
+    "claim": "Humans have far more than five senses.",
+    "explanation": "Beyond the classic five: proprioception, balance (vestibular), temperature, pain, and interoception — Aristotle's list was never complete.",
+    "sources": [
+      {
+        "url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-truth-about-the-five-senses",
+        "title": "hopkinsmedicine.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-110",
+    "category": "FACT",
+    "claim": "The \"lead\" in pencils has never contained lead.",
+    "explanation": "Pencils write with graphite; 1500s English miners mistook it for lead ore (\"plumbago\") and the wrong name stuck for 500 years.",
+    "sources": [
+      {
+        "url": "https://uwaterloo.ca/news/news/why-pencil-lead-isnt-lead",
+        "title": "uwaterloo.ca"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-111",
+    "category": "FACT",
+    "claim": "Venus is the hottest planet — hotter than Mercury, which is closer to the Sun.",
+    "explanation": "Mercury has no atmosphere to trap heat; Venus's CO2 greenhouse holds ~475°C at the surface, enough to melt lead.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/venus/venus-facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-112",
+    "category": "FACT",
+    "claim": "Oxygen is the most abundant element in Earth's crust.",
+    "explanation": "46.6% of crustal mass — not as floating gas, but locked inside rocks and minerals as chemical compounds.",
+    "sources": [
+      {
+        "url": "https://education.jlab.org/itselemental/ele008.html",
+        "title": "education.jlab.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-113",
+    "category": "FACT",
+    "claim": "Pumice can float on water for years.",
+    "explanation": "Gas bubbles trapped during rapid cooling make pumice less dense than water; pumice rafts have drifted across entire oceans.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/volcanoes/kilauea/pumice-rafts",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-114",
+    "category": "FACT",
+    "claim": "Apples have nearly three times as many genes as humans.",
+    "explanation": "The domestic apple genome carries ~57,000 genes versus ~20,000–25,000 protein-coding genes in humans.",
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/ng.654",
+        "title": "nature.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-115",
+    "category": "FACT",
+    "claim": "Sloths can hold their breath longer than dolphins.",
+    "explanation": "Sloths slow their heart rate to hold breath up to 40 minutes underwater; dolphins must surface every 8–10 minutes.",
+    "sources": [
+      {
+        "url": "https://slothconservation.org/10-incredible-facts-about-the-sloth/",
+        "title": "slothconservation.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-116",
+    "category": "FACT",
+    "claim": "Trees on Earth vastly outnumber stars in the Milky Way.",
+    "explanation": "~3 trillion trees versus ~100–400 billion stars — trees win by nearly ten to one.",
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/nature14967",
+        "title": "nature.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-117",
+    "category": "FACT",
+    "claim": "Every properly shuffled deck of cards is almost certainly one-of-a-kind.",
+    "explanation": "52! orderings — an 8 followed by 67 zeros — exceed everything ever shuffled by margins the universe cannot touch.",
+    "sources": [
+      {
+        "url": "https://www.mcgill.ca/oss/article/did-you-know/how-many-ways-can-you-shuffle-deck-cards",
+        "title": "mcgill.ca"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-118",
+    "category": "FACT",
+    "claim": "Russia has a larger surface area than the planet Pluto.",
+    "explanation": "Russia spans 17.1 million km²; Pluto's total surface area is ~16.6 million km².",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/dwarf-planets/pluto/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-119",
+    "category": "FACT",
+    "claim": "All of humanity compressed would fit in a sugar cube.",
+    "explanation": "Atoms are ~99.9999999% empty space; squeeze out the void and 8 billion people's matter occupies a cube's volume — at billions of tons.",
+    "sources": [
+      {
+        "url": "https://home.cern/science/physics/standard-model",
+        "title": "home.cern"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-120",
+    "category": "FACT",
+    "claim": "A trillion seconds equals roughly 31,000 years.",
+    "explanation": "A million seconds is 11.5 days, a billion is 31.7 years, a trillion is 31,709 years — back to the Neanderthals.",
+    "sources": [
+      {
+        "url": "https://math.berkeley.edu/",
+        "title": "math.berkeley.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-121",
+    "category": "FACT",
+    "claim": "Your blood vessels could circle the Earth about 2.5 times.",
+    "explanation": "~60,000 miles of arteries, veins, and capillaries in one adult versus Earth's 24,901-mile waistline.",
+    "sources": [
+      {
+        "url": "https://www.fi.edu/heart/human-circulatory-system",
+        "title": "fi.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-122",
+    "category": "FACT",
+    "claim": "Lake Superior alone could flood the Americas a foot deep.",
+    "explanation": "It holds ~3 quadrillion gallons — 10% of all unfrozen surface freshwater on Earth.",
+    "sources": [
+      {
+        "url": "https://seagrant.umn.edu/",
+        "title": "seagrant.umn.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-123",
+    "category": "FACT",
+    "claim": "Ants outnumber humans about 2.5 million to one.",
+    "explanation": "Earth's ant population is estimated at 20 quadrillion; together they outweigh all wild birds and mammals combined.",
+    "sources": [
+      {
+        "url": "https://www.pnas.org/doi/10.1073/pnas.2025320118",
+        "title": "pnas.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-124",
+    "category": "FACT",
+    "claim": "A Rubik's Cube has more arrangements than seconds since the Big Bang.",
+    "explanation": "43 quintillion combinations versus 4.36×10^17 seconds of cosmic history — the cube wins by a factor of ~100.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-125",
+    "category": "FACT",
+    "claim": "Earth's core holds enough gold to coat the entire planet.",
+    "explanation": "Gold dissolved into iron and sank during formation; core gold would plate Earth's surface roughly half a meter thick.",
+    "sources": [
+      {
+        "url": "https://www.bristol.ac.uk/",
+        "title": "bristol.ac.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-126",
+    "category": "FACT",
+    "claim": "One glass of water contains more molecules than there are glasses of water in all the oceans.",
+    "explanation": "~8.3×10^24 molecules per glass versus ~3.2×10^21 glasses' worth of ocean — Avogadro's number at full power.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-127",
+    "category": "FACT",
+    "claim": "Humanity's deepest hole reaches only 0.19% of the way to Earth's center.",
+    "explanation": "The 12.2 km Kola borehole stopped when rock hit ~180°C; the planet's center lies 6,370 km down. We never broke the apple's skin.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-128",
+    "category": "FACT",
+    "claim": "A blue whale's tongue weighs as much as an elephant.",
+    "explanation": "~2.7 tons of tongue on the largest animal ever known — bigger than any dinosaur that ever lived.",
+    "sources": [
+      {
+        "url": "https://www.worldwildlife.org/species/whale",
+        "title": "worldwildlife.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-129",
+    "category": "FACT",
+    "claim": "The entire human race could stand shoulder-to-shoulder in Rhode Island.",
+    "explanation": "8 billion people at 3.5 sq ft each need ~1,000 sq mi; Rhode Island has 1,034.",
+    "sources": [
+      {
+        "url": "https://what-if.xkcd.com/8/",
+        "title": "what-if.xkcd.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-130",
+    "category": "FACT",
+    "claim": "The Pacific Ocean is larger than all of Earth's land combined.",
+    "explanation": "63.8 million sq mi of Pacific versus 57.3 million sq mi for every continent and island — and it holds twice the Atlantic's water.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/oceanwater.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-131",
+    "category": "FACT",
+    "claim": "Your DNA, uncoiled, would reach Pluto and back more than six times.",
+    "explanation": "~2 meters of DNA per cell × ~37 trillion cells ≈ 46 billion miles, coiled up inside you right now.",
+    "sources": [
+      {
+        "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+        "title": "genome.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-132",
+    "category": "FACT",
+    "claim": "If Earth's history were one 24-hour day, humans appear 4 seconds before midnight.",
+    "explanation": "Life starts ~4 AM, dinosaurs clock in at 10:56 PM, and Homo sapiens arrives with seconds to spare; all of civilization is a blink.",
+    "sources": [
+      {
+        "url": "https://www.amnh.org/explore/science-topics/earth-and-climate/earth-timeline",
+        "title": "amnh.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-133",
+    "category": "FACT",
+    "claim": "Earning $100,000 every day since the pyramids were built wouldn't make you today's richest person.",
+    "explanation": "4,580 years of daily $100k sums to ~$167 billion — exceeded by the very top of the modern billionaire list.",
+    "sources": [
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "forbes.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-134",
+    "category": "FACT",
+    "claim": "Your body replaces roughly 330 billion cells every single day.",
+    "explanation": "That's ~3.8 million new cells per second, mostly blood and gut lining — you are continuously rebuilt.",
+    "sources": [
+      {
+        "url": "https://www.weizmann.ac.il/",
+        "title": "weizmann.ac.il"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-135",
+    "category": "FACT",
+    "claim": "The ocean's deepest point is nearly 11 kilometers down.",
+    "explanation": "Challenger Deep bottoms out around 10,935 m; drop Everest in and its peak stays ~2 km below the surface.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/facts/deepest-ocean.html",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-136",
+    "category": "FACT",
+    "claim": "Earth's oceanic crust is only about 5 km thick.",
+    "explanation": "The solid skin we live on is thinner relative to Earth than an eggshell is to an egg.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-137",
+    "category": "FACT",
+    "claim": "The Smithsonian holds 148 million objects — and displays under 1% of them.",
+    "explanation": "The vast collection lives in storage and research facilities; galleries show only a sliver at any moment.",
+    "sources": [
+      {
+        "url": "https://www.si.edu/newsdesk/factsheets/smithsonian-collections",
+        "title": "si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-138",
+    "category": "FACT",
+    "claim": "If every drop of atmospheric water fell at once, the planet would get one inch of rain.",
+    "explanation": "Clouds look enormous, but the sky holds relatively little water — ~2.5 cm spread over the whole Earth.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-139",
+    "category": "FACT",
+    "claim": "The ocean's average depth is 3,682 meters.",
+    "explanation": "Mostly vast abyssal plains — and less than half the seafloor has been mapped in high resolution.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-140",
+    "category": "FACT",
+    "claim": "The Empire State Building is struck by lightning about 25 times a year.",
+    "explanation": "Tall, exposed structures attract repeat strikes — the saying \"lightning never strikes twice\" is plain false.",
+    "sources": [
+      {
+        "url": "https://www.noaa.gov/",
+        "title": "noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-141",
+    "category": "FACT",
+    "claim": "A narwhal's \"unicorn horn\" is actually a tooth.",
+    "explanation": "The tusk is an elongated canine packed with nerve endings that likely senses water conditions.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-142",
+    "category": "FACT",
+    "claim": "Honey can stay edible for thousands of years.",
+    "explanation": "Low water content, acidity, and natural chemistry starve microbes of a foothold; sealed ancient honey remains safe — though not literally immortal.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/science-nature/why-does-honey-never-spoil-180985127/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-143",
+    "category": "FACT",
+    "claim": "Glass frogs hide their own blood while they sleep.",
+    "explanation": "They concentrate red blood cells in the liver, turning nearly transparent — without the deadly clotting that should follow.",
+    "sources": [
+      {
+        "url": "https://www.science.org/doi/10.1126/science.aar7104",
+        "title": "science.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-144",
+    "category": "FACT",
+    "claim": "There are lakes at the bottom of the ocean.",
+    "explanation": "Brine pools — water so salty it is denser than seawater — collect in seafloor depressions with visible \"shorelines.\"",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-145",
+    "category": "FACT",
+    "claim": "The largest waterfall on Earth is underwater.",
+    "explanation": "The Denmark Strait cataract drops ~3.5 km as cold water sinks beneath warmer water — taller than any above-water fall.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-146",
+    "category": "FACT",
+    "claim": "Entire ecosystems run on chemistry instead of sunlight.",
+    "explanation": "At hydrothermal vents, microbes harvest chemical energy (chemosynthesis), supporting food webs in absolute darkness.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-147",
+    "category": "FACT",
+    "claim": "Earth is closest to the Sun during northern winter.",
+    "explanation": "We reach perihelion in early January; seasons come from axial tilt, not distance from the Sun.",
+    "sources": [
+      {
+        "url": "https://spaceplace.nasa.gov/",
+        "title": "spaceplace.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-148",
+    "category": "FACT",
+    "claim": "Most of Earth's freshwater is frozen.",
+    "explanation": "~68% sits in glaciers and ice caps, nearly all the rest is groundwater — lakes and rivers are a rounding error.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-149",
+    "category": "FACT",
+    "claim": "The Declaration of Independence was signed weeks after July 4th.",
+    "explanation": "Congress adopted the text on July 4, 1776, but the engrossed parchment was mostly signed on August 2.",
+    "sources": [
+      {
+        "url": "https://www.archives.gov/founding-docs/declaration",
+        "title": "archives.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
+    "id": "fact-150",
+    "category": "FACT",
+    "claim": "Daylight saving time was fiercely opposed by farmers.",
+    "explanation": "Retailers and WWI energy campaigns pushed the clock shift; farmers lobbied against it because their day followed the sun, not the clock.",
+    "sources": [
+      {
+        "url": "https://www.loc.gov/item/today-in-history/march-19/",
+        "title": "loc.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "fact"
+    ]
+  },
+  {
     "id": "kinda-1",
     "category": "KINDA",
     "claim": "A pound of feathers weighs more than a pound of gold.",
-    "explanation": "Precious metals use troy weight: a pound of gold is 12 oz, while feathers use avoirdupois: 16 oz. The units differ.",
+    "explanation": "Precious metals use Troy weight: a \"pound\" of gold is 12 oz (~373 g), while feathers use avoirdupois: 16 oz (~453 g).",
     "sources": [
       {
         "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9",
@@ -114,8 +2418,8 @@
   {
     "id": "kinda-2",
     "category": "KINDA",
-    "claim": "Alaska is the northernmost, westernmost, and easternmost U.S. state.",
-    "explanation": "Alaska is northernmost and westernmost. Aleutian Islands cross the 180° meridian, putting part of Alaska in the Eastern Hemisphere.",
+    "claim": "Alaska is the northernmost, westernmost, AND easternmost U.S. state.",
+    "explanation": "The Aleutian Islands cross the 180° meridian, so parts of Alaska technically sit in the Eastern Hemisphere.",
     "sources": [
       {
         "url": "https://www.usgs.gov/faqs/which-us-state-farthest-west",
@@ -130,8 +2434,8 @@
   {
     "id": "kinda-3",
     "category": "KINDA",
-    "claim": "Mercury—not Venus—is Earth's closest planetary neighbor on average.",
-    "explanation": "Venus can come closest at a moment, but Mercury's smaller orbit keeps it nearer on average over time. “Closest” depends on the measure.",
+    "claim": "Mercury — not Venus — is Earth's closest planetary neighbor on average.",
+    "explanation": "Venus comes nearest at closest approach, but spends long stretches on the far side of the Sun; Mercury's tight orbit keeps its average distance smaller.",
     "sources": [
       {
         "url": "https://physicstoday.aip.org/",
@@ -146,8 +2450,8 @@
   {
     "id": "kinda-4",
     "category": "KINDA",
-    "claim": "France has more time zones than any other country: twelve.",
-    "explanation": "France's overseas territories span twelve time zones in some counts. The total depends on including overseas territories.",
+    "claim": "France has more time zones than any other country — twelve.",
+    "explanation": "Overseas departments and territories from Polynesia to the Caribbean stretch across a dozen zones, beating Russia's eleven contiguous ones.",
     "sources": [
       {
         "url": "https://www.guinnessworldrecords.com/world-records/country-with-the-most-time-zones",
@@ -163,7 +2467,7 @@
     "id": "kinda-5",
     "category": "KINDA",
     "claim": "Mauna Kea is taller than Mount Everest.",
-    "explanation": "Measured from its ocean-floor base, Mauna Kea is taller; measured above sea level, Everest is higher. The baseline changes the answer.",
+    "explanation": "Only if measured from base to summit: from its ocean-floor base, Mauna Kea reaches ~10,200 m versus Everest's 8,849 m above sea level.",
     "sources": [
       {
         "url": "https://oceanservice.noaa.gov/facts/maunakea.html",
@@ -179,7 +2483,7 @@
     "id": "kinda-6",
     "category": "KINDA",
     "claim": "Every planet in the solar system fits between Earth and the Moon.",
-    "explanation": "Combined planetary diameters fit within the average Earth–Moon distance, assuming the planets are lined edge-to-edge and using average distance.",
+    "explanation": "Using average distances: Mercury through Neptune lined edge-to-edge span ~380,000 km, just under the 384,400 km mean gap.",
     "sources": [
       {
         "url": "https://science.nasa.gov/solar-system/moon/five-things-to-know-about-the-moon/",
@@ -192,10 +2496,1514 @@
     ]
   },
   {
+    "id": "kinda-7",
+    "category": "KINDA",
+    "claim": "Water can boil and freeze at the same time.",
+    "explanation": "At the triple point — 0.01°C at 0.006 atmospheres — water exists as solid, liquid, and gas simultaneously.",
+    "sources": [
+      {
+        "url": "https://scienceline.ucsb.edu/",
+        "title": "scienceline.ucsb.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-8",
+    "category": "KINDA",
+    "claim": "Biologically speaking, there is no such thing as a fish.",
+    "explanation": "\"Fish\" is a paraphyletic grab-bag: a salmon is a closer relative of camels and humans than of sharks or hagfish, so no natural group contains all \"fish.\"",
+    "sources": [
+      {
+        "url": "https://ucmp.berkeley.edu/",
+        "title": "ucmp.berkeley.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-9",
+    "category": "KINDA",
+    "claim": "The longest mountain range on Earth is almost entirely underwater.",
+    "explanation": "The mid-ocean ridge system runs ~65,000 km around the globe like baseball seams; roughly 90% lies deep beneath the sea.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/ocean-fact/mid-ocean-ridge/",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-10",
+    "category": "KINDA",
+    "claim": "A \"jiffy\" is a real, precisely defined unit of time.",
+    "explanation": "In physics, the time light takes to travel one centimeter (~33 picoseconds); in early computing, one tick of the system clock (classically 1/60 second).",
+    "sources": [
+      {
+        "url": "https://physics.mit.edu/",
+        "title": "physics.mit.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-11",
+    "category": "KINDA",
+    "claim": "There is a place on Earth closer to astronauts than to any other human.",
+    "explanation": "Point Nemo, the oceanic pole of inaccessibility, lies 2,688 km from the nearest land — while the ISS passes ~400 km overhead.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/nemo.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-12",
+    "category": "KINDA",
+    "claim": "In deep winter, you can walk from the United States to Russia.",
+    "explanation": "The Diomede Islands are 3.8 km apart; when the Bering Strait freezes solid, an ice bridge links Big Diomede (Russia) and Little Diomede (USA).",
+    "sources": [
+      {
+        "url": "https://www.nationalgeographic.com/",
+        "title": "nationalgeographic.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-13",
+    "category": "KINDA",
+    "claim": "Hawaii, Alaska, and Puerto Rico have Interstate highways.",
+    "explanation": "\"Interstate\" refers to federal funding and defense-grade construction standards, not a requirement of connecting two or more states.",
+    "sources": [
+      {
+        "url": "https://www.fhwa.dot.gov/interstate/faq.cfm",
+        "title": "fhwa.dot.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-14",
+    "category": "KINDA",
+    "claim": "The largest living organism on Earth is a mushroom.",
+    "explanation": "Under the clonal-organism definition (one genetic individual, connected tissue), an Armillaria fungus in Oregon spans 965 hectares and is thousands of years old.",
+    "sources": [
+      {
+        "url": "https://www.fs.usda.gov/",
+        "title": "fs.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-15",
+    "category": "KINDA",
+    "claim": "Folding a paper 42 times would reach the Moon.",
+    "explanation": "Mathematically sound — each fold doubles thickness: 2^42 × 0.1 mm ≈ 439,000 km, past the Moon's 384,400 km. Physically, no human fold passes ~12.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-16",
+    "category": "KINDA",
+    "claim": "Pure water is an electrical insulator.",
+    "explanation": "Distilled water barely conducts; the danger in \"water + electricity\" comes entirely from dissolved salts and minerals carrying the current.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-electrical-conductivity",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-17",
+    "category": "KINDA",
+    "claim": "Bananas and pumpkins are berries, but strawberries are not.",
+    "explanation": "Botanically, berries form from a single flower ovary — bananas and avocados qualify; strawberries are aggregate accessory fruits.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/science/berry-plant-reproductive-body",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-18",
+    "category": "KINDA",
+    "claim": "Most natural diamonds are older than coal itself.",
+    "explanation": "Nearly all diamonds formed over 100 million years before the first land plants — and therefore coal — existed. Diamonds were never compressed coal.",
+    "sources": [
+      {
+        "url": "https://naturalhistory.si.edu/education/teaching-resources/earth-science/diamonds",
+        "title": "naturalhistory.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-19",
+    "category": "KINDA",
+    "claim": "A true \"day\" on Earth lasts 23 hours, 56 minutes, and 4 seconds.",
+    "explanation": "That is the sidereal day (one full spin vs. distant stars); the 24-hour solar day adds the extra spin needed to catch up to the moving Sun.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/solar-system/skywatching/what-is-a-sidereal-day/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-20",
+    "category": "KINDA",
+    "claim": "Peanuts are legumes, and almonds and walnuts are seeds — not one of them is a true nut.",
+    "explanation": "True nuts (acorns, chestnuts) are hard pods whose fruit never opens; peanuts are legumes, and almonds and walnuts are drupe seeds.",
+    "sources": [
+      {
+        "url": "https://www.fs.usda.gov/",
+        "title": "fs.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-21",
+    "category": "KINDA",
+    "claim": "Decaf coffee still contains caffeine.",
+    "explanation": "U.S. standards require only 97% removal; a typical 8-oz cup of decaf retains 2–7 mg of caffeine.",
+    "sources": [
+      {
+        "url": "https://www.fda.gov/consumers/consumer-updates/caffeine-and-your-body",
+        "title": "fda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-22",
+    "category": "KINDA",
+    "claim": "Water boils below 100°C at altitude — about 68°C atop Everest.",
+    "explanation": "Boiling happens when vapor pressure equals ambient pressure, which falls with altitude: ~95°C in Denver, higher inside pressure cookers.",
+    "sources": [
+      {
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/high-altitude-cooking",
+        "title": "fsis.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-23",
+    "category": "KINDA",
+    "claim": "The outward push you feel in a turning car does not exist as a real force.",
+    "explanation": "\"Centrifugal force\" is classed as fictitious: it is your inertia — your body trying to continue straight while the vehicle turns beneath you.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-24",
+    "category": "KINDA",
+    "claim": "Farmers lobbied against daylight saving time.",
+    "explanation": "The clock shift was championed by retailers and WWI energy campaigns; sun-driven farm schedules were disrupted by it, so agriculture fought it.",
+    "sources": [
+      {
+        "url": "https://www.loc.gov/",
+        "title": "loc.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-25",
+    "category": "KINDA",
+    "claim": "The U.S. Supreme Court ruled the tomato a vegetable.",
+    "explanation": "Botanically a fruit; in Nix v. Hedden (1893) the Court classified it by culinary use for tariff purposes.",
+    "sources": [
+      {
+        "url": "https://www.loc.gov/",
+        "title": "loc.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-26",
+    "category": "KINDA",
+    "claim": "An octopus's arms can think and react independently of its brain.",
+    "explanation": "About two-thirds of its neurons live in the arms, which can taste, grasp, and even react to injury without — or after losing — central control.",
+    "sources": [
+      {
+        "url": "https://naturalhistory.si.edu/education/teaching-resources/life-science/octopus",
+        "title": "naturalhistory.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-27",
+    "category": "KINDA",
+    "claim": "Controlled studies find no reliable link between sugar and children's hyperactivity.",
+    "explanation": "A meta-analysis of 23 studies found no effect; the famous \"sugar rush\" is largely adults expecting to see it.",
+    "sources": [
+      {
+        "url": "https://jamanetwork.com/",
+        "title": "jamanetwork.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-28",
+    "category": "KINDA",
+    "claim": "A chameleon's color change is mostly communication, not camouflage.",
+    "explanation": "Color shifts signal mood, rivalry, and temperature; their camouflage is mostly their resting pattern, not background-matching.",
+    "sources": [
+      {
+        "url": "https://animals.sandiegozoo.org/animals/chameleon",
+        "title": "animals.sandiegozoo.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-29",
+    "category": "KINDA",
+    "claim": "Baby sea turtles actively swim rather than drifting passively on currents.",
+    "explanation": "Satellite tracking showed juveniles navigate — currents influence them, but they are not floating debris.",
+    "sources": [
+      {
+        "url": "https://www.fisheries.noaa.gov/feature-story/turtle-tracking",
+        "title": "fisheries.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-30",
+    "category": "KINDA",
+    "claim": "A flamingo stands on one leg using almost no muscle effort.",
+    "explanation": "Their leg joints lock passively, stabilizing the pose — even deceased birds balance one-legged in lab tests.",
+    "sources": [
+      {
+        "url": "https://royalsocietypublishing.org/",
+        "title": "royalsocietypublishing.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-31",
+    "category": "KINDA",
+    "claim": "The Moon technically has an atmosphere.",
+    "explanation": "An ultra-thin exosphere of helium, argon, and neon — so sparse its particles rarely collide. \"Airless\" is a simplification, not a fact.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/moon/facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-32",
+    "category": "KINDA",
+    "claim": "If the Sun became a black hole of identical mass, Earth's orbit would not change.",
+    "explanation": "Gravity depends on mass and distance, not on object type — we'd keep orbiting; freezing in the dark would be the real apocalypse.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/universe/black-holes/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-33",
+    "category": "KINDA",
+    "claim": "Outer space is not completely empty.",
+    "explanation": "The interstellar \"vacuum\" holds gas, dust, radiation, and magnetic fields — about one atom per cubic centimeter, but far from nothing.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/universe/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-34",
+    "category": "KINDA",
+    "claim": "Columbus's voyage was controversial because he misjudged the distance to Asia — not because anyone thought Earth was flat.",
+    "explanation": "Educated Europeans had known Earth's shape for over a millennium; Columbus bet (wrongly) that Asia was close, and hit a continent instead.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/biography/Christopher-Columbus",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-35",
+    "category": "KINDA",
+    "claim": "Yellow-hot iron is hotter than red-hot iron.",
+    "explanation": "As metal heats, its glow shifts from red through yellow toward white — color tracks temperature, though lighting can fool the eye.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-36",
+    "category": "KINDA",
+    "claim": "Antarctica is the largest desert on Earth.",
+    "explanation": "Deserts are defined by precipitation, not heat: the Antarctic polar desert (~14 million km²) dwarfs the Sahara (~9 million km², largest hot desert).",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/largest-desert",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-37",
+    "category": "KINDA",
+    "claim": "Chimborazo in Ecuador is the farthest point on Earth's surface from the planet's center.",
+    "explanation": "The equatorial bulge lifts it: Chimborazo's summit sits ~2 km farther from Earth's core than Everest's, despite being lower above sea level.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/highestpoint.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-38",
+    "category": "KINDA",
+    "claim": "The Caspian Sea is actually a lake.",
+    "explanation": "The world's largest enclosed inland water has no ocean connection; \"sea\" survives as a historical quirk of its salty water.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Caspian-Sea",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-39",
+    "category": "KINDA",
+    "claim": "Greenland is the world's largest island — because Australia counts as a continent.",
+    "explanation": "The island/continent boundary is convention, not physics; standard classification promotes Australia to continent status.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Greenland",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-40",
+    "category": "KINDA",
+    "claim": "Pluto's demotion depends on which definition of \"planet\" you accept.",
+    "explanation": "The 2006 IAU rule demands \"clearing the orbital neighborhood\" — Pluto fails; many planetary scientists still dispute the definition.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/dwarf-planets/pluto/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-41",
+    "category": "KINDA",
+    "claim": "The blue whale is the largest animal ever known — by mass.",
+    "explanation": "Some dinosaurs were longer, but none heavier; at ~150+ tons the record needs its \"by mass\" footnote.",
+    "sources": [
+      {
+        "url": "https://ocean.si.edu/ocean-life/marine-mammals/blue-whale",
+        "title": "ocean.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-42",
+    "category": "KINDA",
+    "claim": "The peregrine falcon's 300+ km/h record belongs to its dive, not level flight.",
+    "explanation": "Gravity-powered stoops reach record speed; powered horizontal flight is far slower. Different measurements, different champions.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/fastest-bird-horizontal-flight",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-43",
+    "category": "KINDA",
+    "claim": "A wind chill of −30°C does not mean the air is −30°C.",
+    "explanation": "Wind chill estimates heat loss from exposed skin; the air — and any object in it — never drops below the actual thermometer reading.",
+    "sources": [
+      {
+        "url": "https://www.weather.gov/safety/cold-wind-chill-chart",
+        "title": "weather.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-44",
+    "category": "KINDA",
+    "claim": "Earth has more than one correct \"radius.\"",
+    "explanation": "Rotation flattens the poles: equatorial radius 6,378 km versus polar 6,357 km — so \"Earth's radius\" depends on where you measure.",
+    "sources": [
+      {
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+        "title": "nssdc.gsfc.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-45",
+    "category": "KINDA",
+    "claim": "Nobody can definitively name the world's longest river.",
+    "explanation": "The Nile (~6,650 km) and Amazon (~6,400–7,000 km) swap the title depending on which headwater you trace and how you measure.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/story/what-is-the-longest-river-in-the-world",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-46",
+    "category": "KINDA",
+    "claim": "The marathon's odd 42.195 km distance came from a royal request.",
+    "explanation": "The 1908 London race ran from Windsor Castle to the stadium, finishing before the royal box; the arbitrary route became the world standard in 1921.",
+    "sources": [
+      {
+        "url": "https://olympics.com/en/olympic-games/olympic-marathon",
+        "title": "olympics.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-47",
+    "category": "KINDA",
+    "claim": "Gone with the Wind can rank as the highest-grossing film of all time.",
+    "explanation": "Inflation-adjusted, its ~$3.4 billion equivalent tops modern blockbusters; raw-dollar rankings crown newer films. Different scoreboards.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/world-records/highest-box-office-film-gross",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-48",
+    "category": "KINDA",
+    "claim": "Angel Falls' \"highest waterfall\" record has fine print.",
+    "explanation": "It holds the highest uninterrupted drop (~807 m) of a 979 m total; multi-tier falls change the answer depending on what is measured.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Angel-Falls",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-49",
+    "category": "KINDA",
+    "claim": "A full rotation of Venus (243 days) is longer than its year (225 days) — yet its solar day is only ~117 days.",
+    "explanation": "\"Day\" splits two ways: rotation against the stars vs. sunrise to sunrise. Both figures are correct; the statement needs the definition to avoid self-contradiction.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/venus/facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-50",
+    "category": "KINDA",
+    "claim": "Saturn would float in water — in theory.",
+    "explanation": "Its average density (~0.69 g/cm³) is below water's, but no ocean big enough exists; the statement describes density, not a doable experiment.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/saturn/facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-51",
+    "category": "KINDA",
+    "claim": "Peanut butter can be turned into diamond.",
+    "explanation": "It takes brutal lab conditions — carbon-rich paste heated to ~1,000°C under pressures mimicking Earth's lower mantle.",
+    "sources": [
+      {
+        "url": "https://www.ed.ac.uk/",
+        "title": "ed.ac.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-52",
+    "category": "KINDA",
+    "claim": "Strawberries are the only fruit with seeds on the outside.",
+    "explanation": "Botanically, each yellow \"seed\" is an individual fruit (an achene); the red flesh is swollen stem tissue, not the fruit itself.",
+    "sources": [
+      {
+        "url": "https://plants.ces.ncsu.edu/plants/fragaria-x-ananassa/",
+        "title": "plants.ces.ncsu.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-53",
+    "category": "KINDA",
+    "claim": "A day on Mars is almost exactly as long as a day on Earth.",
+    "explanation": "A Martian \"sol\" lasts 24h 39m 35s — close enough that NASA rover teams live on Mars time and suffer permanent jet lag.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/mars/facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-54",
+    "category": "KINDA",
+    "claim": "Cashews grow on the bottom of apples.",
+    "explanation": "The nut hangs beneath the swollen stem (the \"cashew apple\"), inside a toxic shell — the stem is not the true fruit.",
+    "sources": [
+      {
+        "url": "https://blogs.ifas.ufl.edu/",
+        "title": "blogs.ifas.ufl.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-55",
+    "category": "KINDA",
+    "claim": "The Sahara Desert was recently a green, lake-dotted landscape.",
+    "explanation": "Earth's orbital wobble swings the African monsoon every ~20,000 years; just 5,000–10,000 years ago the desert bloomed with lakes and vegetation.",
+    "sources": [
+      {
+        "url": "https://eapsweb.mit.edu/",
+        "title": "eapsweb.mit.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-56",
+    "category": "KINDA",
+    "claim": "Some turtles breathe through their rear ends.",
+    "explanation": "During underwater hibernation, species like the Fitzroy River turtle absorb oxygen from water via cloacal respiration; on land, normal lungs apply.",
+    "sources": [
+      {
+        "url": "https://www.australiangeographic.com.au/",
+        "title": "australiangeographic.com.au"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-57",
+    "category": "KINDA",
+    "claim": "Vending machines kill more people than sharks.",
+    "explanation": "Statistically true in the U.S. (~4 deaths a year vs. ~1 fatal shark attack) — but only because frustrated people rock top-heavy machines and get crushed.",
+    "sources": [
+      {
+        "url": "https://www.cpsc.gov/s3fs-public/pdfs/blk_media_vending.pdf",
+        "title": "cpsc.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-58",
+    "category": "KINDA",
+    "claim": "Watermelons are technically berries.",
+    "explanation": "Botanically they are \"pepos\" — a berry subclass defined by a thick outer rind and fleshy, unsegmented interior.",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/science/berry-plant-reproductive-body",
+        "title": "britannica.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-59",
+    "category": "KINDA",
+    "claim": "Humans share about half their genes with bananas.",
+    "explanation": "Roughly 50% of protein-coding genes have banana analogues — but those genes are a tiny slice of the genome; total shared DNA is closer to 1%.",
+    "sources": [
+      {
+        "url": "https://www.genome.gov/genetics-glossary/Genome",
+        "title": "genome.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-60",
+    "category": "KINDA",
+    "claim": "A sloth can starve to death on a full stomach.",
+    "explanation": "Digestion depends on symbiotic gut bacteria; if its body temperature drops too low, the bacteria die and food rots undigested.",
+    "sources": [
+      {
+        "url": "https://slothconservation.org/",
+        "title": "slothconservation.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-61",
+    "category": "KINDA",
+    "claim": "Blood is a tissue, not a bodily fluid.",
+    "explanation": "Histologically it is a specialized connective tissue — living cells suspended in a matrix (plasma), originating in bone marrow.",
+    "sources": [
+      {
+        "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tissue",
+        "title": "cancer.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-62",
+    "category": "KINDA",
+    "claim": "The tallest mountain in the solar system is on Mars.",
+    "explanation": "Olympus Mons, a shield volcano ~22 km high — nearly three times Everest — with a footprint about the size of Arizona.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/mars/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-63",
+    "category": "KINDA",
+    "claim": "Dead people can get goosebumps.",
+    "explanation": "As rigor mortis sets in, the arrector pili muscles contract, pulling hair follicles upright on the corpse — postmortem goosebumps.",
+    "sources": [
+      {
+        "url": "https://onlinelibrary.wiley.com/journal/15564029",
+        "title": "onlinelibrary.wiley.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-64",
+    "category": "KINDA",
+    "claim": "Polar bears have black skin.",
+    "explanation": "Jet-black skin absorbs solar heat; their fur contains no pigment — translucent hollow tubes that scatter light to look white.",
+    "sources": [
+      {
+        "url": "https://www.worldwildlife.org/species/polar-bear",
+        "title": "worldwildlife.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-65",
+    "category": "KINDA",
+    "claim": "The loudest animal on Earth is a tiny shrimp.",
+    "explanation": "The pistol shrimp's claw snap forms a collapsing cavitation bubble that hits 218 decibels — louder than a jet engine — stunning its prey.",
+    "sources": [
+      {
+        "url": "https://www.bbc.com/earth",
+        "title": "bbc.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-66",
+    "category": "KINDA",
+    "claim": "The avocado's name comes from a word meaning testicles.",
+    "explanation": "The Aztec Nahuatl \"ahuacatl\" named both the fruit and the body part — unsurprising given their shape and tendency to grow in pairs.",
+    "sources": [
+      {
+        "url": "https://www.merriam-webster.com/wordplay/avocado-word-origin",
+        "title": "merriam-webster.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-67",
+    "category": "KINDA",
+    "claim": "You can survive a very long time on nothing but potatoes and butter.",
+    "explanation": "Potatoes supply nearly all essential amino acids plus carbs; butter supplies the missing fats and vitamins A and D (molybdenum eventually runs out).",
+    "sources": [
+      {
+        "url": "https://nutrition.org/",
+        "title": "nutrition.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-68",
+    "category": "KINDA",
+    "claim": "The U.S. lost an armed nuclear bomb in North Carolina — and left it there.",
+    "explanation": "A 1961 B-52 breakup dropped two nukes; one was recovered, the other's uranium core sank into a muddy swamp and was declared unrecoverable.",
+    "sources": [
+      {
+        "url": "https://nsarchive.gwu.edu/",
+        "title": "nsarchive.gwu.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-69",
+    "category": "KINDA",
+    "claim": "Your brain is mostly fat.",
+    "explanation": "By dry weight it is ~60% lipids — essential fatty acids that insulate nerve fibers so electrical signals can fire.",
+    "sources": [
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK279396/",
+        "title": "ncbi.nlm.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-70",
+    "category": "KINDA",
+    "claim": "Flamingos are born entirely grey.",
+    "explanation": "They earn their pink from canthaxanthin, absorbed from brine shrimp and blue-green algae; no pigment in the diet, no pink in the feathers.",
+    "sources": [
+      {
+        "url": "https://animals.sandiegozoo.org/animals/flamingo",
+        "title": "animals.sandiegozoo.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-71",
+    "category": "KINDA",
+    "claim": "Hippopotamus milk is pink.",
+    "explanation": "The milk itself is white; hippos secrete a reddish antimicrobial sunscreen (\"blood sweat\") that occasionally mixes in and tints it.",
+    "sources": [
+      {
+        "url": "https://animals.sandiegozoo.org/animals/hippopotamus",
+        "title": "animals.sandiegozoo.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-72",
+    "category": "KINDA",
+    "claim": "Scotland's national animal is a mythical creature.",
+    "explanation": "The unicorn — adopted by 12th-century Scottish royals as a symbol of purity and legendary enemy of England's lion.",
+    "sources": [
+      {
+        "url": "https://www.nts.org.uk/",
+        "title": "nts.org.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-73",
+    "category": "KINDA",
+    "claim": "Apples, peaches, and strawberries are all roses.",
+    "explanation": "All belong to the Rosaceae family — evolutionary cousins of the ornamental rose bushes in your garden.",
+    "sources": [
+      {
+        "url": "https://plants.usda.gov/home",
+        "title": "plants.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-74",
+    "category": "KINDA",
+    "claim": "The FDA legally permits insect fragments and rodent hair in peanut butter.",
+    "explanation": "\"Action levels\" (e.g., 30 insect fragments per 100 g) acknowledge the physical impossibility of keeping outdoor-grown food 100% clean.",
+    "sources": [
+      {
+        "url": "https://www.fda.gov/food/chemical-contaminants-pesticides/natural-toxins-food",
+        "title": "fda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-75",
+    "category": "KINDA",
+    "claim": "Human skin is covered in invisible stripes.",
+    "explanation": "Blaschko's lines trace how embryonic cells migrated across the skin; invisible unless specific chimeric skin conditions reveal them.",
+    "sources": [
+      {
+        "url": "https://www.jaad.org/",
+        "title": "jaad.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-76",
+    "category": "KINDA",
+    "claim": "You can start a fire with a block of ice.",
+    "explanation": "Polish clear ice into a convex lens and it focuses sunlight onto tinder — a magnifying glass made of frozen water.",
+    "sources": [
+      {
+        "url": "https://physics.stanford.edu/",
+        "title": "physics.stanford.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-77",
+    "category": "KINDA",
+    "claim": "Pocket lint has an official dictionary name.",
+    "explanation": "It is called \"gnurr\" — a genuinely obscure entry sitting in the Oxford English Dictionary.",
+    "sources": [
+      {
+        "url": "https://www.oed.com/",
+        "title": "oed.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-78",
+    "category": "KINDA",
+    "claim": "There is a town in Norway where it is illegal to die.",
+    "explanation": "In Longyearbyen, permafrost preserves buried bodies — and their viruses — intact, so the terminally ill are flown to the mainland to pass.",
+    "sources": [
+      {
+        "url": "https://www.bbc.com/news/magazine-26969850",
+        "title": "bbc.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-79",
+    "category": "KINDA",
+    "claim": "You are taller when you wake up than when you go to bed.",
+    "explanation": "Spinal discs compress under gravity all day and rehydrate overnight — a difference of roughly half an inch.",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/",
+        "title": "nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-80",
+    "category": "KINDA",
+    "claim": "Carrots were originally purple.",
+    "explanation": "Wild and early domesticated carrots were purple or white; Dutch breeders turned them orange in the 17th century, likely honoring William of Orange.",
+    "sources": [
+      {
+        "url": "https://www.usda.gov/",
+        "title": "usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-81",
+    "category": "KINDA",
+    "claim": "The Great Lakes hold more shipwrecks than the Bermuda Triangle.",
+    "explanation": "Over 6,000 wrecks rest in the lakes, victims of sudden squalls and shallow freezing water — the mythologized Triangle sees far fewer.",
+    "sources": [
+      {
+        "url": "https://www.greatlakesmuseum.org/",
+        "title": "greatlakesmuseum.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-82",
+    "category": "KINDA",
+    "claim": "It is impossible to hum while pinching your nose shut.",
+    "explanation": "Humming requires air flowing through the nasal passage; block the exit and your vocal cords can no longer sustain the vibration.",
+    "sources": [
+      {
+        "url": "https://www.exploratorium.edu/",
+        "title": "exploratorium.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-83",
+    "category": "KINDA",
+    "claim": "A jellyfish is roughly 95% water.",
+    "explanation": "With no brain, bones, or heart, hydrostatic pressure alone holds their shape; beached jellyfish essentially evaporate in the sun.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/jellyfish.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-84",
+    "category": "KINDA",
+    "claim": "Exactly one letter is missing from every U.S. state name.",
+    "explanation": "The letter Q appears in no state name; every other letter of the alphabet shows up at least once across the 50 states.",
+    "sources": [
+      {
+        "url": "https://www.census.gov/library/stories/2020/07/what-letter-is-not-in-any-state-name.html",
+        "title": "census.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-85",
+    "category": "KINDA",
+    "claim": "There are more public libraries in the U.S. than McDonald's restaurants.",
+    "explanation": "Roughly 16,000 library branches versus about 14,000 Golden Arches — though the burger chain wins on daily foot traffic.",
+    "sources": [
+      {
+        "url": "https://www.ala.org/tools/research/librariesmatter",
+        "title": "ala.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-86",
+    "category": "KINDA",
+    "claim": "Mushrooms are more closely related to humans than to plants.",
+    "explanation": "Fungi and animals belong to the opisthokont supergroup — a more recent common ancestor than either shares with plants.",
+    "sources": [
+      {
+        "url": "https://www.cell.com/",
+        "title": "cell.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-87",
+    "category": "KINDA",
+    "claim": "Spiders can fly for hundreds of miles.",
+    "explanation": "\"Ballooning\": spiders release silk strands that ride atmospheric electrostatic charges, lifting them miles up and across oceans.",
+    "sources": [
+      {
+        "url": "https://www.cell.com/current-biology/home",
+        "title": "cell.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-88",
+    "category": "KINDA",
+    "claim": "Bone is stronger than concrete.",
+    "explanation": "Four times concrete's compressive strength — plus a collagen matrix that lets it flex and absorb shock instead of shattering.",
+    "sources": [
+      {
+        "url": "https://www.sciencedirect.com/journal/materials-science-and-engineering-a",
+        "title": "sciencedirect.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-89",
+    "category": "KINDA",
+    "claim": "The smell of rain is actually the smell of bacteria.",
+    "explanation": "Petrichor is mostly geosmin, an aerosol released by Streptomyces soil bacteria when raindrops strike the ground.",
+    "sources": [
+      {
+        "url": "https://news.mit.edu/2015/rainfall-smell-0604",
+        "title": "news.mit.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-90",
+    "category": "KINDA",
+    "claim": "The Guinness Book of World Records was created to settle bar arguments.",
+    "explanation": "Guinness managing director Sir Hugh Beaver commissioned it in 1954 to give pub patrons a definitive referee for trivia disputes.",
+    "sources": [
+      {
+        "url": "https://www.guinnessworldrecords.com/about-us",
+        "title": "guinnessworldrecords.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-91",
+    "category": "KINDA",
+    "claim": "Falling coconuts kill more people than sharks.",
+    "explanation": "Sharks kill ~5–10 people a year; coconuts an estimated 150 — though that figure traces to one highly extrapolated 1984 trauma study.",
+    "sources": [
+      {
+        "url": "https://journals.lww.com/jtrauma/",
+        "title": "journals.lww.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-92",
+    "category": "KINDA",
+    "claim": "There is a mammal completely covered in scales.",
+    "explanation": "The pangolin — the only mammal with overlapping keratin scales, armor evolved against predators.",
+    "sources": [
+      {
+        "url": "https://www.worldwildlife.org/species/pangolin",
+        "title": "worldwildlife.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-93",
+    "category": "KINDA",
+    "claim": "Sound travels more than four times faster in water than in air.",
+    "explanation": "Denser molecular packing in water speeds the waves — which is why underwater noises seem to originate inside your own skull.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/sound.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-94",
+    "category": "KINDA",
+    "claim": "We have explored less than 5% of the ocean.",
+    "explanation": "Satellites mapped 100% of the seafloor at ~5 km resolution; the \"5%\" is the share mapped with high-resolution sonar or seen directly.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/facts/explored.html",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-95",
+    "category": "KINDA",
+    "claim": "Human flatus is flammable.",
+    "explanation": "Gut bacteria produce methane and hydrogen — both highly flammable, which makes the juvenile party trick chemically viable.",
+    "sources": [
+      {
+        "url": "https://gi.org/",
+        "title": "gi.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-96",
+    "category": "KINDA",
+    "claim": "Stomach acid can completely dissolve a razor blade.",
+    "explanation": "At pH 1–2, gastric juice structurally degraded a single-edge razor blade within 24 hours in lab tests.",
+    "sources": [
+      {
+        "url": "https://www.giejournal.org/",
+        "title": "giejournal.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-97",
+    "category": "KINDA",
+    "claim": "A crocodile is physically incapable of sticking its tongue out.",
+    "explanation": "A fleshy membrane anchors the tongue to the roof of the mouth — a seal that keeps the airway closed while submerged.",
+    "sources": [
+      {
+        "url": "https://www.science.org/content/article/why-crocodiles-cant-stick-out-their-tongues",
+        "title": "science.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-98",
+    "category": "KINDA",
+    "claim": "Bananas grow upside down.",
+    "explanation": "The bunch hangs downward, but each fruit curves upward against gravity (negative geotropism) to reach the sunlight.",
+    "sources": [
+      {
+        "url": "https://www.kew.org/read-and-watch/why-do-bananas-grow-upwards",
+        "title": "kew.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-99",
+    "category": "KINDA",
+    "claim": "George Washington's dentures were made of hippo ivory, gold, and human teeth.",
+    "explanation": "Wood would rot instantly in saliva; his dentures combined hippopotamus ivory, brass, gold, and teeth pulled from enslaved workers.",
+    "sources": [
+      {
+        "url": "https://www.mountvernon.org/george-washington/health/teeth/",
+        "title": "mountvernon.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
+    "id": "kinda-100",
+    "category": "KINDA",
+    "claim": "Ketchup was originally sold in pharmacies as medicine.",
+    "explanation": "In the 1830s an Ohio physician marketed tomato ketchup as a cure for diarrhea, indigestion, and jaundice — sold in pill form.",
+    "sources": [
+      {
+        "url": "https://www.nationalgeographic.com/history",
+        "title": "nationalgeographic.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "kinda"
+    ]
+  },
+  {
     "id": "bull-1",
     "category": "BULLSHIT",
     "claim": "Lemmings commit mass suicide by cliff-diving when overpopulated.",
-    "explanation": "Lemmings migrate but do not intentionally commit mass suicide. The famous mass cliff-diving footage was staged for a 1958 documentary.",
+    "explanation": "Disney's 1958 documentary White Wilderness staged the \"suicide\" by pushing purchased lemmings off an Alberta cliff. Lemmings migrate, sensibly, over land.",
     "sources": [
       {
         "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildlifenews.view_article&articles_id=56",
@@ -210,8 +4018,8 @@
   {
     "id": "bull-2",
     "category": "BULLSHIT",
-    "claim": "Bulls charge at a matador's cape because it is red.",
-    "explanation": "Cattle lack human-like red color vision. The cape's movement, rather than its color, provokes a charge.",
+    "claim": "Bulls charge at the matador's cape because it is red.",
+    "explanation": "Cattle are red-green colorblind; the cape's motion triggers the charge. Red is tradition — it masks bloodstains from the crowd.",
     "sources": [
       {
         "url": "https://www.livescience.com/animals/are-bulls-really-enraged-by-red",
@@ -227,7 +4035,7 @@
     "id": "bull-3",
     "category": "BULLSHIT",
     "claim": "Bats are blind.",
-    "explanation": "All bats can see. Many species also use echolocation; it supplements vision rather than replacing it.",
+    "explanation": "All 1,400+ bat species see; many fruit bats have vision sharper than ours. Echolocation supplements eyes, never replaced them.",
     "sources": [
       {
         "url": "https://www.usgs.gov/faqs/are-bats-blind",
@@ -243,7 +4051,7 @@
     "id": "bull-4",
     "category": "BULLSHIT",
     "claim": "The tongue has separate zones for sweet, salty, sour, and bitter tastes.",
-    "explanation": "The popular tongue map is a misconception. Taste qualities are detected across the tongue; there are no exclusive taste zones.",
+    "explanation": "The famous \"tongue map\" comes from a mistranslated 1901 paper; taste buds for every flavor cover the whole tongue.",
     "sources": [
       {
         "url": "https://cst.ufl.edu/",
@@ -258,8 +4066,8 @@
   {
     "id": "bull-5",
     "category": "BULLSHIT",
-    "claim": "Daddy longlegs are the most venomous spiders, but their fangs are too short to bite humans.",
-    "explanation": "Harvestmen are not spiders and have no venom glands or fangs. The name can also mean cellar spiders, which are not known as dangerously venomous to humans.",
+    "claim": "Daddy longlegs are the most venomous spiders alive, but their fangs are too short to bite humans.",
+    "explanation": "Harvestmen are not spiders at all — they have no venom glands and no fangs. Every layer of the claim is invented.",
     "sources": [
       {
         "url": "https://entomology.ucr.edu/news/2022/01/14/are-daddy-longlegs-really-most-venomous-spiders-world",
@@ -275,11 +4083,1515 @@
     "id": "bull-6",
     "category": "BULLSHIT",
     "claim": "Popeye eats spinach because it contains ten times more iron than any other green.",
-    "explanation": "Spinach is not uniquely rich in iron to that extent. A decimal-place error in an old analysis is often cited as the source of its exaggerated reputation.",
+    "explanation": "A misplaced decimal in an 1870 analysis inflated spinach's iron content; the error was corrected in the 1930s, but the myth outlived the correction.",
     "sources": [
       {
         "url": "https://www.bmj.com/content/331/7531/1498",
         "title": "bmj.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-7",
+    "category": "BULLSHIT",
+    "claim": "Toilets and bathtubs drain counterclockwise in the Northern Hemisphere and clockwise in the Southern.",
+    "explanation": "The Coriolis effect steers hurricanes but is millions of times too weak for a sink; drain direction comes from the basin's shape and jets.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/article/fact-or-fiction-south-of-the-equator/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-8",
+    "category": "BULLSHIT",
+    "claim": "Goldfish forget everything every three seconds.",
+    "explanation": "Goldfish learn mazes, recognize their keepers, and retain feeding cues for weeks to months. Their memory is impressive for a fish.",
+    "sources": [
+      {
+        "url": "https://www.pbs.org/wgbh/nova/article/goldfish-memory/",
+        "title": "pbs.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-9",
+    "category": "BULLSHIT",
+    "claim": "Viking raiders wore horned helmets into battle.",
+    "explanation": "No Viking combat helmet with horns has ever been found; the image was invented by a costume designer for Wagner's Ring cycle in 1876.",
+    "sources": [
+      {
+        "url": "https://www.khm.uio.no/english/visit-us/viking-age/",
+        "title": "khm.uio.no"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-10",
+    "category": "BULLSHIT",
+    "claim": "A duck's quack is the only sound in nature that produces no echo.",
+    "explanation": "Acousticians recorded a perfectly normal echo from a duck named Daisy in a reverberation chamber; the quack's fading tail just masks its own echo.",
+    "sources": [
+      {
+        "url": "https://www.theguardian.com/notesandqueries/query/0,,-2018,00.html",
+        "title": "theguardian.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-11",
+    "category": "BULLSHIT",
+    "claim": "Human hair and fingernails keep growing for days after death.",
+    "explanation": "Growth requires living cells. Dehydration shrinks the skin, exposing more nail and hair shaft — the illusion of growth, not growth itself.",
+    "sources": [
+      {
+        "url": "https://uamshealth.com/medical-myths/",
+        "title": "uamshealth.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-12",
+    "category": "BULLSHIT",
+    "claim": "Polar bears hunt penguins at the North Pole.",
+    "explanation": "They have never met: polar bears live only around the Arctic; every wild penguin lives in the Southern Hemisphere.",
+    "sources": [
+      {
+        "url": "https://www.worldwildlife.org/species/polar-bear",
+        "title": "worldwildlife.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-13",
+    "category": "BULLSHIT",
+    "claim": "Twinkies stay fresh for decades thanks to chemical ingredients.",
+    "explanation": "A Twinkie's shelf life is about 45 days; made of real flour, sugar, and dairy, it stales and molds like any other cake.",
+    "sources": [
+      {
+        "url": "https://www.npr.org/sections/thesalt/2013/01/11/169126008/hostess-twinkies-are-back-but-will-they-last-forever",
+        "title": "npr.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-14",
+    "category": "BULLSHIT",
+    "claim": "The Great Wall of China is the only human structure visible from the Moon.",
+    "explanation": "No human-made object is visible from the Moon with the naked eye; even from orbit the Wall blends into the terrain. Apollo astronauts confirmed it.",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/vision/space/workinginspace/great_wall.html",
+        "title": "nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-15",
+    "category": "BULLSHIT",
+    "claim": "Napoleon was comically short — just 5 feet 2 inches.",
+    "explanation": "He stood ~5'6\"–5'7\", average for his era; British caricatures mixed up the longer French inch with the English one to shrink him.",
+    "sources": [
+      {
+        "url": "https://www.napoleon.org/en/history-of-the-two-empires/articles/was-napoleon-short/",
+        "title": "napoleon.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-16",
+    "category": "BULLSHIT",
+    "claim": "Real ninjas wore black bodysuits to blend into the night.",
+    "explanation": "Covert agents dressed as farmers, merchants, or monks to vanish in daylight crowds; the black suit was borrowed from Kabuki stagehands by 20th-century film.",
+    "sources": [
+      {
+        "url": "https://www.japan-experience.com/plan-your-trip/to-know/japanese-history/ninja",
+        "title": "japan-experience.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-17",
+    "category": "BULLSHIT",
+    "claim": "An ostrich buries its head in the sand when threatened.",
+    "explanation": "It would suffocate. The myth comes from heat-haze distortions of ostriches tending low ground nests — and from them lying flat to hide.",
+    "sources": [
+      {
+        "url": "https://animals.sandiegozoo.org/animals/ostrich",
+        "title": "animals.sandiegozoo.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-18",
+    "category": "BULLSHIT",
+    "claim": "Microwave ovens cook food from the inside out.",
+    "explanation": "Microwaves penetrate only the outer inch or so, exciting water molecules there; heat then conducts inward exactly as in a conventional oven.",
+    "sources": [
+      {
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/microwave-ovens-and-food-safety",
+        "title": "fsis.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-19",
+    "category": "BULLSHIT",
+    "claim": "The first vending machine was an 1880s London device selling blank postcards.",
+    "explanation": "Hero of Alexandria built a coin-operated holy-water dispenser in the 1st century BC — vending machines are ancient technology.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/history/the-first-vending-machine-dispensed-holy-water-180979879/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-20",
+    "category": "BULLSHIT",
+    "claim": "Shaving makes hair grow back thicker, darker, and faster.",
+    "explanation": "A razor leaves a blunt tip that feels stubbly against the skin; the follicle is untouched, so rate and thickness never change.",
+    "sources": [
+      {
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/expert-answers/hair-removal/faq-20058427",
+        "title": "mayoclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-21",
+    "category": "BULLSHIT",
+    "claim": "Eating lots of carrots gives you superhuman night vision.",
+    "explanation": "Vitamin A fixes deficiency-related night blindness, but extra carrots add nothing beyond normal vision. The myth was WWII RAF propaganda.",
+    "sources": [
+      {
+        "url": "https://ods.od.nih.gov/factsheets/VitaminA-Consumer/",
+        "title": "ods.od.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-22",
+    "category": "BULLSHIT",
+    "claim": "Stained-glass cathedral windows are thicker at the bottom because glass flows like a liquid over centuries.",
+    "explanation": "Glass is an amorphous solid at room temperature; uneven panes come from the medieval crown-glass process, with thick edges installed downward by design.",
+    "sources": [
+      {
+        "url": "https://www.cmog.org/article/does-glass-flow",
+        "title": "cmog.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-23",
+    "category": "BULLSHIT",
+    "claim": "An octopus can deliberately stop its heart while sleeping to conserve oxygen.",
+    "explanation": "Octopuses do have three hearts, and the main heart stops while swimming (why they prefer crawling) — but the sleep-switch claim is invented.",
+    "sources": [
+      {
+        "url": "https://ocean.si.edu/ocean-life/invertebrates/giant-pacific-octopus",
+        "title": "ocean.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-24",
+    "category": "BULLSHIT",
+    "claim": "Greenland sharks cannot reproduce during their first century of life.",
+    "explanation": "The real numbers are astonishing enough: lifespans near 392 years (±120) and maturity around 156 — the \"century of celibacy\" is fabricated precision.",
+    "sources": [
+      {
+        "url": "https://www.science.org/doi/10.1126/science.1227166",
+        "title": "science.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-25",
+    "category": "BULLSHIT",
+    "claim": "Butterflies can smell the exact plant species beneath them from meters away, using their feet.",
+    "explanation": "Their feet taste by contact after landing — remarkable, but strictly touch-range. The long-distance sniffing is the invented part.",
+    "sources": [
+      {
+        "url": "https://nationalzoo.si.edu/animals/news/how-do-butterflies-taste",
+        "title": "nationalzoo.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-26",
+    "category": "BULLSHIT",
+    "claim": "A frozen wood frog's heart keeps beating slowly beneath the ice.",
+    "explanation": "The miracle is that the heart fully stops. Beating resumes only at thaw — an intermittent heartbeat would be far less extraordinary, and untrue.",
+    "sources": [
+      {
+        "url": "https://www.nps.gov/articles/wood-frog.htm",
+        "title": "nps.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-27",
+    "category": "BULLSHIT",
+    "claim": "Axolotl limbs regrow faster if the animal is kept in darkness.",
+    "explanation": "Regeneration itself is real and nearly unique; the darkness \"accelerator\" has no supporting evidence — a real wonder with a fake upgrade.",
+    "sources": [
+      {
+        "url": "https://news.northeastern.edu/",
+        "title": "news.northeastern.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-28",
+    "category": "BULLSHIT",
+    "claim": "Mercury's poles are in permanent darkness because the planet never turns toward the Sun there.",
+    "explanation": "Only the deep floors of polar craters are permanently shadowed — precisely where NASA found water ice. The poles themselves see daylight.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/solar-system/mercury/mercurys-polar-craters/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-29",
+    "category": "BULLSHIT",
+    "claim": "Apollo astronauts' footprints endure because lunar gravity is too weak for dust to settle back.",
+    "explanation": "Gravity settles lunar dust fine; prints persist because there is no wind or water to erase them — though micrometeorites slowly grind them away.",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/history/alsj/a11/a11.sta3.html",
+        "title": "nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-30",
+    "category": "BULLSHIT",
+    "claim": "Nothing can ever escape a black hole, so it emits zero radiation.",
+    "explanation": "Matter falling in heats to incredible temperatures outside the horizon and blazes with radiation; and Hawking radiation means black holes slowly evaporate.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/universe/black-holes/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-31",
+    "category": "BULLSHIT",
+    "claim": "Pumice is the only rock on Earth that floats.",
+    "explanation": "Pumice does float on trapped gas — but it is not unique; some volcanic scorias and organic rocks can float under the right conditions.",
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/faqs/what-pumice",
+        "title": "usgs.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-32",
+    "category": "BULLSHIT",
+    "claim": "Fingernails grow faster during a full moon.",
+    "explanation": "Growth varies with age, season, and finger — but lunar gravity moves oceans, not nail beds. No lunar effect has ever been demonstrated.",
+    "sources": [
+      {
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/expert-answers/nails/faq-20058455",
+        "title": "mayoclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-33",
+    "category": "BULLSHIT",
+    "claim": "Every cell lining your intestine is replaced exactly once every 72 hours.",
+    "explanation": "The gut lining does renew in \"a few days\" — but turnover varies by cell type and region, and some specialized cells live far longer. The precision is the lie.",
+    "sources": [
+      {
+        "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works",
+        "title": "niddk.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-34",
+    "category": "BULLSHIT",
+    "claim": "Bananas stored together make each other radioactive.",
+    "explanation": "A banana's radioactivity comes from its own potassium-40; neighboring bananas contribute nothing. Buy freely.",
+    "sources": [
+      {
+        "url": "https://www.epa.gov/radtown/natural-radioactivity-food",
+        "title": "epa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-35",
+    "category": "BULLSHIT",
+    "claim": "Tomatoes grown under red light contain no vitamin C.",
+    "explanation": "Light spectrum can nudge plant chemistry, but it does not delete vitamins; cultivar, ripeness, and handling matter far more.",
+    "sources": [
+      {
+        "url": "https://www.ars.usda.gov/",
+        "title": "ars.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-36",
+    "category": "BULLSHIT",
+    "claim": "Ocean water becomes less salty every night as the Moon pulls fresh water away.",
+    "explanation": "Tides redistribute seawater — they never desalinate it. Evaporation, rain, and rivers drive salinity changes.",
+    "sources": [
+      {
+        "url": "https://oceanservice.noaa.gov/facts/salinity.html",
+        "title": "oceanservice.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-37",
+    "category": "BULLSHIT",
+    "claim": "Cut grass releases its smell exclusively to summon predators of whatever is eating it.",
+    "explanation": "Green-leaf volatiles do many jobs at once: wound signaling, antimicrobial defense, and insect attraction — a multi-tool, not a single-purpose alarm.",
+    "sources": [
+      {
+        "url": "https://agrilifeextension.tamu.edu/",
+        "title": "agrilifeextension.tamu.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-38",
+    "category": "BULLSHIT",
+    "claim": "Deep-sea hydrothermal vents emit light bright enough for plants to photosynthesize on the ocean floor.",
+    "explanation": "Vent ecosystems need no sunlight at all — microbes harvest chemical energy (chemosynthesis), and the food web builds on that.",
+    "sources": [
+      {
+        "url": "https://oceanexplorer.noaa.gov/facts/chemosynthesis.html",
+        "title": "oceanexplorer.noaa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-39",
+    "category": "BULLSHIT",
+    "claim": "Humans use only 10% of their brains.",
+    "explanation": "Imaging shows virtually every region active across a day, even in sleep; damage to the \"unused\" 90% causes devastating, obvious deficits.",
+    "sources": [
+      {
+        "url": "https://www.psychologicalscience.org/observer/brain-myths",
+        "title": "psychologicalscience.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-40",
+    "category": "BULLSHIT",
+    "claim": "Swallowed chewing gum takes seven years to digest.",
+    "explanation": "Gum is indigestible but harmless — it passes through the system intact in a few days, just like fiber.",
+    "sources": [
+      {
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/childrens-health/in-depth/childrens-health/art-20044825",
+        "title": "mayoclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-41",
+    "category": "BULLSHIT",
+    "claim": "Blood is blue inside the body until it touches oxygen.",
+    "explanation": "Blood is always red; deoxygenated blood is simply darker. Veins look blue through skin only because of how light scatters.",
+    "sources": [
+      {
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/childrens-health/in-depth/childrens-health/art-20044825",
+        "title": "mayoclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-42",
+    "category": "BULLSHIT",
+    "claim": "Cracking your knuckles causes arthritis.",
+    "explanation": "The pop is gas bubbles bursting in synovial fluid; multiple long-term studies show no link to joint degeneration.",
+    "sources": [
+      {
+        "url": "https://www.health.harvard.edu/pain/knuckle-cracking-is-it-bad-for-you",
+        "title": "health.harvard.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-43",
+    "category": "BULLSHIT",
+    "claim": "Going outside with wet hair makes you catch a cold.",
+    "explanation": "Colds come from viruses, not temperature; wet hair might be miserable, but it cannot infect you.",
+    "sources": [
+      {
+        "url": "https://www.mayoclinic.org/diseases-conditions/common-cold/expert-answers/common-cold/faq-20057842",
+        "title": "mayoclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-44",
+    "category": "BULLSHIT",
+    "claim": "A penny dropped from the Empire State Building could kill a pedestrian.",
+    "explanation": "Air resistance caps a penny's fall at ~30–50 mph; it would sting, but its low mass cannot crack a skull.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/article/coins-falling-from-skyscrapers/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-45",
+    "category": "BULLSHIT",
+    "claim": "Albert Einstein failed math as a child.",
+    "explanation": "He mastered differential and integral calculus by 15; the myth grew from a reversed grading scale on a Swiss school report.",
+    "sources": [
+      {
+        "url": "https://www.history.com/news/9-things-you-may-not-know-about-albert-einstein",
+        "title": "history.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-46",
+    "category": "BULLSHIT",
+    "claim": "Waking a sleepwalker can kill them.",
+    "explanation": "Waking one causes brief confusion at worst — and is far safer than letting them wander into stairs or traffic.",
+    "sources": [
+      {
+        "url": "https://www.sleepfoundation.org/parasomnias/sleepwalking",
+        "title": "sleepfoundation.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-47",
+    "category": "BULLSHIT",
+    "claim": "Mac computers cannot get viruses or malware.",
+    "explanation": "Macs are fully susceptible to malware; they historically saw fewer attacks because smaller market share made them a lesser target.",
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/102445",
+        "title": "support.apple.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-48",
+    "category": "BULLSHIT",
+    "claim": "Everyone must drink exactly eight glasses of water a day.",
+    "explanation": "Needs vary with size, diet, and environment — and food, coffee, and tea all count toward daily water intake.",
+    "sources": [
+      {
+        "url": "https://nap.nationalacademies.org/catalog/10925/dietary-reference-intakes-for-water-potassium-sodium-chloride-and-sulfate",
+        "title": "nap.nationalacademies.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-49",
+    "category": "BULLSHIT",
+    "claim": "A drink of alcohol warms you up in the cold.",
+    "explanation": "Alcohol dilates surface blood vessels: skin flushes with warmth while core body heat drains away faster.",
+    "sources": [
+      {
+        "url": "https://www.who.int/news-room/fact-sheets/detail/alcohol",
+        "title": "who.int"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-50",
+    "category": "BULLSHIT",
+    "claim": "A shark can smell a single drop of blood from a mile away.",
+    "explanation": "Shark smell is excellent but needs roughly one part blood per million parts of water — a far cry from a drop in a mile of ocean.",
+    "sources": [
+      {
+        "url": "https://ocean.si.edu/ocean-life/fish/sharks",
+        "title": "ocean.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-51",
+    "category": "BULLSHIT",
+    "claim": "Men think about sex every seven seconds.",
+    "explanation": "Behavioral sampling finds nothing close to that frequency for anyone; the number was fabricated and never measured.",
+    "sources": [
+      {
+        "url": "https://kinseyinstitute.org/research/publications/kinsey-reports.html",
+        "title": "kinseyinstitute.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-52",
+    "category": "BULLSHIT",
+    "claim": "Reading in dim light permanently ruins your eyesight.",
+    "explanation": "Low light causes temporary strain and fatigue — uncomfortable, but it leaves no lasting physical damage.",
+    "sources": [
+      {
+        "url": "https://www.aao.org/eye-health/tips-prevention/reading-in-dim-light",
+        "title": "aao.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-53",
+    "category": "BULLSHIT",
+    "claim": "A dog's mouth is cleaner than a human's.",
+    "explanation": "Both mouths host hundreds of bacterial species, most adapted to their own host; neither is cleaner — they are simply different ecosystems.",
+    "sources": [
+      {
+        "url": "https://www.akc.org/expert-advice/health/is-a-dogs-mouth-cleaner-than-a-humans/",
+        "title": "akc.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-54",
+    "category": "BULLSHIT",
+    "claim": "Turkey makes you sleepy because it is packed with tryptophan.",
+    "explanation": "Turkey has no more tryptophan than chicken or cheese; the holiday coma comes from massive carbs, fat, and alcohol.",
+    "sources": [
+      {
+        "url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/food-myths",
+        "title": "hopkinsmedicine.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-55",
+    "category": "BULLSHIT",
+    "claim": "Throwing rice at weddings kills birds.",
+    "explanation": "Birds eat raw grain in nature constantly; rice cannot expand enough in a bird's stomach to cause harm.",
+    "sources": [
+      {
+        "url": "https://www.birdnote.org/listen/shows/does-uncooked-rice-kill-birds",
+        "title": "birdnote.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-56",
+    "category": "BULLSHIT",
+    "claim": "You lose most of your body heat through your head.",
+    "explanation": "Heat loss tracks exposed surface area; a bare head accounts for only about 10% — wear a coat, not just a hat.",
+    "sources": [
+      {
+        "url": "https://www.bmj.com/content/337/bmj.a2769",
+        "title": "bmj.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-57",
+    "category": "BULLSHIT",
+    "claim": "Cinco de Mayo is Mexico's Independence Day.",
+    "explanation": "Independence Day is September 16; Cinco de Mayo marks the 1862 victory over France at Puebla — and is celebrated harder in the U.S.",
+    "sources": [
+      {
+        "url": "https://www.history.com/topics/holidays/cinco-de-mayo",
+        "title": "history.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-58",
+    "category": "BULLSHIT",
+    "claim": "Snakes unhinge or dislocate their jaws to swallow prey.",
+    "explanation": "Nothing dislocates; the jaw halves are joined by flexible ligaments that simply stretch incredibly wide.",
+    "sources": [
+      {
+        "url": "https://www.nationalgeographic.com/animals/reptiles/facts/snakes",
+        "title": "nationalgeographic.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-59",
+    "category": "BULLSHIT",
+    "claim": "Elephants are the only animals that cannot jump.",
+    "explanation": "Sloths, hippos, and rhinos also cannot jump; the limitation is shared physics, not elephant exclusivity.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/science-nature/why-elephants-cant-jump-11503944/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-60",
+    "category": "BULLSHIT",
+    "claim": "Mature sunflowers track the sun across the sky all day.",
+    "explanation": "Only young, growing buds heliotrope; once mature, stalks stiffen and the flower faces east forever.",
+    "sources": [
+      {
+        "url": "https://www.science.org/doi/10.1126/science.aan6035",
+        "title": "science.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-61",
+    "category": "BULLSHIT",
+    "claim": "The Egyptian pyramids were built by slaves.",
+    "explanation": "Excavated workers' villages, tombs, and payroll records show paid, well-fed, respected labor crews.",
+    "sources": [
+      {
+        "url": "https://www.harvardmagazine.com/2003/07/who-built-the-pyramids-html",
+        "title": "harvardmagazine.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-62",
+    "category": "BULLSHIT",
+    "claim": "Thomas Edison invented the lightbulb.",
+    "explanation": "Edison built the first commercially viable bulb; Swan, Davy, and others had working electric lights decades earlier.",
+    "sources": [
+      {
+        "url": "https://www.energy.gov/articles/history-light-bulb",
+        "title": "energy.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-63",
+    "category": "BULLSHIT",
+    "claim": "The forbidden fruit eaten by Eve was an apple.",
+    "explanation": "Genesis never names the fruit; the apple stuck through a Latin pun — malum means both \"evil\" and \"apple.\"",
+    "sources": [
+      {
+        "url": "https://www.biblicalarchaeology.org/daily/biblical-topics/bible-interpretation/what-was-the-forbidden-fruit/",
+        "title": "biblicalarchaeology.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-64",
+    "category": "BULLSHIT",
+    "claim": "Vomitoriums were rooms where Romans vomited to keep eating.",
+    "explanation": "A vomitorium is an amphitheater exit passage; the \"spewing forth\" referred to crowds pouring out, not stomachs.",
+    "sources": [
+      {
+        "url": "https://www.scientificamerican.com/article/pompeii-vomitorium/",
+        "title": "scientificamerican.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-65",
+    "category": "BULLSHIT",
+    "claim": "The word \"sushi\" translates to \"raw fish.\"",
+    "explanation": "It means \"sour rice,\" the vinegared base of the dish; sliced raw fish alone is called sashimi.",
+    "sources": [
+      {
+        "url": "https://www.japaneseculinaryacademy.com/",
+        "title": "japaneseculinaryacademy.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-66",
+    "category": "BULLSHIT",
+    "claim": "Fortune cookies are a traditional Chinese invention.",
+    "explanation": "They were invented in early-1900s California, largely by Japanese immigrants adapting a cracker called tsujiura senbei.",
+    "sources": [
+      {
+        "url": "https://www.smithsonianmag.com/arts-culture/fortune-cookies-were-invented-in-america-180955048/",
+        "title": "smithsonianmag.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-67",
+    "category": "BULLSHIT",
+    "claim": "Frankenstein is the name of the monster.",
+    "explanation": "Frankenstein is the scientist; in Mary Shelley's novel the creature is never given a name at all.",
+    "sources": [
+      {
+        "url": "https://www.bl.uk/romantics-and-victorians/articles/mary-shelley-frankenstein",
+        "title": "bl.uk"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-68",
+    "category": "BULLSHIT",
+    "claim": "Iron maidens were widely used medieval torture devices.",
+    "explanation": "They are 19th-century museum fabrications, assembled to make the Middle Ages look barbaric to Victorian audiences.",
+    "sources": [
+      {
+        "url": "https://www.livescience.com/58626-iron-maiden-medieval-torture-device.html",
+        "title": "livescience.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-69",
+    "category": "BULLSHIT",
+    "claim": "Salting a pot of water makes it boil significantly faster.",
+    "explanation": "A pinch of salt raises the boiling point a fraction of a degree — technically it boils imperceptibly slower.",
+    "sources": [
+      {
+        "url": "https://www.exploratorium.edu/food/salt-and-boiling-water",
+        "title": "exploratorium.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-70",
+    "category": "BULLSHIT",
+    "claim": "Poinsettias are highly toxic and deadly to pets.",
+    "explanation": "The sap is mildly irritating and might cause mild nausea; a dog or cat would need to eat enormous quantities for real harm.",
+    "sources": [
+      {
+        "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/poinsettia",
+        "title": "aspca.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-71",
+    "category": "BULLSHIT",
+    "claim": "You get tetanus from the rust on a nail.",
+    "explanation": "Tetanus comes from Clostridium tetani bacteria in soil and feces; rust is merely evidence the object sat in dirt.",
+    "sources": [
+      {
+        "url": "https://www.cdc.gov/tetanus/about/index.html",
+        "title": "cdc.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-72",
+    "category": "BULLSHIT",
+    "claim": "Leaving your phone plugged in overnight severely damages the battery.",
+    "explanation": "Modern lithium-ion charging systems stop drawing current at 100%; overnight top-ups cause negligible wear.",
+    "sources": [
+      {
+        "url": "https://www.batteryuniversity.com/article/bu-409-charging-lithium-ion/",
+        "title": "batteryuniversity.com"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-73",
+    "category": "BULLSHIT",
+    "claim": "Searing meat \"seals in the juices.\"",
+    "explanation": "Searing builds flavor via the Maillard reaction, but meat loses moisture either way — nothing gets sealed.",
+    "sources": [
+      {
+        "url": "https://www.exploratorium.edu/food/searing-meat",
+        "title": "exploratorium.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-74",
+    "category": "BULLSHIT",
+    "claim": "You must wait 24 hours before reporting someone missing.",
+    "explanation": "No waiting period exists; police urge immediate reports precisely because the first hours are the most critical.",
+    "sources": [
+      {
+        "url": "https://www.missingkids.org/gethelpnow/isyourchildmissing",
+        "title": "missingkids.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-75",
+    "category": "BULLSHIT",
+    "claim": "Touching a baby bird makes its mother abandon it.",
+    "explanation": "Most birds smell poorly and parent fiercely; a returned chick is almost always reclaimed by its mother.",
+    "sources": [
+      {
+        "url": "https://www.audubon.org/birding/faq?wpmobileexternal=true",
+        "title": "audubon.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-76",
+    "category": "BULLSHIT",
+    "claim": "Marie Antoinette said, \"Let them eat cake.\"",
+    "explanation": "The phrase comes from Rousseau's writing about a generic princess — published when Antoinette was nine and living in Austria.",
+    "sources": [
+      {
+        "url": "https://www.chateauversailles.fr/discover/history/key-dates/marie-antoinette",
+        "title": "chateauversailles.fr"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-77",
+    "category": "BULLSHIT",
+    "claim": "Camels store water in their humps to survive desert droughts.",
+    "explanation": "Humps store fat, not water. This fat serves as a crucial energy reserve, while their uniquely oval-shaped red blood cells handle severe dehydration.",
+    "sources": [
+      {
+        "url": "https://animals.sandiegozoo.org/animals/camel",
+        "title": "animals.sandiegozoo.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-78",
+    "category": "BULLSHIT",
+    "claim": "Dogs sweat exclusively by panting with their tongues.",
+    "explanation": "Panting regulates heat, but their actual sweat glands (merocrine glands) are located on the bottom of their paw pads.",
+    "sources": [
+      {
+        "url": "https://www.akc.org/expert-advice/health/do-dogs-sweat/",
+        "title": "akc.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-79",
+    "category": "BULLSHIT",
+    "claim": "You must wait an hour after eating to swim, or you will get fatal cramps.",
+    "explanation": "Digestion redirects some blood flow to the stomach, but not nearly enough to incapacitate skeletal muscles. You might feel full, but you will not drown.",
+    "sources": [
+      {
+        "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html",
+        "title": "redcross.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-80",
+    "category": "BULLSHIT",
+    "claim": "The \"five-second rule\" prevents bacteria from transferring to dropped food.",
+    "explanation": "Bacterial transfer is almost instantaneous. Moisture and surface type matter far more than time; a wet slice of fruit hits the floor and is immediately contaminated.",
+    "sources": [
+      {
+        "url": "https://foodscience.rutgers.edu/news/5-second-rule.html",
+        "title": "foodscience.rutgers.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-81",
+    "category": "BULLSHIT",
+    "claim": "People are either logically \"left-brained\" or creatively \"right-brained.\"",
+    "explanation": "Brain imaging proves all cognitive tasks heavily recruit networks across both hemispheres simultaneously. The personality binary is entirely a pop-psychology myth.",
+    "sources": [
+      {
+        "url": "https://healthcare.utah.edu/the-scope/health-library/all/2018/06/left-brain-right-brain-myth",
+        "title": "healthcare.utah.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-82",
+    "category": "BULLSHIT",
+    "claim": "Drinking coffee at a young age will stunt your physical growth.",
+    "explanation": "Coffee has zero effect on bone growth or ultimate height. The myth was fabricated by early 20th-century cereal manufacturers competing for the breakfast market share.",
+    "sources": [
+      {
+        "url": "https://www.health.harvard.edu/staying-healthy/does-coffee-stunt-growth",
+        "title": "health.harvard.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-83",
+    "category": "BULLSHIT",
+    "claim": "Massive doses of Vitamin C can cure or prevent the common cold.",
+    "explanation": "Clinical trials show no preventative effect for the general public, though it may marginally shorten the duration of cold symptoms once you are already infected.",
+    "sources": [
+      {
+        "url": "https://ods.od.nih.gov/factsheets/VitaminC-Consumer/",
+        "title": "ods.od.nih.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-84",
+    "category": "BULLSHIT",
+    "claim": "Astronauts float in space because there is zero gravity.",
+    "explanation": "Gravity at the International Space Station's altitude is still about 90% as strong as on Earth's surface. Astronauts float because they are in constant, continuous free-fall around the planet.",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/missions/station/why-do-astronauts-float/",
+        "title": "nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-85",
+    "category": "BULLSHIT",
+    "claim": "Meteorites are burning hot to the touch when they hit the ground.",
+    "explanation": "The glowing entry phase strips away the outer layer, leaving the freezing cold interior intact. Most freshly fallen meteorites are covered in frost, not fire.",
+    "sources": [
+      {
+        "url": "https://www.amnh.org/explore/news-blogs/news-posts/meteorites",
+        "title": "amnh.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-86",
+    "category": "BULLSHIT",
+    "claim": "The \"dark side\" of the Moon never receives any sunlight.",
+    "explanation": "The Moon is tidally locked, meaning we only ever see one side, but the far side gets just as much sunlight during its lunar day. It is \"dark\" only to radio communications.",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/moon/moon-facts/",
+        "title": "science.nasa.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-87",
+    "category": "BULLSHIT",
+    "claim": "Peeing on a jellyfish sting neutralizes the venom and stops the pain.",
+    "explanation": "Urine can actually cause the nematocysts (stinging cells) to fire more venom. The correct first aid is rinsing the area with vinegar or hot saltwater.",
+    "sources": [
+      {
+        "url": "https://health.clevelandclinic.org/pee-on-jellyfish-sting",
+        "title": "health.clevelandclinic.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-88",
+    "category": "BULLSHIT",
+    "claim": "Monosodium glutamate (MSG) causes severe headaches and numbness.",
+    "explanation": "Decades of double-blind studies show no link between MSG and headaches. The myth stems from a single, poorly researched 1968 letter to a medical journal driven by xenophobia.",
+    "sources": [
+      {
+        "url": "https://www.fda.gov/food/food-additives-petitions/questions-and-answers-monosodium-glutamate-msg",
+        "title": "fda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-89",
+    "category": "BULLSHIT",
+    "claim": "Organic crops are grown entirely without the use of pesticides.",
+    "explanation": "Organic farming relies heavily on pesticides; they just have to be derived from natural sources rather than synthesized chemically. Natural does not always mean safer or chemical-free.",
+    "sources": [
+      {
+        "url": "https://www.ams.usda.gov/grades-standards/organic-standards",
+        "title": "ams.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-90",
+    "category": "BULLSHIT",
+    "claim": "Microwaving food destroys its nutrients more than other cooking methods.",
+    "explanation": "Microwaving often preserves more nutrients than boiling or baking because the cooking time is shorter and requires little to no added water, minimizing vitamin leaching.",
+    "sources": [
+      {
+        "url": "https://www.health.harvard.edu/staying-healthy/microwave-cooking-and-nutrition",
+        "title": "health.harvard.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-91",
+    "category": "BULLSHIT",
+    "claim": "Owls can turn their heads a full 360 degrees.",
+    "explanation": "They can rotate their heads a maximum of 270 degrees in either direction. A full 360-degree spin would sever their arteries and snap their necks.",
+    "sources": [
+      {
+        "url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/food-myths",
+        "title": "hopkinsmedicine.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-92",
+    "category": "BULLSHIT",
+    "claim": "Dogs see the world in strictly black and white.",
+    "explanation": "Dogs are dichromatic, meaning they have two types of color receptors. They see the world primarily in shades of blue, yellow, and gray, similar to red-green colorblind humans.",
+    "sources": [
+      {
+        "url": "https://www.akc.org/expert-advice/health/do-dogs-see-color/",
+        "title": "akc.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-93",
+    "category": "BULLSHIT",
+    "claim": "Wild sloths are incredibly lazy and sleep for 20 hours a day.",
+    "explanation": "Captive sloths might sleep up to 15 hours, but wild sloths typically sleep less than 10 hours a day, keeping a relatively normal rest schedule despite their slow movement.",
+    "sources": [
+      {
+        "url": "https://www.mpg.de/12014426/sloth-sleep",
+        "title": "mpg.de"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-94",
+    "category": "BULLSHIT",
+    "claim": "Drinking alcohol permanently kills your brain cells.",
+    "explanation": "Heavy drinking damages the dendrites (the communicative ends of neurons) causing impairment, but the cells themselves do not die and the connections can heal with abstinence.",
+    "sources": [
+      {
+        "url": "https://www.burkemuseum.org/collections-and-research/biology/arachnology-and-entomology/spider-myths/myth-daddy-longlegs-would",
+        "title": "burkemuseum.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-95",
+    "category": "BULLSHIT",
+    "claim": "The average human swallows eight spiders a year in their sleep.",
+    "explanation": "Spiders have no interest in the heavy breathing, vibrations, and heat of a sleeping human mouth. The statistic was entirely invented in a 1993 magazine article to prove how easily people believe fake facts.",
+    "sources": [
+      {
+        "url": "https://www.burkemuseum.org/collections-and-research/biology/arachnology-and-entomology/spider-myths/myth-daddy-longlegs-would",
+        "title": "burkemuseum.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-96",
+    "category": "BULLSHIT",
+    "claim": "Brown eggs are more natural and nutritionally superior to white eggs.",
+    "explanation": "Shell color is determined strictly by the breed of the chicken. There is absolutely no nutritional or taste difference between white and brown eggs.",
+    "sources": [
+      {
+        "url": "https://www.ams.usda.gov/grades-standards/egg-grading",
+        "title": "ams.usda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-97",
+    "category": "BULLSHIT",
+    "claim": "A cow has four stomachs to digest grass.",
+    "explanation": "A cow has only one stomach, but it is divided into four distinct compartments (the rumen, reticulum, omasum, and abomasum) that process fibrous plant matter in stages.",
+    "sources": [
+      {
+        "url": "https://www.fda.gov/animal-veterinary/animal-health-literacy/ruminants",
+        "title": "fda.gov"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-98",
+    "category": "BULLSHIT",
+    "claim": "Porcupines can shoot their quills through the air like arrows.",
+    "explanation": "Quills are modified hairs that detach easily on contact, but porcupines cannot launch them. The predator has to physically push against the porcupine to get stuck.",
+    "sources": [
+      {
+        "url": "https://nationalzoo.si.edu/animals/porcupine",
+        "title": "nationalzoo.si.edu"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-99",
+    "category": "BULLSHIT",
+    "claim": "Earwigs crawl into your ears while you sleep to lay eggs in your brain.",
+    "explanation": "Earwigs prefer cool, damp outdoor spaces under rocks and logs. The name stems from Old English superstitions; they do not nest in human bodies.",
+    "sources": [
+      {
+        "url": "https://entsoc.org/publications/entomology-today/earwigs-ear-myth",
+        "title": "entsoc.org"
+      }
+    ],
+    "replacementEligible": true,
+    "tags": [
+      "bullshit"
+    ]
+  },
+  {
+    "id": "bull-100",
+    "category": "BULLSHIT",
+    "claim": "Koalas are a small species of bear native to Australia.",
+    "explanation": "Koalas are marsupials, not bears. The \"koala bear\" misnomer was coined by late 18th-century English settlers solely due to their physical resemblance to teddy bears.",
+    "sources": [
+      {
+        "url": "https://www.savethekoala.com/about-koalas/koala-facts/",
+        "title": "savethekoala.com"
       }
     ],
     "replacementEligible": true,
