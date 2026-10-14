@@ -123,3 +123,4 @@
 .rules li{font-size:19px;line-height:1.4;margin:5px 0}
 .rules h4{font-size:23px;font-style:italic;font-weight:500;margin:22px 0 4px;color:#eadfc9}
 .rules-play{display:block;margin:32px auto 8px;min-width:min(260px,100%)}
+@media (hover:none), (max-width:600px){.wild[data-tooltip]:hover::after,.wild[data-tooltip]:focus-visible::after{display:none!important}}
