@@ -1,0 +1,4 @@
+project_id = "factually-community"
+
+[functions.community]
+verify_jwt = false

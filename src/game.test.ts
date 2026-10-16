@@ -14,13 +14,13 @@ describe('scoring uses exact sixth-point units',()=>{
 });
 describe('daily challenge selection',()=>{
  it('is deterministic for a given date and gives one of each category per round',()=>{const a=makeChallenge('2026-10-13',library),b=makeChallenge('2026-10-13',library);expect(a.map(r=>r.map(c=>c.id))).toEqual(b.map(r=>r.map(c=>c.id)));for(const r of a)expect(r.map(c=>c.category).sort()).toEqual((['BULLSHIT','FACT','KINDA'] as Category[]).sort())});
- it('keys the day by the player’s local calendar date, not UTC',()=>{expect(dayKey(new Date(2026,9,13,23,59))).toBe('2026-10-13');expect(dayKey(new Date(2026,9,14,0,1))).toBe('2026-10-14')});
+ it('keys the daily challenge by UTC date',()=>{expect(dayKey(new Date('2026-10-13T23:59:00Z'))).toBe('2026-10-13');expect(dayKey(new Date('2026-10-14T00:01:00Z'))).toBe('2026-10-14')});
  it('contains nine unique records',()=>{const rounds=makeChallenge('2026-10-13',library);expect(rounds.flat()).toHaveLength(9);expect(new Set(rounds.flat().map(c=>c.id)).size).toBe(9)});
  it('shuffles the player order, gives distinct round arrangements, and preserves all claims',()=>{const base=makeChallenge('2026-10-13',library),ordered=orderForPlayer(base,1234);expect(ordered.flat().map(c=>c.id).sort()).toEqual(base.flat().map(c=>c.id).sort());for(const r of ordered)expect(r.map(c=>c.category).sort()).toEqual((['BULLSHIT','FACT','KINDA'] as Category[]).sort());expect(new Set(ordered.map(r=>r.map(c=>c.category).join(','))).size).toBe(3)});
  it('different browser seeds can produce different orders',()=>{const base=makeChallenge('2026-10-13',library);expect(orderForPlayer(base,1).flat().map(c=>c.id)).not.toEqual(orderForPlayer(base,2).flat().map(c=>c.id))});
 });
 describe('Lifesaver scoring',()=>{
- const sample:Claim[]=[{id:'a',category:'FACT',claim:'a',explanation:'',sources:[],replacementEligible:true},{id:'b',category:'KINDA',claim:'b',explanation:'',sources:[],replacementEligible:true},{id:'c',category:'BULLSHIT',claim:'c',explanation:'',sources:[],replacementEligible:true}];
+ const sample:Claim[]=[{id:'a',category:'FACT',claim:'a',explanation:'',sources:[],replacementEligible:true,obscurity:5},{id:'b',category:'KINDA',claim:'b',explanation:'',sources:[],replacementEligible:true,obscurity:5},{id:'c',category:'BULLSHIT',claim:'c',explanation:'',sources:[],replacementEligible:true,obscurity:5}];
  it('awards full points to a protected claim and its counterpart',()=>expect(scoreRound(sample,['KINDA','FACT','BULLSHIT'],0)).toEqual([6,6,6]));
  it('keeps normal scoring when the protected answer is correct',()=>expect(scoreRound(sample,['FACT','KINDA','BULLSHIT'],0)).toEqual([6,6,6]));
  it('gives unanswered claims zero',()=>expect(scoreRound(sample,[null,'KINDA','BULLSHIT'],null)).toEqual([0,6,6]));
@@ -48,3 +48,4 @@ describe('Swap replacement is deterministic for everyone',()=>{
     for(const round of base){for(const claim of round){const r=swapReplacement(date,claim,library,used);if(r){expect(r.category).toBe(claim.category);expect(r.replacementEligible).toBe(true);expect(used).not.toContain(r.id);expect(r.id).not.toBe(claim.id)}}}
   });
 });
+
