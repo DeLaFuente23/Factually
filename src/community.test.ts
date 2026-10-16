@@ -21,6 +21,13 @@ describe('expected daily community stats', () => {
   it('keeps the expected score under the 10-point cap', () => {
     expect(estimateCommunityStats('2026-10-15', claims).averageScore).toBeLessThanOrEqual(10);
   });
+  it('reports a positive score spread and a perfect-game probability between 0 and 1', () => {
+    const stats = estimateCommunityStats('2026-10-15', claims);
+    expect(stats.stdDev).toBeGreaterThan(0);
+    expect(stats.perfectPotential).toBeGreaterThan(0);
+    expect(stats.perfectPotential).toBeLessThanOrEqual(1);
+    expect(stats.perfectCount).toBe(0);
+  });
 });
 
 describe('real community data mapping', () => {
@@ -30,5 +37,11 @@ describe('real community data mapping', () => {
     expect(stats.averageScore).toBe(6.5);
     expect(stats.claims[0].accuracy).toBe(0.75);
     expect(stats.categories[0].accuracy).toBe(0.7);
+  });
+  it('turns the perfect-game count into a share and a spread for the bell curve', () => {
+    const stats = mapRealStats({ submissions: 200, averageScore: 6, perfect: 20, bins: [5, 20, 60, 80, 35], wildcardAverage: 1, claims: [], categories: [] });
+    expect(stats.perfectCount).toBe(20);
+    expect(stats.perfectPotential).toBeCloseTo(0.1);
+    expect(stats.stdDev).toBeGreaterThan(0);
   });
 });
