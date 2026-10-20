@@ -61,6 +61,8 @@ Deno.serve(async (request) => {
 
   // The authoritative challenge for a date. Generated once, shared by all players.
   if (body.action === "challenge") {
+    // A client built against a different challenge shape must not be served.
+    if (body.challengeVersion !== challengeVersion) return respond({ ok: false, error: "This challenge version is no longer active." }, 409);
     // Keep the usage inventory in step with the bundled library before selecting.
     const { error: reconcileError } = await admin.rpc("inventory_reconcile", { p_claims: libraryIndex });
     if (reconcileError) return respond({ ok: false, error: "The claim inventory could not be reconciled." }, 503);
