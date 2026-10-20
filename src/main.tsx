@@ -2,20 +2,25 @@ import React,{useEffect,useMemo,useRef,useState}from'react';
 import{createRoot}from'react-dom/client';
 import data from'./claims.json';
 import type{Category,Claim,WildcardName}from'./game';
-import{makeChallenge,scoreRound,dayKey,orderForPlayer,formatScore as fmt,swapReplacement,CHALLENGE_VERSION}from'./game';
+import{makeChallenge,scoreRound,dayKey,orderForPlayer,formatScore as fmt,CHALLENGE_VERSION}from'./game';
 import{estimateCommunityStats,mapRealStats}from'./community';
 import type{ClaimStat,CategoryStat}from'./community';
-import{communityConfigured,fetchCommunityStats,submitCommunityGame}from'./supabase';
+import{buildReplacementPairs}from'./inventory';
+import{communityConfigured,fetchCommunityStats,submitCommunityGame,fetchDailyChallenge,resolveServerReplacement}from'./supabase';
 import'./style.css';
 
 type Result={claims:Claim[];answers:(Category|null)[];earned:number[];life:number|null};
 type WildUse={name:WildcardName;round:number;claim:string;claimId:string;replacementId?:string};
-type Game={date:string;rounds:Claim[][];round:number;answers:(Category|null)[];used:WildcardName[];uses:WildUse[];revealed:number[];life:number|null;locked:boolean;deadline:number;timerMs:number;score:number;results:Result[];done:boolean;communitySubmitted?:boolean};
+type Game={date:string;rounds:Claim[][];round:number;answers:(Category|null)[];used:WildcardName[];uses:WildUse[];revealed:number[];life:number|null;locked:boolean;deadline:number;timerMs:number;score:number;results:Result[];done:boolean;communitySubmitted?:boolean;replacements?:Record<string,string|null>;serverAuthoritative?:boolean};
 type Screen='home'|'game'|'archive'|'leaderboard'|'rules';
 const C:Category[]=['FACT','KINDA','BULLSHIT'],W:WildcardName[]=['One Off','Swap','Lifesaver'],KEY='factually.v2',library=data as Claim[],ARCHIVE_START='2026-10-13';
 const label=(c:Category)=>c==='FACT'?'FACT!':c==='BULLSHIT'?'BULLSH1T':'KINDA?';
 const dateName=(d:string,locale='en-US')=>new Date(d+'T12:00:00Z').toLocaleDateString(locale,{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
 const msToNextUtcMidnight=(now:number)=>{const d=new Date(now);return Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+1)-now};
+// Permanent replacement pairing for offline play. The authoritative pairing lives in
+// the server inventory; this mirrors the same rule so Swap works without a backend.
+// It is built once from the bundled library, so it is stable across reloads.
+const localPairs=(()=>{const map=buildReplacementPairs(library);const byId=new Map(library.map(c=>[c.id,c]));return{find:(id:string)=>{const partner=map.get(id);return partner?byId.get(partner)??null:null}}})();
 // Spanish claim copy falls back to English whenever a translation is missing, so a partial
 // library still renders. Claim picks the localized field; plain strings pass through untouched.
 const claimText=(c:Claim,es:boolean)=>es&&c.claim_es?c.claim_es:c.claim;
@@ -34,14 +39,34 @@ function App(){
  function closeIntro(){SSI(false);try{localStorage.setItem('factually.intro.seen','1')}catch{}}
  useEffect(()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch{}},[saved]);
  useEffect(()=>{try{localStorage.setItem('factually.language',lang)}catch{};document.documentElement.lang=lang==='ES'?'es':'en'},[lang]); useEffect(()=>{if(screen!=='leaderboard')return;let alive=true;SCL(true);SCE('');SCR(null);if(!communityConfigured){SCE(t('Community stats are not configured in this build.','Las estadísticas comunitarias no están configuradas en esta versión.'));SCL(false);return}fetchCommunityStats(today,CHALLENGE_VERSION).then(result=>{if(alive)SCR(result)}).catch(()=>{if(alive)SCE(t('Live stats are temporarily unavailable. The estimate is shown instead.','Las estadísticas en vivo no están disponibles. Se muestra la estimación.'))}).finally(()=>{if(alive)SCL(false)});return()=>{alive=false}},[screen,today,lang]);
- function put(g:Game){SG(g);SS((s:any)=>({...s,games:{...s.games,[g.date]:g}}))}
- function start(date=today){let g=saved.games[date];if(!g){const base=makeChallenge(date,library),seed=randomSeed();g={date,rounds:orderForPlayer(base,seed),round:0,answers:[null,null,null],used:[],uses:[],revealed:[],life:null,locked:false,deadline:Date.now()+60000,timerMs:60000,score:0,results:[],done:false}}put(g);SW(null);SN('');SM('');ST('');SO(null);S('game')}
+ const gameRef=useRef<Game|null>(null);
+ function put(g:Game){gameRef.current=g;SG(g);SS((s:any)=>({...s,games:{...s.games,[g.date]:g}}))}
+ function start(date=today){let g=saved.games[date];if(!g){g={date,rounds:orderForPlayer(makeChallenge(date,library),randomSeed()),round:0,answers:[null,null,null],used:[],uses:[],revealed:[],life:null,locked:false,deadline:Date.now()+60000,timerMs:60000,score:0,results:[],done:false,replacements:{}};put(g)}
+   // The authoritative challenge is generated once, server-side, and shared by every
+   // player. The local selection above is replaced once the server challenge arrives.
+   // Adoption is computed once, outside React's updaters, from gameRef. Reading the
+   // ref (rather than a state closure) does not depend on when React commits, and
+   // avoids side effects inside an updater, which StrictMode may run twice.
+   if(communityConfigured){gameRef.current=g;fetchDailyChallenge(date,CHALLENGE_VERSION).then(server=>{
+     const claimOrder=(round:{claims:Claim[]})=>orderForPlayer([round.claims],randomSeed())[0];
+     const adopt=(cur:Game|null|undefined):Game|null=>(!cur||cur.locked||cur.results.length||cur.serverAuthoritative)?null:{...cur,rounds:server.rounds.map(claimOrder),replacements:Object.assign({},...server.rounds.map(r=>r.replacements)),serverAuthoritative:true};
+     const current=gameRef.current;
+     if(!current||current.date!==date)return;
+     const next=adopt(current);
+     if(next)put(next);
+   }).catch(()=>{})}
+ SW(null);SN('');SM('');ST('');SO(null);S('game')}
  function assign(i:number,c:Category){if(!game||game.locked||game.revealed.includes(i))return;const a=[...game.answers],j=a.findIndex((x,k)=>k!==i&&x===c&&!game.revealed.includes(k)),old=a[i];a[i]=c;if(j>=0)a[j]=old;put({...game,answers:a})}
  function toggleWild(w:WildcardName){if(!game||game.locked)return;if(game.used.includes(w)){SN(t('That wildcard has already been spent.','Ese comodín ya se usó.'));return}if(wild===w){SW(null);SN(t('Wildcard selection cancelled.','Se canceló la selección del comodín.'));return}SW(w);SN(`${t('Select a claim to use it.','Selecciona una afirmación para usarlo.')} ${wildTip(w)}`)}
  function selectWild(i:number){if(!game||!wild)return;const name=wild,claim=game.rounds[game.round][i],use:WildUse={name,round:game.round+1,claim:claim.claim,claimId:claim.id};
   if(name==='One Off'){if(game.revealed.includes(i)){SN(t('That claim is already revealed.','Esa afirmación ya fue revelada.'));return}const a=[...game.answers],j=a.findIndex((x,k)=>k!==i&&x===claim.category&&!game.revealed.includes(k));if(j>=0)a[j]=a[i];a[i]=claim.category;put({...game,answers:a,revealed:[...game.revealed,i],used:[...game.used,name],uses:[...game.uses,use]});SN(t('Verdict revealed and locked.','Veredicto revelado y fijado.'))}
   else if(name==='Lifesaver'){put({...game,life:i,used:[...game.used,name],uses:[...game.uses,use]});SN(t('Lifesaver protects this claim.','Salvavidas protege esta afirmación.'))}
-  else{const replacement=swapReplacement(game.date,claim,library,game.rounds.flat().map(c=>c.id));if(!replacement){SN(t('No replacement is available; Swap remains unused.','No hay reemplazos disponibles; Cambio sigue sin usarse.'));SW(null);return}const rounds=game.rounds.map(r=>[...r]);rounds[game.round][i]=replacement;const a=[...game.answers];a[i]=null;put({...game,rounds,answers:a,used:[...game.used,name],uses:[...game.uses,{...use,replacementId:replacement.id}]});SN(t('A new claim from the same hidden category is dealt.','Se mostró otra afirmación de la misma categoría oculta.'))}
+  else{const onInChallenge=new Set(game.rounds.flat().map(c=>c.id));const apply=(replacement:Claim,consumedNow:boolean)=>{const rounds=game.rounds.map(r=>[...r]);rounds[game.round][i]=replacement;const a=[...game.answers];a[i]=null;put({...game,rounds,answers:a,used:[...game.used,name],uses:[...game.uses,{...use,replacementId:replacement.id}]});SN(consumedNow?t('A new claim from the same hidden category is dealt. This replacement is now exhausted.','Se mostró otra afirmación de la misma categoría oculta. Este reemplazo queda agotado.'):t('A new claim from the same hidden category is dealt.','Se mostró otra afirmación de la misma categoría oculta.'))};
+   // Offline fallback: use the permanent local pairing so Swap still works without a
+   // backend. The pairing matches the server rule; only global consumption is local.
+   const fallback=()=>{const replacement=localPairs.find(claim.id);if(!replacement||replacement.category!==claim.category||onInChallenge.has(replacement.id)){SN(t('No replacement is available; Swap remains unused.','No hay reemplazos disponibles; Cambio sigue sin usarse.'));SW(null);return}apply(replacement,false)};
+   if(communityConfigured&&game.serverAuthoritative)resolveServerReplacement(game.date,claim.id,[...onInChallenge]).then(result=>apply(result.replacement,result.consumedNow)).catch(()=>fallback());
+   else fallback()}
  SW(null)
  }
  function submit(auto=false){if(!game||game.locked)return;if(!auto&&game.answers.some(x=>!x)){SN(t('Assign all three verdicts before locking in.','Asigna los tres veredictos antes de confirmar.'));return}const claims=game.rounds[game.round],earned=scoreRound(claims,game.answers,game.life);const results=[...game.results,{claims,answers:game.answers,earned,life:game.life}];put({...game,locked:true,score:game.score+earned.reduce((a,b)=>a+b,0),results});SW(null);SN(auto?t('Time is up. Unanswered claims score zero.','Se acabó el tiempo. Las afirmaciones sin respuesta valen cero.'):isPhone?t('Answers locked. Tap a card and flip it to get further context about each claim.','Respuestas bloqueadas. Toca una tarjeta y gírala para ver más contexto.'):t('Answers locked.','Respuestas bloqueadas.'))}

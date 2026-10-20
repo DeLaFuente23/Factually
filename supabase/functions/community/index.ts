@@ -1,16 +1,33 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
-import { makeChallenge, scoreRound } from "../../../src/game.ts";
+import { scoreRound, makeChallenge, CHALLENGE_VERSION } from "../../../src/game.ts";
 import type { Category, Claim } from "../../../src/game.ts";
 import claimData from "../../../src/claims.json" with { type: "json" };
 
 const claims = claimData as Claim[];
 const byId = new Map(claims.map((claim) => [claim.id, claim]));
-const challengeVersion = 'claims-v1';
+const challengeVersion = CHALLENGE_VERSION;
 const categories: Category[] = ["FACT", "KINDA", "BULLSHIT"];
 const wildcardNames = ["One Off", "Swap", "Lifesaver"] as const;
+
+// The day the server-owned inventory took over. Dates before this were selected
+// by the original deterministic hash in `makeChallenge()`, and are frozen as
+// historical snapshots rather than regenerated, so the archive keeps reproducing.
+const INVENTORY_START_DATE = "2026-10-21";
+
 type WildcardUse = { name: (typeof wildcardNames)[number]; round: number; claimId: string; replacementId?: string };
 type ResultInput = { claims: string[]; answers: (Category | null)[]; life: number | null };
-type Payload = { action: "submit" | "stats"; challengeDate: string; challengeVersion?: string; browserToken?: string; results?: ResultInput[]; wildcardUses?: WildcardUse[] };
+type StoredRound = { round: number; claim_ids: string[] };
+type Payload = {
+  action: "submit" | "stats" | "challenge" | "swap" | "diagnostics";
+  challengeDate: string;
+  challengeVersion?: string;
+  browserToken?: string;
+  results?: ResultInput[];
+  wildcardUses?: WildcardUse[];
+  claimId?: string;
+  exclude?: string[];
+  export?: string[];
+};
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -20,6 +37,9 @@ const cors = {
 const respond = (body: unknown, status = 200) => new Response(JSON.stringify(body), {
   status, headers: { ...cors, "Content-Type": "application/json" },
 });
+
+/** The master library in the compact shape the reconciliation RPC expects. */
+const libraryIndex = claims.map((claim) => ({ id: claim.id, category: claim.category }));
 
 Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response("ok", { headers: cors });
@@ -34,18 +54,114 @@ Deno.serve(async (request) => {
   const parsedDate = new Date(`${body.challengeDate}T00:00:00Z`);
   if (Number.isNaN(parsedDate.valueOf()) || parsedDate.toISOString().slice(0, 10) !== body.challengeDate) return respond({ ok: false, error: "Invalid challenge date." }, 400);
 
-  if (body.challengeVersion !== challengeVersion) return respond({ ok: false, error: "This challenge version is no longer active." }, 409);
-
   const secret = Deno.env.get("SUPABASE_SECRET_KEY") ?? Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   const url = Deno.env.get("SUPABASE_URL");
   if (!url || !secret) return respond({ ok: false, error: "Server configuration is incomplete." }, 500);
   const admin = createClient(url, secret, { auth: { persistSession: false, autoRefreshToken: false } });
+
+  // The authoritative challenge for a date. Generated once, shared by all players.
+  if (body.action === "challenge") {
+    // Keep the usage inventory in step with the bundled library before selecting.
+    const { error: reconcileError } = await admin.rpc("inventory_reconcile", { p_claims: libraryIndex });
+    if (reconcileError) return respond({ ok: false, error: "The claim inventory could not be reconciled." }, 503);
+
+    // Dates predating the inventory were chosen by the original deterministic hash.
+    // Import that exact selection as a frozen snapshot the first time it is asked
+    // for, so the archive reproduces reliably instead of being randomly regenerated.
+    // `inventory_import_challenge` never overwrites an existing row.
+    if (body.challengeDate < INVENTORY_START_DATE) {
+      const historical = makeChallenge(body.challengeDate, claims).map((round, index) => ({
+        round: index + 1,
+        claim_ids: round.map((claim) => claim.id),
+      }));
+      const { error: importError } = await admin.rpc("inventory_import_challenge", {
+        p_date: body.challengeDate,
+        p_rounds: historical,
+        p_status: "archived",
+      });
+      if (importError) return respond({ ok: false, error: "The archived challenge could not be restored." }, 503);
+    }
+
+    const { data, error } = await admin.rpc("inventory_get_or_create_challenge", { p_date: body.challengeDate });
+    if (error) {
+      const message = String(error.message ?? "");
+      if (message.includes("INSUFFICIENT_INVENTORY")) {
+        const category = message.split("INSUFFICIENT_INVENTORY:")[1]?.trim() ?? "unknown";
+        return respond({ ok: false, error: `There are not enough unused ${category} claims left to build a challenge.`, category }, 409);
+      }
+      return respond({ ok: false, error: "The daily challenge is unavailable." }, 503);
+    }
+
+    const rounds: StoredRound[] = data?.rounds ?? [];
+    // Resolve ids to full claims, and to each claim's permanent replacement, so the
+    // client never needs to know the inventory. Swap targets are safe to disclose:
+    // they are only shown once a player actually spends the wildcard.
+    const resolved = rounds.map((round) => ({
+      round: round.round,
+      claims: round.claim_ids.map((id) => byId.get(id)).filter((claim): claim is Claim => Boolean(claim)),
+      replacements: Object.fromEntries(round.claim_ids.map((id) => [id, null as string | null])),
+    }));
+
+    const { data: replacements } = await admin
+      .from("claim_usage")
+      .select("claim_id,replacement_claim_id")
+      .in("claim_id", rounds.flatMap((round) => round.claim_ids));
+    const replacementFor = new Map((replacements ?? []).map((row) => [row.claim_id as string, row.replacement_claim_id as string | null]));
+    for (const round of resolved) {
+      round.replacements = Object.fromEntries(round.claims.map((claim) => [claim.id, replacementFor.get(claim.id) ?? null]));
+    }
+
+    return respond({
+      ok: true,
+      challengeId: data?.challengeId ?? body.challengeDate,
+      generatedAt: data?.generatedAt ?? null,
+      status: data?.status ?? "active",
+      created: Boolean(data?.created),
+      rounds: resolved,
+    });
+  }
+
+  // Administrative inventory inspection. Guarded by a shared secret so the
+  // diagnostics and the raw JSON export are never reachable by players. Set
+  // INVENTORY_ADMIN_TOKEN as an Edge Function secret to enable it.
+  if (body.action === "diagnostics") {
+    const expected = Deno.env.get("INVENTORY_ADMIN_TOKEN");
+    const supplied = request.headers.get("x-inventory-token");
+    if (!expected || supplied !== expected) return respond({ ok: false, error: "Not found." }, 404);
+    const { data, error } = await admin.rpc("inventory_diagnostics");
+    if (error) return respond({ ok: false, error: "Diagnostics are unavailable." }, 503);
+    const exportRequested = Array.isArray(body.export) && body.export.length > 0;
+    if (!exportRequested) return respond({ ok: true, diagnostics: data });
+    const { data: dump, error: dumpError } = await admin.rpc("inventory_export");
+    if (dumpError) return respond({ ok: false, error: "The inventory could not be exported." }, 503);
+    return respond({ ok: true, diagnostics: data, claimUsage: dump?.claimUsage, dailyChallenges: dump?.dailyChallenges });
+  }
+
+  if (body.challengeVersion !== challengeVersion) return respond({ ok: false, error: "This challenge version is no longer active." }, 409);
 
   if (body.action === "stats") {
     const { data, error } = await admin.rpc("community_stats", { p_challenge_date: body.challengeDate, p_challenge_version: challengeVersion });
     if (error) return respond({ ok: false, error: "Community statistics are temporarily unavailable." }, 503);
     const submissions = Number(data?.submissions ?? 0);
     return respond({ ok: true, submissions, mode: submissions >= 100 ? "real" : "expected", stats: submissions >= 100 ? data : null });
+  }
+
+  // Resolve the permanent replacement for a claim. Assignment is permanent and
+  // identical for everyone; consumption is recorded globally but never invalidates
+  // an established assignment.
+  if (body.action === "swap") {
+    if (!body.claimId || !byId.has(body.claimId)) return respond({ ok: false, error: "Unknown claim." }, 400);
+    const exclude = Array.isArray(body.exclude) ? body.exclude.filter((id) => byId.has(id)) : [];
+    const { data, error } = await admin.rpc("inventory_resolve_replacement", {
+      p_claim_id: body.claimId,
+      p_date: body.challengeDate,
+      p_exclude: exclude,
+    });
+    if (error) return respond({ ok: false, error: "The replacement could not be resolved." }, 503);
+    if (!data?.ok) return respond({ ok: false, error: data?.reason ?? "No replacement is available." }, 409);
+    const claim = byId.get(data.replacementId as string);
+    if (!claim) return respond({ ok: false, error: "The assigned replacement is missing from the library." }, 503);
+    return respond({ ok: true, replacement: claim, consumedNow: Boolean(data.consumedNow) });
   }
 
   if (body.action !== "submit") return respond({ ok: false, error: "Unknown action." }, 400);
@@ -62,7 +178,18 @@ Deno.serve(async (request) => {
       throw new Error("Invalid wildcard use.");
     }
     const swapUses = uses.filter((use) => use.name === "Swap");
-    const base = makeChallenge(body.challengeDate, claims);
+
+    // Validate against the PERSISTED assignment, not a recomputation. Randomised
+    // selection means the server cannot derive the challenge from the date alone.
+    const { data: stored, error: storedError } = await admin
+      .from("challenge_assignments")
+      .select("rounds")
+      .eq("challenge_id", body.challengeDate)
+      .maybeSingle();
+    if (storedError) throw new Error("The daily challenge could not be verified.");
+    if (!stored) throw new Error("This daily challenge has not been generated yet.");
+    const rounds = stored.rounds as StoredRound[];
+
     const allClaimIds: string[] = [];
     const outcomes: { id: string; category: Category; selected: Category | null; correct: boolean; pointsSixths: number; round: number }[] = [];
     let classificationSixths = 0;
@@ -78,15 +205,20 @@ Deno.serve(async (request) => {
       if (roundClaims.some((claim) => !claim)) throw new Error("Unknown claim.");
       const resolved = roundClaims as Claim[];
       if (new Set(resolved.map((claim) => claim.category)).size !== 3) throw new Error("Each round must contain one claim from each verdict.");
+
       const swap = swapUses.find((use) => use.round === roundIndex + 1);
       if (swapUses.some((use) => use.round < 1 || use.round > 3)) throw new Error("Invalid Swap round.");
-      const expectedIds = new Set(base[roundIndex].map((claim) => claim.id));
+
+      const expectedIds = new Set(rounds[roundIndex]?.claim_ids ?? []);
+      if (expectedIds.size !== 3) throw new Error("The daily challenge is incomplete.");
       if (swap) {
         const original = byId.get(swap.claimId);
         const replacement = byId.get(swap.replacementId ?? "");
-        if (!original || !replacement || !expectedIds.has(original.id) || original.category !== replacement.category || !replacement.replacementEligible) {
-          throw new Error("Invalid same-category replacement.");
-        }
+        if (!original || !replacement || !expectedIds.has(original.id)) throw new Error("Swap must target a claim in this challenge.");
+        // The replacement must be the claim's PERMANENT partner, not any free claim.
+        const { data: usage } = await admin.from("claim_usage").select("replacement_claim_id").eq("claim_id", original.id).maybeSingle();
+        if (!usage || usage.replacement_claim_id !== replacement.id) throw new Error("Invalid same-category replacement.");
+        if (original.category !== replacement.category) throw new Error("Invalid same-category replacement.");
         expectedIds.delete(original.id);
         expectedIds.add(replacement.id);
       }
@@ -137,8 +269,3 @@ Deno.serve(async (request) => {
     return respond({ ok: false, error: error instanceof Error ? error.message : "Invalid result." }, 400);
   }
 });
-
-
-
-
-

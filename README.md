@@ -28,6 +28,96 @@ pnpm test
 pnpm build
 ```
 
+## Global claim inventory and daily challenges
+
+Daily challenges are generated **server-side, once per date**, and stored permanently. Every player receives the same nine claims and the same round assignment. Reloading, using another browser, or opening a second session never produces a different challenge.
+
+Two logical data stores hold this state:
+
+| Store | Table | Purpose |
+|---|---|---|
+| `claim-usage.json` | `public.claim_usage` | Per-claim usage flags and permanent replacement pairing |
+| `daily-challenges.json` | `public.challenge_assignments` | The frozen nine claims for each date |
+
+Both are exportable to JSON through `public.inventory_export()`, which returns exactly the two documented shapes so the inventory can be inspected and backed up.
+
+### Usage model
+
+Each claim tracks two **independent** flags:
+
+- `used_as_main` — it has served as one of the nine primary claims. It can never serve as a main claim again.
+- `used_as_replacement` — it has been consumed as a wildcard replacement. It can never be consumed as a replacement again, but remains eligible as a **main** claim while `used_as_main` is false.
+
+A claim is permanently exhausted only when **both** are true.
+
+### Permanent replacement pairing
+
+Every claim has a stable, same-category partner, formed once and persisted. Within each category, claim IDs are sorted with a numeric-aware comparator (so `fact-2` precedes `fact-10`) and adjacent entries are paired, giving disjoint one-to-one pairs. Pairing never depends on JSON, storage, or insertion order, and an existing valid pairing is never rewritten.
+
+The daily selector draws each category's three claims from **three distinct pairs**, which guarantees a Swap target is never already on the table.
+
+### Swap semantics
+
+A claim always resolves to its permanent partner — the same claim, for every player, forever. The global `used_as_replacement` flag records that the partner has been served at least once; it **never** invalidates an already-established assignment. A later player swapping the same claim still receives the same partner, and the response's `consumedNow` flag reports whether that particular request performed the first consumption.
+
+### Migration and back-fill
+
+The migration seeds `claim_usage` from the bundled library with all flags `false`. Historical usage could not be reconstructed from the old client-only storage, so **the tracker begins at the migration date**: claims used before it are not retroactively marked.
+
+Past daily challenges (`2026-10-13` onward) were originally selected by a deterministic hash. `scripts/backfill-history.cjs` reproduces them exactly and emits `supabase/backfill-history.sql`, which freezes them as permanent snapshots so the Archive keeps reproducing. Frozen history is never regenerated, even if the inventory changes later.
+
+> **Known edge case:** the `2026-10-14` historical challenge contains both members of a replacement pair (`bull-83` and `bull-84`), which the newer pair-exclusion rule forbids. History is preserved unchanged, so a Swap on either claim in that one past challenge is refused rather than duplicating a claim on screen.
+
+### Capacity
+
+Selecting 3 main claims per category per day, the current library sustains **33 days** before any category starves (100 KINDA / 100 BULLSHIT at 3/day). FACT lasts 50 days. `public.inventory_diagnostics()` reports remaining capacity and the per-category breakdown; when a category runs out the challenge endpoint returns `409` naming the starved category instead of reusing exhausted claims.
+
+### Deploying the inventory
+
+Apply the migration and deploy the Edge Function:
+
+```sh
+supabase db push
+supabase functions deploy community
+```
+
+Historical challenges are imported automatically: the first time the archive asks
+for a date before the inventory existed, that date's original hash-selected claims
+are frozen as an immutable snapshot. `node scripts/backfill-history.cjs` also
+generates `supabase/backfill-history.sql`, which can be run in the SQL editor to
+pre-populate the same dates in one pass.
+
+### Checking how many days are left
+
+Set the admin token once (it enables the guarded `diagnostics` action; without it
+the action returns `404` to everyone):
+
+```sh
+supabase secrets set INVENTORY_ADMIN_TOKEN=<a-long-random-string>
+```
+
+Then, from your machine, export both data stores as real files and print the
+inventory summary:
+
+```sh
+npm run inventory:export
+```
+
+This writes `data/claim-usage.json` and `data/daily-challenges.json` and prints the
+remaining daily-challenge capacity per category, unused main claims, exhausted
+claims, available replacements, and any broken pairs. The token is read from the
+`INVENTORY_ADMIN_TOKEN` env var or `~/.factually-inventory-token`.
+
+With the same token you can also read the raw JSON from the Supabase SQL editor:
+
+```sql
+select public.inventory_diagnostics();
+select jsonb_pretty(public.inventory_export() -> 'claimUsage');
+select jsonb_pretty(public.inventory_export() -> 'dailyChallenges');
+```
+
+If `VITE_SUPABASE_*` is not configured, the app falls back to the bundled deterministic selector so the board stays playable offline; in that mode the inventory is local and not shared.
+
 ## Supabase community statistics
 
 The Leaderboard screen is now a daily community statistics screen. Before 100 accepted submissions, it shows a date-seeded estimate based on each daily claim’s `obscurity` rating. At 100 or more accepted submissions, it shows aggregates from completed games. Results are counted as submissions, not verified unique players.

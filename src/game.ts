@@ -10,6 +10,10 @@ export function points(selected:Category,actual:Category):number {if(selected===
 export function orderForPlayer(rounds:Claim[][],seed:number):Claim[][]{const categories:Category[]=['FACT','KINDA','BULLSHIT'];const permutations:Category[][]=[[categories[0],categories[1],categories[2]],[categories[0],categories[2],categories[1]],[categories[1],categories[0],categories[2]],[categories[1],categories[2],categories[0]],[categories[2],categories[0],categories[1]],[categories[2],categories[1],categories[0]]];const used=new Set<number>();return rounds.map((round,index)=>{let order=hash(`${seed}:${index}:${round.map(c=>c.id).join('|')}`)%permutations.length;while(used.has(order))order=(order+1)%permutations.length;used.add(order);return permutations[order].map(category=>round.find(claim=>claim.category===category)!).filter(Boolean)})}
 export function scoreRound(claims:Claim[],answers:(Category|null)[],life:number|null):number[]{const earned=claims.map((claim,i)=>answers[i]?points(answers[i]!,claim.category):0);if(life!==null&&answers[life]&&earned[life]!==6){const counterpart=claims.findIndex((claim,i)=>i!==life&&answers[i]===claims[life].category);if(counterpart>=0){earned[life]=6;earned[counterpart]=6}}return earned}
 export function formatScore(sixths:number):string{return (sixths/6).toFixed(2).replace(/0+$/,'').replace(/\.$/,'')}
+// Swap is now resolved from the globally shared, permanently assigned replacement
+// inventory (`src/inventory.ts` / the `inventory_resolve_replacement` RPC). A claim
+// always resolves to its permanent same-category partner, so selection is stable.
+// This helper remains as the local/offline resolver used when the backend is absent.
 export function swapReplacement(date:string,claim:Claim,library:Claim[],usedIds:Iterable<string>=[]):Claim|null{const used=new Set(usedIds);const pool=library.filter(c=>c.category===claim.category&&c.replacementEligible&&c.id!==claim.id&&!used.has(c.id));if(!pool.length)return null;return pool[hash(`${date}:${claim.id}:swap`)%pool.length]}
 
 

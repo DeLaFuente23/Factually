@@ -4,3 +4,7 @@ dist/
 .DS_Store
 .env
 supabase/.temp/
+
+# Generated inventory snapshot from `npm run inventory:export`; the database is the
+# source of truth, so this is a local inspection/backup artifact.
+data/
