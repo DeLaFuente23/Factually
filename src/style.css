@@ -139,12 +139,12 @@
 .community-average strong{font-size:clamp(42px,7vw,68px);font-style:italic;font-weight:500;line-height:1}
 .community-average strong small{font-size:22px}
 .community-average>small{color:var(--muted)}
-.score-distribution{height:210px;position:relative;padding:30px 8px 36px;border-bottom:1px solid var(--line)}
+.score-distribution{height:190px;position:relative;padding:40px 8px 32px;border-bottom:1px solid var(--line)}
 .bell-chart{display:block;width:100%;height:100%}
 .bell-area{fill:rgba(116,181,163,.22)}
 .bell-line{fill:none;stroke:var(--cream);stroke-width:2;vector-effect:non-scaling-stroke}
 .bell-axis{position:absolute;left:8px;right:8px;bottom:11px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
-.distribution-caption{position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:12px;color:var(--muted);white-space:nowrap}
+.distribution-caption{position:absolute;top:3px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--muted);white-space:nowrap}
 .community-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .community-stat{min-width:0;padding:18px 20px;border:1px solid var(--line);background:rgba(16,46,66,.45)}
 .community-stat h3{margin:0 0 12px;font-size:22px;font-weight:500;font-style:italic}
@@ -159,9 +159,17 @@
 .community-stat .stat-empty{margin:0 0 10px;color:var(--muted)}
 .community-stat .stat-mode{margin:12px 0 0;font-size:13px;letter-spacing:.04em;color:#9fb0ad}
 @media(max-width:700px){.community-overview{grid-template-columns:1fr;gap:16px;padding:18px}.community-average{border-right:0;border-bottom:1px solid var(--line);padding:0 0 16px}.community-highlights{grid-template-columns:1fr}.score-distribution{height:190px}}
-.player-score-marker{position:absolute;z-index:2;top:40px;bottom:36px;width:2px;background:var(--teal);transform:translateX(-50%);pointer-events:none}
-.player-score-marker b{position:absolute;top:-32px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.08em;color:var(--teal);white-space:nowrap}
-.player-score-marker em{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-style:normal;font-size:14px;color:var(--teal);white-space:nowrap}
+.player-score-marker{position:absolute;z-index:2;top:60px;bottom:32px;width:2px;background:var(--teal);transform:translateX(-50%);pointer-events:none}
+.player-score-marker b{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.08em;color:var(--teal);white-space:nowrap}
+.next-game{font-size:14px;letter-spacing:.06em;color:#c9b994;font-variant-numeric:tabular-nums}
 .final-stats{margin:22px auto 6px;text-align:center}
 .final-stats .community-overview{margin:0 auto 14px}
-.final-stats-link{background:none;border:0;color:#92c9b9;text-decoration:underline;font-size:17px;padding:6px 4px}
+.final-stats-link{grid-column:1/-1;justify-self:center;background:none;border:0;color:#92c9b9;text-decoration:underline;font-size:17px;padding:6px 4px}
+.intro-overlay{position:fixed;inset:0;z-index:300;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px;overflow:auto;background:rgba(6,14,22,.82)}
+.intro-panel{position:relative;width:min(760px,100%);max-height:calc(100vh - 48px);overflow:auto;padding:30px 30px 34px;border:1px solid var(--line);background:#102e42;box-shadow:0 22px 60px rgba(0,0,0,.6)}
+.intro-panel .eyebrow{margin-top:0}
+.intro-panel h2{font-size:clamp(28px,5vw,44px);font-style:italic;font-weight:500;margin:4px 0 12px}
+.intro-panel>p:not(.eyebrow){font-size:19px;line-height:1.4;color:#e3d9c8}
+.intro-panel .definitions{margin:18px 0}
+.intro-close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--cream);font-size:22px;line-height:1;padding:6px;cursor:pointer}
+.intro-panel .rules-play{margin-top:30px}
