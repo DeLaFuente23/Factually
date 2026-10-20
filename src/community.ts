@@ -69,7 +69,11 @@ export function estimateCommunityStats(date: string, claims: Claim[]): Community
   }
   const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
   const stdDev = Math.sqrt(scores.reduce((sum, score) => sum + (score - averageScore) ** 2, 0) / scores.length);
-  const perfectPotential = claims.reduce((product, claim) => product * success(claim), 1);
+  // The score model already credits accidental correct guesses by using
+  // p + (1 - p) * 0.25 per claim. Multiply raw success rates here and a perfect
+  // game looks impossible; divide by the guess floor to report the clean sweep.
+  const guessFloor = 0.25;
+  const perfectPotential = Math.min(1, claims.reduce((product, claim) => product * success(claim), 1) / guessFloor ** claims.length);
   const groups = new Map<Category, Claim[]>();
   for (const claim of claims) groups.set(claim.category, [...(groups.get(claim.category) ?? []), claim]);
   const categories = [...groups].map(([category, categoryClaims]) => {
