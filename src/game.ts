@@ -1,5 +1,5 @@
 export type Category = 'FACT'|'KINDA'|'BULLSHIT';
-export type Claim = {id:string;category:Category;claim:string;explanation:string;sources:{title:string;url:string}[];replacementEligible:boolean;obscurity:number;difficulty?:number;tags?:string[]};
+export type Claim = {id:string;category:Category;claim:string;claim_es?:string;explanation:string;explanation_es?:string;sources:{title:string;url:string}[];replacementEligible:boolean;obscurity:number;difficulty?:number;tags?:string[]};
 export type WildcardName = 'One Off'|'Swap'|'Lifesaver';
 export const labels:Category[]=['FACT','KINDA','BULLSHIT'];
 export const CHALLENGE_VERSION='claims-v1';

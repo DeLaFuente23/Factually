@@ -21,12 +21,21 @@ describe('expected daily community stats', () => {
   it('keeps the expected score under the 10-point cap', () => {
     expect(estimateCommunityStats('2026-10-15', claims).averageScore).toBeLessThanOrEqual(10);
   });
-  it('reports a positive score spread and a perfect-game probability between 0 and 1', () => {
+  it('reports a positive score spread and a rescaled perfect-game index between 0 and 1', () => {
     const stats = estimateCommunityStats('2026-10-15', claims);
     expect(stats.stdDev).toBeGreaterThan(0);
     expect(stats.perfectPotential).toBeGreaterThan(0);
     expect(stats.perfectPotential).toBeLessThanOrEqual(1);
     expect(stats.perfectCount).toBe(0);
+  });
+  it('ranks a harder claim set below an easier one on the perfect-game scale', () => {
+    const easy: Claim[] = claims.map(claim => ({ ...claim, obscurity: 2 }));
+    const hard: Claim[] = claims.map(claim => ({ ...claim, obscurity: 8 }));
+    const easyValue = estimateCommunityStats('2026-10-15', easy).perfectPotential;
+    const hardValue = estimateCommunityStats('2026-10-15', hard).perfectPotential;
+    expect(easyValue).toBeGreaterThan(hardValue);
+    expect(easyValue).toBeLessThan(1);
+    expect(hardValue).toBeGreaterThan(0);
   });
 });
 

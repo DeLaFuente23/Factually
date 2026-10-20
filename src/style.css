@@ -139,6 +139,7 @@
 .community-average strong{font-size:clamp(42px,7vw,68px);font-style:italic;font-weight:500;line-height:1}
 .community-average strong small{font-size:22px}
 .community-average>small{color:var(--muted)}
+.community-average .next-game{margin-top:8px}
 .score-distribution{height:190px;position:relative;padding:56px 8px 32px;border-bottom:1px solid var(--line)}
 .bell-chart{display:block;width:100%;height:100%}
 .bell-area{fill:rgba(116,181,163,.22)}
@@ -160,8 +161,8 @@
 .community-stat .stat-mode{margin:12px 0 0;font-size:13px;letter-spacing:.04em;color:#9fb0ad}
 @media(max-width:700px){.community-overview{grid-template-columns:1fr;gap:16px;padding:18px}.community-average{border-right:0;border-bottom:1px solid var(--line);padding:0 0 16px}.community-highlights{grid-template-columns:1fr}.score-distribution{height:190px;padding:56px 8px 32px}}
 .player-score-marker{position:absolute;z-index:2;top:56px;bottom:32px;width:2px;background:var(--teal);transform:translateX(-50%);pointer-events:none}
-.player-score-marker b{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.08em;color:var(--teal);white-space:nowrap}
-.next-game{font-size:14px;letter-spacing:.06em;color:#c9b994;font-variant-numeric:tabular-nums}
+.player-score-marker b{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.08em;color:var(--teal);white-space:nowrap}
+.next-game{display:block;font-size:14px;letter-spacing:.06em;color:#c9b994;font-variant-numeric:tabular-nums}
 .final-stats{margin:22px auto 6px;text-align:center}
 .final-stats .community-overview{margin:0 auto 14px}
 .final-stats-link{grid-column:1/-1;justify-self:center;background:none;border:0;color:#92c9b9;text-decoration:underline;font-size:17px;padding:6px 4px}

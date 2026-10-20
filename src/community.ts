@@ -11,7 +11,7 @@ export type CommunityStats = {
   stdDev: number;
   bins: ScoreBin[];
   wildcardAverage: number;
-  /** Probability (expected) or share (real) of games that earned a perfect 10/10. */
+  /** Rescaled 0-1 index (expected mode) or observed share (real mode) of perfect 10/10 games. */
   perfectPotential: number;
   /** Number of completed 10/10 games (real mode only). */
   perfectCount: number;
@@ -70,10 +70,18 @@ export function estimateCommunityStats(date: string, claims: Claim[]): Community
   const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
   const stdDev = Math.sqrt(scores.reduce((sum, score) => sum + (score - averageScore) ** 2, 0) / scores.length);
   // The score model already credits accidental correct guesses by using
-  // p + (1 - p) * 0.25 per claim. Multiply raw success rates here and a perfect
-  // game looks impossible; divide by the guess floor to report the clean sweep.
-  const guessFloor = 0.25;
-  const perfectPotential = Math.min(1, claims.reduce((product, claim) => product * success(claim), 1) / guessFloor ** claims.length);
+  // p + (1 - p) * 0.25 per claim. A raw product of nine success rates is a true
+  // probability, but it collapses toward 0 on any ordinary claim set, so the
+  // reader only ever sees 0%. Report it on a log scale between a fully opaque
+  // and a fully transparent claim set instead, which keeps the value informative
+  // and inside (0, 1) without ever pinning the display at 0% or 100%.
+  const easiestSet = success({ obscurity: 1 } as Claim) ** claims.length;
+  const hardestSet = success({ obscurity: 10 } as Claim) ** claims.length;
+  const rawPerfect = claims.reduce((product, claim) => product * success(claim), 1);
+  const logSpan = Math.log(easiestSet) - Math.log(hardestSet);
+  const perfectPotential = logSpan > 0
+    ? (Math.log(rawPerfect) - Math.log(hardestSet)) / logSpan
+    : 0;
   const groups = new Map<Category, Claim[]>();
   for (const claim of claims) groups.set(claim.category, [...(groups.get(claim.category) ?? []), claim]);
   const categories = [...groups].map(([category, categoryClaims]) => {
