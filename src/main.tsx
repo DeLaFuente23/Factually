@@ -6,7 +6,7 @@ import{makeChallenge,scoreRound,dayKey,orderForPlayer,formatScore as fmt,CHALLEN
 import{estimateCommunityStats,mapRealStats}from'./community';
 import type{ClaimStat,CategoryStat}from'./community';
 import{buildReplacementPairs}from'./inventory';
-import{communityConfigured,fetchCommunityStats,submitCommunityGame,fetchDailyChallenge,resolveServerReplacement}from'./supabase';
+import{communityConfigured,fetchCommunityStats,submitCommunityGame,fetchDailyChallenge,cachedDailyChallenge,prefetchDailyChallenge,resolveServerReplacement}from'./supabase';
 import'./style.css';
 
 type Result={claims:Claim[];answers:(Category|null)[];earned:number[];life:number|null};
@@ -36,6 +36,12 @@ function App(){
  const[screen,S]=useState<Screen>('home'),[saved,SS]=useState(load),[game,SG]=useState<Game|null>(null),[wild,SW]=useState<WildcardName|null>(null),[note,SN]=useState(''),[remaining,SR]=useState(60000),[flipped,SF]=useState<Record<string,boolean>>({}),[shareMsg,SM]=useState(''),[shareText,ST]=useState(''),today=dayKey(),submitRef=useRef<(auto?:boolean)=>void>(()=>{}),[openCard,SO]=useState<number|null>(null),isPhone=useMediaQuery('(max-width:600px)'),[communityResponse,SCR]=useState<any>(null),[communityLoading,SCL]=useState(false),[communityError,SCE]=useState('');const submittedRef=useRef<Set<string>>(new Set());const[starting,STARTING]=useState(false);
  const[nextIn,SNextIn]=useState(()=>msToNextUtcMidnight(Date.now())),[showIntro,SSI]=useState<boolean>(()=>{try{return !localStorage.getItem('factually.intro.seen')}catch{return true}});
  useEffect(()=>{const id=window.setInterval(()=>SNextIn(msToNextUtcMidnight(Date.now())),1000);return()=>window.clearInterval(id)},[]);
+ // Warm today's challenge while the player is still on the home screen, so the board is
+ // ready the moment they press Play. This runs in the background and never delays the
+ // page: the request is already cached by the time a click arrives, and a same-day
+ // revisit is served from the cache with no request at all. `today` also re-runs this
+ // if the page stays open across the UTC rollover, so the new day is ready too.
+ useEffect(()=>{prefetchDailyChallenge(today,CHALLENGE_VERSION)},[today]);
  function closeIntro(){SSI(false);try{localStorage.setItem('factually.intro.seen','1')}catch{}}
  useEffect(()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch{}},[saved]);
  useEffect(()=>{try{localStorage.setItem('factually.language',lang)}catch{};document.documentElement.lang=lang==='ES'?'es':'en'},[lang]); useEffect(()=>{if(screen!=='leaderboard')return;let alive=true;SCL(true);SCE('');SCR(null);if(!communityConfigured){SCE(t('Community stats are not configured in this build.','Las estadísticas comunitarias no están configuradas en esta versión.'));SCL(false);return}fetchCommunityStats(today,CHALLENGE_VERSION).then(result=>{if(alive)SCR(result)}).catch(()=>{if(alive)SCE(t('Live stats are temporarily unavailable. The estimate is shown instead.','Las estadísticas en vivo no están disponibles. Se muestra la estimación.'))}).finally(()=>{if(alive)SCL(false)});return()=>{alive=false}},[screen,today,lang]);
@@ -43,7 +49,7 @@ function App(){
  function put(g:Game){gameRef.current=g;SG(g);SS((s:any)=>({...s,games:{...s.games,[g.date]:g}}))}
  const localGame=(date:string):Game=>({date,rounds:orderForPlayer(makeChallenge(date,library),randomSeed()),round:0,answers:[null,null,null],used:[],uses:[],revealed:[],life:null,locked:false,deadline:Date.now()+60000,timerMs:60000,score:0,results:[],done:false,replacements:{}});
  // Start a date. The authoritative challenge is generated once, server-side, and shared
- // by every player, so it is fetched BEFORE the board is shown: revealing a local board
+ // by every player, so it is known BEFORE the board is shown: revealing a local board
  // and swapping its claims a moment later visibly changes the cards mid-round.
  // The local challenge is only a fallback for when the backend is unconfigured or
  // unreachable, which keeps the game playable offline.
@@ -57,10 +63,16 @@ function App(){
   const enterLocal=()=>{STARTING(false);enter(localGame(date))};
   if(!communityConfigured){enterLocal();return}
   const claimOrder=(round:{claims:Claim[]})=>orderForPlayer([round.claims],randomSeed())[0];
-  // The board is only shown once the authoritative challenge has arrived, so the cards
-  // never change under the player. The button reports that wait instead of appearing dead.
+  const build=(server:{rounds:{claims:Claim[];replacements:Record<string,string|null>}[]})=>enter({...localGame(date),rounds:server.rounds.map(claimOrder),replacements:Object.assign({},...server.rounds.map(r=>r.replacements)),serverAuthoritative:true});
+  // The mount-time prefetch usually has this ready already, in which case the board is
+  // shown immediately with no waiting state at all.
+  const warm=cachedDailyChallenge(date,CHALLENGE_VERSION);
+  if(warm){build(warm);return}
+  // Otherwise fetch now. The board is only shown once the challenge has arrived, so the
+  // cards never change under the player, and the button reports that wait rather than
+  // appearing dead.
   STARTING(true);
-  fetchDailyChallenge(date,CHALLENGE_VERSION).then(server=>enter({...localGame(date),rounds:server.rounds.map(claimOrder),replacements:Object.assign({},...server.rounds.map(r=>r.replacements)),serverAuthoritative:true}),enterLocal);
+  fetchDailyChallenge(date,CHALLENGE_VERSION).then(build,enterLocal);
  }
  function assign(i:number,c:Category){if(!game||game.locked||game.revealed.includes(i))return;const a=[...game.answers],j=a.findIndex((x,k)=>k!==i&&x===c&&!game.revealed.includes(k)),old=a[i];a[i]=c;if(j>=0)a[j]=old;put({...game,answers:a})}
  function toggleWild(w:WildcardName){if(!game||game.locked)return;if(game.used.includes(w)){SN(t('That wildcard has already been spent.','Ese comodín ya se usó.'));return}if(wild===w){SW(null);SN(t('Wildcard selection cancelled.','Se canceló la selección del comodín.'));return}SW(w);SN(`${t('Select a claim to use it.','Selecciona una afirmación para usarlo.')} ${wildTip(w)}`)}
