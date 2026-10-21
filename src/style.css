@@ -123,6 +123,16 @@
 .rules li{font-size:19px;line-height:1.4;margin:5px 0}
 .rules h4{font-size:23px;font-style:italic;font-weight:500;margin:22px 0 4px;color:#eadfc9}
 .rules-play{display:block;margin:32px auto 8px;min-width:min(260px,100%)}
+/* Fine print under the "Let's play!" button: quiet, centred, and the two document
+   names carry the link highlight so they read as clickable. */
+.subpage>p.fine-print{margin:16px auto 0;max-width:640px;text-align:center;font-size:15px;line-height:1.5;font-style:italic;color:#bfb29a}
+.legal-link{background:none;border:0;padding:0;font:inherit;font-style:italic;color:#92c9b9;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.legal-link:hover{color:#b7e2d5}
+.legal-panel p{font-size:18px;line-height:1.5;color:#e3d9c8;margin:10px 0}
+.legal-panel ul{padding-left:26px;margin:10px 0 18px;color:#e3d9c8}
+.legal-panel li{font-size:18px;line-height:1.45;margin:6px 0}
+.legal-panel h3{font-size:21px;font-style:italic;font-weight:500;margin:24px 0 6px;color:#eadfc9}
+.legal-panel a{color:#92c9b9}
 @media (hover:none), (max-width:600px){.wild[data-tooltip]:hover::after,.wild[data-tooltip]:focus-visible::after{display:none!important}}
 @media(max-width:600px){.claim-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.claim-row:active{background:#122d42;box-shadow:none}}
 .language-toggle{display:flex;align-items:center;justify-content:center;text-align:center;line-height:1;margin-left:auto;min-width:48px;height:38px;padding:4px 10px;background:transparent;border:1px solid var(--line);color:var(--cream);font:18px 'EB Garamond',Georgia,serif;letter-spacing:.12em;cursor:pointer;transition:background .15s,color .15s;-webkit-tap-highlight-color:transparent}
