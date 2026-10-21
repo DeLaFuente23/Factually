@@ -36,6 +36,10 @@ function App(){
  const[screen,S]=useState<Screen>('home'),[saved,SS]=useState(load),[game,SG]=useState<Game|null>(null),[wild,SW]=useState<WildcardName|null>(null),[note,SN]=useState(''),[remaining,SR]=useState(60000),[flipped,SF]=useState<Record<string,boolean>>({}),[shareMsg,SM]=useState(''),[shareText,ST]=useState(''),today=dayKey(),submitRef=useRef<(auto?:boolean)=>void>(()=>{}),[openCard,SO]=useState<number|null>(null),isPhone=useMediaQuery('(max-width:600px)'),[communityResponse,SCR]=useState<any>(null),[communityLoading,SCL]=useState(false),[communityError,SCE]=useState('');const submittedRef=useRef<Set<string>>(new Set());const[starting,STARTING]=useState(false);
  const[nextIn,SNextIn]=useState(()=>msToNextUtcMidnight(Date.now())),[showIntro,SSI]=useState<boolean>(()=>{try{return !localStorage.getItem('factually.intro.seen')}catch{return true}});
  useEffect(()=>{const id=window.setInterval(()=>SNextIn(msToNextUtcMidnight(Date.now())),1000);return()=>window.clearInterval(id)},[]);
+ // Switching screens replaces the page's content but not the window's scroll offset, so
+ // arriving from a long page (such as the final verdict) would leave the new screen
+ // scrolled down, showing its middle. Every screen change starts at the top.
+ useEffect(()=>{window.scrollTo(0,0)},[screen]);
  // Warm today's challenge while the player is still on the home screen, so the board is
  // ready the moment they press Play. This runs in the background and never delays the
  // page: the request is already cached by the time a click arrives, and a same-day
