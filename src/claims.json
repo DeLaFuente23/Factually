@@ -1547,8 +1547,8 @@
     "explanation_es": "La epidemia de baile de Estrasburgo hizo que algunos habitantes bailaran durante semanas; la explicación principal es una enfermedad psicógena colectiva, aunque los registros no son claros.",
     "sources": [
       {
-        "url": "https://www.smithsonianmag.com/",
-        "title": "smithsonianmag.com"
+        "url": "https://www.britannica.com/event/dancing-plague-of-1518/",
+        "title": "britannica.com"
       }
     ],
     "replacementEligible": true,
@@ -2212,8 +2212,8 @@
     "explanation_es": "Hay 52! órdenes posibles, una cifra de 8 seguida de 67 ceros, una cantidad tan enorme que supera por muchísimo todas las barajas que se hayan mezclado jamás.",
     "sources": [
       {
-        "url": "https://www.mcgill.ca/oss/article/did-you-know/how-many-ways-can-you-shuffle-deck-cards",
-        "title": "mcgill.ca"
+        "url": "https://czep.net/weblog/52cards.html/",
+        "title": "czep.net"
       }
     ],
     "replacementEligible": true,
@@ -2744,8 +2744,8 @@
     "explanation_es": "La catarata del estrecho de Dinamarca desciende unos 3,5 km cuando el agua fría se hunde bajo el agua más cálida, superando la altura de cualquier cascada en la superficie.",
     "sources": [
       {
-        "url": "https://oceanexplorer.noaa.gov/",
-        "title": "oceanexplorer.noaa.gov"
+        "url": "https://oceanservice.noaa.gov/facts/largest-waterfall.html/",
+        "title": "oceanservice.noaa.gov"
       }
     ],
     "replacementEligible": true,
@@ -2858,8 +2858,8 @@
     "explanation_es": "Los metales preciosos se miden en onzas troy: una «libra» de oro equivale a 12 oz (unos 373 g), mientras que las plumas se miden con el sistema avoirdupois: 16 oz (unos 453 g).",
     "sources": [
       {
-        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9",
-        "title": "nist.gov"
+        "url": "https://bullionexchanges.com/blog/which-weighs-more-a-pound-of-gold-or-a-pound-of-feathers/",
+        "title": "bullionexchanges.com"
       }
     ],
     "replacementEligible": true,
@@ -3745,14 +3745,14 @@
   {
     "id": "kinda-48",
     "category": "KINDA",
-    "claim": "Angel Falls' \"highest waterfall\" record has fine print.",
-    "claim_es": "El récord de «cascada más alta» del Salto Ángel tiene letra pequeña.",
-    "explanation": "It holds the highest uninterrupted drop (~807 m) of a 979 m total; multi-tier falls change the answer depending on what is measured.",
+    "claim": "Angel Falls' holds the world record for \"tallest waterfall\" on Earth.",
+    "claim_es": "El Salto Ángel tiene un récord por ser la «cascada más alta» de todo el mundo.",
+    "explanation": "It holds the highest UNINTERRUPTED drop (~807 m) of a 979 m total; multi-tier falls change the answer depending on what is measured.",
     "explanation_es": "Tiene la caída ininterrumpida más alta (unos 807 m) dentro de una altura total de 979 m; si se cuentan cascadas de varios niveles, la respuesta depende de qué se mida.",
     "sources": [
       {
-        "url": "https://www.britannica.com/place/Angel-Falls",
-        "title": "britannica.com"
+        "url": "https://www.guinnessworldrecords.com/world-records/highest-waterfall/",
+        "title": "guinnessworldrecords.com"
       }
     ],
     "replacementEligible": true,
@@ -4429,14 +4429,14 @@
   {
     "id": "kinda-84",
     "category": "KINDA",
-    "claim": "Exactly one letter is missing from every U.S. state name.",
+    "claim": "There's one letter missing from every U.S. state name.",
     "claim_es": "A todos los nombres de los estados de Estados Unidos les falta exactamente una letra.",
     "explanation": "The letter Q appears in no state name; every other letter of the alphabet shows up at least once across the 50 states.",
     "explanation_es": "La letra Q no aparece en el nombre de ningún estado; todas las demás letras del alfabeto aparecen al menos una vez entre los 50 estados.",
     "sources": [
       {
-        "url": "https://www.census.gov/library/stories/2020/07/what-letter-is-not-in-any-state-name.html",
-        "title": "census.gov"
+        "url": "https://www.rd.com/article/letter-not-in-any-state-name/",
+        "title": "rd.com"
       }
     ],
     "replacementEligible": true,
@@ -5119,7 +5119,7 @@
     "explanation_es": "La cuchilla deja una punta roma que se siente áspera al rozar la piel. El folículo no se ve afectado, por lo que ni la velocidad de crecimiento ni el grosor cambian.",
     "sources": [
       {
-        "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/expert-answers/hair-removal/faq-20058427",
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/expert-answers/hair-removal/faq-20058427/",
         "title": "mayoclinic.org"
       }
     ],
@@ -5537,7 +5537,7 @@
     "explanation_es": "El chasquido se debe al comportamiento de burbujas de gas en el líquido sinovial. Varios estudios a largo plazo no han encontrado una relación con el deterioro de las articulaciones.",
     "sources": [
       {
-        "url": "https://www.health.harvard.edu/pain/knuckle-cracking-is-it-bad-for-you",
+        "url": "https://www.health.harvard.edu/pain/does-cracking-knuckles-cause-arthritis/",
         "title": "health.harvard.edu"
       }
     ],
@@ -5784,8 +5784,8 @@
     "explanation_es": "Las aves comen granos crudos constantemente en la naturaleza; el arroz no se expande lo suficiente en el estómago de un ave como para hacerle daño.",
     "sources": [
       {
-        "url": "https://www.birdnote.org/listen/shows/does-uncooked-rice-kill-birds",
-        "title": "birdnote.org"
+        "url": "https://www.snopes.com/fact-check/against-the-grain/",
+        "title": "snopes.com"
       }
     ],
     "replacementEligible": true,
