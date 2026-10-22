@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { scoreRound, makeChallenge, CHALLENGE_VERSION } from "../../../src/game.ts";
 import type { Category, Claim } from "../../../src/game.ts";
+import { selectRotatedClaims, validateRotatedClaims, type RotationContext } from "../../../src/rotation.ts";
 import claimData from "../../../src/claims.json" with { type: "json" };
 
 const claims = claimData as Claim[];
@@ -18,7 +19,7 @@ type WildcardUse = { name: (typeof wildcardNames)[number]; round: number; claimI
 type ResultInput = { claims: string[]; answers: (Category | null)[]; life: number | null };
 type StoredRound = { round: number; claim_ids: string[] };
 type Payload = {
-  action: "submit" | "stats" | "challenge" | "swap" | "diagnostics";
+  action: "submit" | "stats" | "challenge" | "swap" | "diagnostics" | "rotation";
   challengeDate: string;
   challengeVersion?: string;
   browserToken?: string;
@@ -40,6 +41,90 @@ const respond = (body: unknown, status = 200) => new Response(JSON.stringify(bod
 
 /** The master library in the compact shape the reconciliation RPC expects. */
 const libraryIndex = claims.map((claim) => ({ id: claim.id, category: claim.category }));
+
+type Admin = ReturnType<typeof createClient>;
+
+type StoredBoard = {
+  challengeId: string;
+  generatedAt: string | null;
+  status: string;
+  created: boolean;
+  rounds: StoredRound[];
+};
+
+/** The board for a date, when it has already been generated. */
+async function loadStoredChallenge(admin: Admin, date: string): Promise<StoredBoard | null> {
+  const { data, error } = await admin
+    .from("challenge_assignments")
+    .select("challenge_id, generated_at, status, rounds")
+    .eq("challenge_id", date)
+    .maybeSingle();
+  if (error || !data) return null;
+  return {
+    challengeId: (data.challenge_id as string) ?? date,
+    generatedAt: (data.generated_at as string) ?? null,
+    status: (data.status as string) ?? "active",
+    created: false,
+    rounds: (data.rounds as StoredRound[]) ?? [],
+  };
+}
+
+/**
+ * Builds the day with the rotation rules.
+ *
+ * The nine claims rotate through the library instead of being consumed: two
+ * claims that have already shared a day never share a day again, a claim is
+ * held back for a cooldown after it was shown to a player, and the fresh period
+ * gives way to a period that mixes new claims with returning ones.
+ *
+ * The solver works in TypeScript so the rules can be proved by tests; the
+ * database re-checks every rule before it stores anything, so an illegal day
+ * can never be persisted. A rejected proposal means the state moved under us,
+ * so the day is solved again from a fresh context.
+ */
+async function generateRotatedChallenge(
+  admin: Admin,
+  date: string,
+): Promise<{ board: StoredBoard | null; error?: string; status?: number }> {
+  const { error: stateError } = await admin.rpc("inventory_ensure_rotation_state");
+  if (stateError) return { board: null, error: "The rotation could not be initialised." };
+
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const { data: context, error: contextError } = await admin.rpc("inventory_rotation_context", { p_date: date });
+    if (contextError || !context?.ok) return { board: null, error: "The rotation inventory could not be read." };
+
+    const solved = selectRotatedClaims(context as unknown as RotationContext);
+    if (!("rounds" in solved)) {
+      // Every claim is either on its cooldown or has already shared a day with
+      // another one: no legal board exists for this date.
+      return {
+        board: null,
+        error: "There are not enough available claims left to build today's challenge.",
+        status: 409,
+      };
+    }
+
+    const { data: commit, error: commitError } = await admin.rpc("inventory_commit_rotation", {
+      p_date: date,
+      p_rounds: solved.rounds,
+    });
+    if (!commitError && commit?.ok) {
+      return {
+        board: {
+          challengeId: (commit.challengeId as string) ?? date,
+          generatedAt: (commit.generatedAt as string) ?? null,
+          status: (commit.status as string) ?? "active",
+          created: Boolean(commit.created),
+          rounds: (commit.rounds as StoredRound[]) ?? solved.rounds,
+        },
+      };
+    }
+    if (commitError && !String(commitError.message ?? "").includes("ROTATION_REJECTED")) {
+      return { board: null, error: "The daily challenge could not be stored." };
+    }
+  }
+  return { board: null, error: "The daily challenge could not be generated." };
+}
 
 Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response("ok", { headers: cors });
@@ -84,17 +169,20 @@ Deno.serve(async (request) => {
       if (importError) return respond({ ok: false, error: "The archived challenge could not be restored." }, 503);
     }
 
-    const { data, error } = await admin.rpc("inventory_get_or_create_challenge", { p_date: body.challengeDate });
-    if (error) {
-      const message = String(error.message ?? "");
-      if (message.includes("INSUFFICIENT_INVENTORY")) {
-        const category = message.split("INSUFFICIENT_INVENTORY:")[1]?.trim() ?? "unknown";
-        return respond({ ok: false, error: `There are not enough unused ${category} claims left to build a challenge.`, category }, 409);
-      }
-      return respond({ ok: false, error: "The daily challenge is unavailable." }, 503);
+    // The board for a date is generated once and shared by every player.
+    const stored = await loadStoredChallenge(admin, body.challengeDate);
+    const generated = stored
+      ? { board: stored, error: "", status: 503 }
+      : await generateRotatedChallenge(admin, body.challengeDate);
+    const board = generated.board;
+    if (!board) {
+      return respond(
+        { ok: false, error: generated.error || "The daily challenge is unavailable." },
+        generated.status ?? 503,
+      );
     }
 
-    const rounds: StoredRound[] = data?.rounds ?? [];
+    const rounds: StoredRound[] = board.rounds;
     // Resolve ids to full claims, and to each claim's permanent replacement, so the
     // client never needs to know the inventory. Swap targets are safe to disclose:
     // they are only shown once a player actually spends the wildcard.
@@ -115,10 +203,10 @@ Deno.serve(async (request) => {
 
     return respond({
       ok: true,
-      challengeId: data?.challengeId ?? body.challengeDate,
-      generatedAt: data?.generatedAt ?? null,
-      status: data?.status ?? "active",
-      created: Boolean(data?.created),
+      challengeId: board.challengeId ?? body.challengeDate,
+      generatedAt: board.generatedAt ?? null,
+      status: board.status ?? "active",
+      created: Boolean(board.created),
       rounds: resolved,
     });
   }
@@ -137,6 +225,39 @@ Deno.serve(async (request) => {
     const { data: dump, error: dumpError } = await admin.rpc("inventory_export");
     if (dumpError) return respond({ ok: false, error: "The inventory could not be exported." }, 503);
     return respond({ ok: true, diagnostics: data, claimUsage: dump?.claimUsage, dailyChallenges: dump?.dailyChallenges });
+  }
+
+  // Preview the rotation for a date without storing it. Runs the same solver and
+  // the same validator the generator uses, so the rules can be inspected against
+  // the live inventory before a day is committed.
+  if (body.action === "rotation") {
+    const expected = Deno.env.get("INVENTORY_ADMIN_TOKEN");
+    const supplied = request.headers.get("x-inventory-token");
+    if (!expected || supplied !== expected) return respond({ ok: false, error: "Not found." }, 404);
+
+    const { error: stateError } = await admin.rpc("inventory_ensure_rotation_state");
+    if (stateError) return respond({ ok: false, error: "The rotation could not be initialised." }, 503);
+
+    const { data: context, error: contextError } = await admin.rpc("inventory_rotation_context", { p_date: body.challengeDate });
+    if (contextError) return respond({ ok: false, error: "The rotation context could not be read." }, 503);
+    if (!context?.ok) return respond({ ok: false, error: String(context?.error ?? "The rotation is not available.") }, 503);
+
+    const rotationContext = context as unknown as RotationContext;
+    const solved = selectRotatedClaims(rotationContext);
+    if (!("rounds" in solved)) return respond({ ok: false, error: solved.error }, 409);
+
+    return respond({
+      ok: true,
+      date: body.challengeDate,
+      phase: solved.phase,
+      composition: solved.composition,
+      degraded: solved.degraded,
+      rounds: solved.rounds,
+      problems: validateRotatedClaims(rotationContext, solved.rounds),
+      thresholds: rotationContext.thresholds,
+      usedCounts: rotationContext.usedCounts,
+      mixingStartedAt: rotationContext.mixingStartedAt,
+    });
   }
 
   if (body.challengeVersion !== challengeVersion) return respond({ ok: false, error: "This challenge version is no longer active." }, 409);

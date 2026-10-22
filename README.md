@@ -8,7 +8,7 @@ The world is full of facts so ridiculous they sound made up, half-truths that hi
 
 Each round presents three surprising claims. Assign one FACT!, one KINDA?, and one BULLSH1T. Complete three rounds to earn up to 10 points. Every claim includes an explanation and sources.
 
-Daily challenges are selected deterministically from the bundled JSON library using the UTC date. The claim library is public in the static app and can be inspected by visitors. Game progress and local results are stored in the browser under the versioned `factually.v2` key.
+Daily challenges are selected server-side, once per date, and the same nine claims are served to every player. The claim library is public in the static app and can be inspected by visitors. Game progress and local results are stored in the browser under the versioned `factually.v2` key.
 
 ## Run locally
 
@@ -32,23 +32,29 @@ pnpm build
 
 Daily challenges are generated **server-side, once per date**, and stored permanently. Every player receives the same nine claims and the same round assignment. Reloading, using another browser, or opening a second session never produces a different challenge.
 
-Two logical data stores hold this state:
+Two logical data stores hold this state, and the rotation adds two tables beside them:
 
 | Store | Table | Purpose |
 |---|---|---|
 | `claim-usage.json` | `public.claim_usage` | Per-claim usage flags and permanent replacement pairing |
 | `daily-challenges.json` | `public.challenge_assignments` | The frozen nine claims for each date |
+| — | `public.challenge_claims` | The same nine, normalised to one row per claim, so the batch rule is an indexed lookup |
+| — | `public.rotation_state` | The threshold snapshot and the date the mixed period began |
 
-Both are exportable to JSON through `public.inventory_export()`, which returns exactly the two documented shapes so the inventory can be inspected and backed up.
+The two files are exportable to JSON through `public.inventory_export()`, which returns exactly the two documented shapes so the inventory can be inspected and backed up.
 
 ### Usage model
 
-Each claim tracks two **independent** flags:
+Each claim tracks two **independent** flags, plus the dates the rotation needs:
 
-- `used_as_main` — it has served as one of the nine primary claims. It can never serve as a main claim again.
-- `used_as_replacement` — it has been consumed as a wildcard replacement. It can never be consumed as a replacement again, but remains eligible as a **main** claim while `used_as_main` is false.
+- `used_as_main` — it has served as one of the nine primary claims at least once.
+- `used_as_replacement` — it has been consumed as a wildcard replacement at least once.
+- `main_usage_date` / `replacement_usage_date` — the **first** time each of those happened, kept for audit.
+- `last_main_usage_date` — the most recent day it was one of the nine.
+- `last_exposure_date` — the most recent day it was shown to a player in **any** capacity. A claim served as a Swap replacement was still shown, so it counts here as well.
+- `main_appearances` — how many days it has been one of the nine.
 
-A claim is permanently exhausted only when **both** are true.
+The two flags stay independent: a claim consumed as a replacement can still be one of the nine, and a claim that has been one of the nine can still be a replacement target.
 
 ### Permanent replacement pairing
 
@@ -59,6 +65,31 @@ The daily selector draws each category's three claims from **three distinct pair
 ### Swap semantics
 
 A claim always resolves to its permanent partner — the same claim, for every player, forever. The global `used_as_replacement` flag records that the partner has been served at least once; it **never** invalidates an already-established assignment. A later player swapping the same claim still receives the same partner, and the response's `consumedNow` flag reports whether that particular request performed the first consumption.
+
+### Claim rotation
+
+The nine claims of a day **rotate** through the library instead of being consumed once and never seen again. `src/rotation.ts` holds the rules, the solver and their tests; the database re-checks every rule before it stores a day, so an illegal board can never be persisted.
+
+Four rules bind, in this order:
+
+1. **Batch rule** — two claims that have ever shared a day may never share a day again. The batch is the whole nine, so the day's claims come from nine different earlier days.
+2. **Swap-pair rule** — at most one member of a permanent swap pair per day, so a Swap can never put a duplicate on the table.
+3. **Cooldown** — a claim cannot be used again until it has been absent for **21 days**. Absence is measured from the last time a player saw it, in any capacity.
+4. **Composition** — the fresh period uses three new claims per category; the mixed period aims for two new and one returning.
+
+The **fresh period** lasts until at least half of every category has been used. The threshold is a snapshot of half the library size, taken the first time the rotation runs, so growing the library later cannot move the switch date. When the threshold is reached the next day is the first **mixed** day, and from then on each category aims for two new and one returning claim.
+
+The mix degrades one step at a time rather than failing a day: `2 new + 1 returning` → `1 new + 2 returning` → `3 new + 0 returning` → `0 new + 3 returning`. The switch is one-way — a day built from the mixed ladder stays mixed.
+
+The rules govern the **nine the server selects**. A Swap is a player-initiated substitution to a fixed partner, and it is exempt from the batch rule and the cooldown check; the replacement it serves does, however, count as an exposure and pushes that claim's cooldown out.
+
+The solver runs in TypeScript so the rules can be proved by tests (`src/rotation.test.ts`, including a three-hundred-day run that checks every rule on every day). The database is still the authority: `inventory_commit_rotation()` validates the shape, the swap pairs, the cooldown and the batch rule, and refuses anything illegal with `ROTATION_REJECTED`.
+
+### Capacity
+
+Unused claims are no longer a finite resource. The rotation recycles the library, so the library does not "run dry"; what limits the system is the **batch rule**. Any two claims may share a day at most once, and each day spends 36 of the `C(C-1)/2` possible pairs, so the rotation lives at most `C(C-1)/72` days: roughly 1,700 days at 350 claims and 4,900 days at 600. In practice a greedy solver runs out of legal combinations much earlier — around day 270 at 350 claims — so the library should keep growing, and a smarter solver would push that date out further.
+
+`public.inventory_diagnostics()` reports the rotation state alongside the pool sizes: the threshold snapshot, how many claims of each category have been used, how many have never been used, and the date the mixed period began.
 
 ### Migration and back-fill
 
@@ -97,26 +128,45 @@ built by pairing **adjacent IDs within each category**:
 (`id`, `category`, `claim`, `explanation`, `sources[]`, `obscurity` 1-10,
 `replacementEligible`) and the requirement that existing claims are never removed.
 
-### Capacity
-
-Selecting 3 main claims per category per day, the current library sustains **33 days** before any category starves (100 KINDA / 100 BULLSHIT at 3/day). FACT lasts 50 days. `public.inventory_diagnostics()` reports remaining capacity and the per-category breakdown; when a category runs out the challenge endpoint returns `409` naming the starved category instead of reusing exhausted claims.
-
 ### Deploying the inventory
 
 Apply the migration and deploy the Edge Function:
 
 ```sh
 supabase db push
-supabase functions deploy community
+supabase functions deploy community --no-verify-jwt
 ```
+
+The rotation adds two migrations: `202610210001_claim_rotation.sql` (the exposure
+dates, the batch history, the rotation state and the three rotation RPCs) and
+`202610210002_claim_rotation_fixes.sql` (the archive import can no longer corrupt
+the inventory, and exposure dates can never move backwards).
 
 Historical challenges are imported automatically: the first time the archive asks
 for a date before the inventory existed, that date's original hash-selected claims
 are frozen as an immutable snapshot. `node scripts/backfill-history.cjs` also
 generates `supabase/backfill-history.sql`, which can be run in the SQL editor to
-pre-populate the same dates in one pass.
+pre-populate the same dates in one pass. The import only records usage for a day
+it actually creates, so it is safe to run again over days that already exist.
 
-### Checking how many days are left
+### Previewing a day before it is stored
+
+The `rotation` action runs the solver and the validator against the live
+inventory without storing anything, so a day can be inspected before it is
+committed. It is guarded by the same admin token as `diagnostics`:
+
+```sh
+curl -X POST "$SUPABASE_URL/functions/v1/community" \
+  -H "content-type: application/json" \
+  -H "x-inventory-token: $INVENTORY_ADMIN_TOKEN" \
+  -d '{"action":"rotation","challengeDate":"2026-10-24","challengeVersion":"claims-v1"}'
+```
+
+The response carries the phase (`fresh` or `mixed`), the composition of each
+category, the proposed rounds, and a `problems` array — empty when the day
+obeys every rule.
+
+### Checking the inventory
 
 Set the admin token once (it enables the guarded `diagnostics` action; without it
 the action returns `404` to everyone):
@@ -132,10 +182,14 @@ inventory summary:
 npm run inventory:export
 ```
 
-This writes `data/claim-usage.json` and `data/daily-challenges.json` and prints the
-remaining daily-challenge capacity per category, unused main claims, exhausted
-claims, available replacements, and any broken pairs. The token is read from the
-`INVENTORY_ADMIN_TOKEN` env var or `~/.factually-inventory-token`.
+This writes `data/claim-usage.json` and `data/daily-challenges.json` and prints
+the rotation state — the phase, the threshold snapshot, how many claims of each
+category have been used and how many have never been used — alongside the pool
+sizes, exhausted claims, available replacements and any broken pairs. The token
+is read from the `INVENTORY_ADMIN_TOKEN` env var or `~/.factually-inventory-token`.
+
+The "never used" count is the number that decides when the library needs more
+claims: the mixed period spends two of them per category per day.
 
 With the same token you can also read the raw JSON from the Supabase SQL editor:
 

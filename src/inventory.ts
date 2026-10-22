@@ -16,6 +16,7 @@
 // spec, which is how they are backed up and inspected.
 
 import type { Category, Claim } from './game';
+import { shuffle } from './rotation';
 
 export const CATEGORIES: Category[] = ['FACT', 'KINDA', 'BULLSHIT'];
 export const CLAIMS_PER_ROUND = 3;
@@ -319,17 +320,10 @@ export function selectDailyClaims(
 }
 
 /**
- * Fisher-Yates. Draws exactly `n - 1` values from `random`, avoiding the bias a
- * naive `sort(() => random() - 0.5)` would introduce.
+ * Fisher-Yates. Lives with the rotation module so the Edge Function can bundle
+ * the rotation without pulling in this file.
  */
-export function shuffle<T>(input: T[], random: () => number = Math.random): T[] {
-  const out = [...input];
-  for (let i = out.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out;
-}
+export { shuffle };
 
 // ---------------------------------------------------------------------------
 // Challenge store helpers

@@ -83,14 +83,28 @@ if (!adminToken) {
   console.log(`wrote ${path.relative(ROOT, usagePath)}      (${Object.keys(data.claimUsage?.claims ?? {}).length} claims)`);
   console.log(`wrote ${path.relative(ROOT, challengesPath)} (${Object.keys(data.dailyChallenges?.challenges ?? {}).length} challenges)`);
   console.log('');
-  console.log(`Remaining daily challenges: ${d.remainingCapacity}`);
-  console.log(`  per category:  FACT ${d.capacityPerCategory.FACT}  KINDA ${d.capacityPerCategory.KINDA}  BULLSHIT ${d.capacityPerCategory.BULLSHIT}`);
   console.log(`  unused main:   FACT ${d.unusedMain.FACT}  KINDA ${d.unusedMain.KINDA}  BULLSHIT ${d.unusedMain.BULLSHIT}`);
   console.log(`  exhausted:     FACT ${d.exhausted.FACT}  KINDA ${d.exhausted.KINDA}  BULLSHIT ${d.exhausted.BULLSHIT}`);
   console.log(`  available replacements: ${d.availableReplacements}`);
   console.log(`  broken pairs: ${(d.brokenPairs ?? []).length}`);
-  if (d.remainingCapacity <= 7) {
-    console.log(`\nWARNING: only ${d.remainingCapacity} day(s) of claims remain. Add claims to src/claims.json before the pool runs dry.`);
+  console.log(`  stored days: ${d.storedDays ?? 0}`);
+
+  const r = d.rotation;
+  if (r) {
+    const phase = r.mixingStartedAt ? `mixed since ${r.mixingStartedAt}` : 'fresh';
+    console.log(`\nRotation: ${phase}`);
+    console.log(`  thresholds:      ${['FACT', 'KINDA', 'BULLSHIT'].map((c) => `${c} ${r.thresholds?.[c] ?? 0}`).join('  ')}`);
+    console.log(`  used:            ${['FACT', 'KINDA', 'BULLSHIT'].map((c) => `${c} ${r.usedCounts?.[c] ?? 0}`).join('  ')}`);
+    console.log(`  never used:      ${['FACT', 'KINDA', 'BULLSHIT'].map((c) => `${c} ${r.unusedCounts?.[c] ?? 0}`).join('  ')}`);
+
+    // The mixed period spends two never-used claims per category per day, so
+    // that is how long the new material lasts before the library needs more.
+    const daysLeft = ['FACT', 'KINDA', 'BULLSHIT'].map((c) => Math.floor((r.unusedCounts?.[c] ?? 0) / 2));
+    const shortest = Math.min(...daysLeft);
+    console.log(`  new material lasts: ${shortest} day(s) at the mixed rate of 2 per category per day`);
+    if (shortest <= 14) {
+      console.log(`\nWARNING: only ${shortest} day(s) of never-used claims left for the shortest category. Add claims to src/claims.json.`);
+    }
   }
 })().catch((error) => {
   console.error(`Export failed: ${error instanceof Error ? error.message : error}`);
