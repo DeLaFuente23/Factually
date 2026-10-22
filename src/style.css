@@ -81,7 +81,7 @@
 .selectors button.wrong-choice,.selectors button.muted-wrong{opacity:.4!important}
 .full-context{padding-bottom:12px}
 .claimcard.revealed-card:has(.full-context) .selectors{display:none}
-.share-text{width:min(680px,100%);min-height:0;height:auto;overflow:hidden;resize:none;display:block;white-space:pre-wrap}
+.share-text{width:min(680px,100%);min-height:0;height:auto;overflow:hidden;resize:none;display:block;white-space:pre-wrap;overflow-wrap:break-word;overflow-wrap:anywhere;word-break:break-word}
 .game:has(.final) .stats{display:none}
 .wildcard-review-dropdown{text-align:left;border-top:1px solid #756d58;border-bottom:1px solid #756d58;padding:12px 8px;margin-top:8px}
 .wildcard-review-dropdown summary{cursor:pointer;font-size:21px;color:var(--cream)}
@@ -152,6 +152,9 @@
 .community-average .next-game{margin-top:8px}
 .score-distribution{height:190px;position:relative;padding:56px 8px 32px;border-bottom:1px solid var(--line)}
 .bell-chart{display:block;width:100%;height:100%}
+/* Plot area wrapper: the SVG fills it exactly, so the score marker (a % of this
+   box) maps straight onto the chart's 0..10 scale with no padding offset. */
+.bell-plot{position:relative;height:100%}
 .bell-area{fill:rgba(116,181,163,.22)}
 .bell-line{fill:none;stroke:var(--cream);stroke-width:2;vector-effect:non-scaling-stroke}
 .bell-axis{position:absolute;left:8px;right:8px;bottom:11px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
@@ -170,7 +173,7 @@
 .community-stat .stat-empty{margin:0 0 10px;color:var(--muted)}
 .community-stat .stat-mode{margin:12px 0 0;font-size:13px;letter-spacing:.04em;color:#9fb0ad}
 @media(max-width:700px){.community-overview{grid-template-columns:1fr;gap:16px;padding:18px}.community-average{border-right:0;border-bottom:1px solid var(--line);padding:0 0 16px}.community-highlights{grid-template-columns:1fr}.score-distribution{height:190px;padding:56px 8px 32px}}
-.player-score-marker{position:absolute;z-index:2;top:56px;bottom:32px;width:2px;background:var(--teal);transform:translateX(-50%);pointer-events:none}
+.player-score-marker{position:absolute;z-index:2;top:0;bottom:0;width:2px;background:var(--teal);transform:translateX(-50%);pointer-events:none}
 .player-score-marker b{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.08em;color:var(--teal);white-space:nowrap}
 .next-game{display:block;font-size:14px;letter-spacing:.06em;color:#c9b994;font-variant-numeric:tabular-nums}
 .final-stats{margin:22px auto 6px;text-align:center}

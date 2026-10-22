@@ -68,6 +68,35 @@ Past daily challenges (`2026-10-13` onward) were originally selected by a determ
 
 > **Known edge case:** the `2026-10-14` historical challenge contains both members of a replacement pair (`bull-83` and `bull-84`), which the newer pair-exclusion rule forbids. History is preserved unchanged, so a Swap on either claim in that one past challenge is refused rather than duplicating a claim on screen.
 
+### Adding claims to the library
+
+The Edge Function bundles `src/claims.json` at deploy time, and the server is what
+selects the day's nine. **Pushing a new library to GitHub is not enough** — the
+function has to be redeployed, or the database never learns the new claims:
+
+```sh
+npm run claims:validate     # check the library against git HEAD
+supabase functions deploy community
+```
+
+Reconciliation is automatic: the next `challenge` request appends the new IDs as
+unused (`used_as_main = false`) and repairs any missing pairing. Existing usage
+records are never reset and existing pairs are never re-paired.
+
+Two rules govern how claims may be added, because the permanent swap pairing is
+built by pairing **adjacent IDs within each category**:
+
+1. **Add an even number of claims per category.** An odd count leaves one claim per
+   category without a swap partner, and `validateLibrary()` rejects the library.
+2. **Continue the numbering from the bottom of the category** (`fact-151`+,
+   `kinda-101`+, `bull-101`+). A new ID that sorts *between* existing IDs shifts the
+   pairing of every claim after it, and the database keeps the old pairs — leaving
+   claims pointing at partners that are already paired elsewhere.
+
+`npm run claims:validate` enforces both rules, plus the per-claim field contract
+(`id`, `category`, `claim`, `explanation`, `sources[]`, `obscurity` 1-10,
+`replacementEligible`) and the requirement that existing claims are never removed.
+
 ### Capacity
 
 Selecting 3 main claims per category per day, the current library sustains **33 days** before any category starves (100 KINDA / 100 BULLSHIT at 3/day). FACT lasts 50 days. `public.inventory_diagnostics()` reports remaining capacity and the per-category breakdown; when a category runs out the challenge endpoint returns `409` naming the starved category instead of reusing exhausted claims.
