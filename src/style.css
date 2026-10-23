@@ -119,8 +119,6 @@
 .claim-row .row-state{font-size:15px;letter-spacing:.06em;color:#c9b994;white-space:nowrap}
 .claim-row .row-state.picked{color:var(--cream);border:1px solid #a99a75;padding:3px 9px}
 .claim-row .row-state.correct{color:#8fc9b5}
-.claim-row .row-state.partial-3{color:#e8d18a}
-.claim-row .row-state.partial-2{color:#e6a56f}
 .claim-row .row-state.wrong{color:#d99e8b}
 .claim-row .row-state.hint{color:var(--cream)}
 .claim-row .row-chevron{font-size:22px;line-height:1;color:#8fc9b5}
