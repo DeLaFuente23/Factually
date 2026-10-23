@@ -53,12 +53,9 @@
 .claimcard.revealed-card{cursor:pointer;min-height:390px}
 .claimcard.revealed-card .selectors{margin-top:auto}
 /* Desktop reveal tones. The mobile claim rows already colour the category when the
-   round ends; these carry the same soft green/yellow/orange/red to the desktop cards
-   without turning the whole card into a traffic light. */
-.claimcard.earned-6{background:linear-gradient(0deg,rgba(143,201,181,.18),rgba(143,201,181,.05)),#102e42}
-.claimcard.earned-3{background:linear-gradient(0deg,rgba(232,209,138,.16),rgba(232,209,138,.05)),#102e42}
-.claimcard.earned-2{background:linear-gradient(0deg,rgba(230,165,111,.16),rgba(230,165,111,.05)),#102e42}
-.claimcard.earned-0{background:linear-gradient(0deg,rgba(217,158,139,.16),rgba(217,158,139,.05)),#102e42}
+   round ends; these carry the same soft green/yellow/orange/red to the desktop cards.
+   Only the text is tinted: the card keeps its normal background, so the verdict reads
+   as a score, not as a traffic light. */
 .claimcard.earned-6 .verdict-word,.claimcard.earned-6 .earned-points{color:#9ed7c2}
 .claimcard.earned-3 .verdict-word,.claimcard.earned-3 .earned-points{color:#e8d18a}
 .claimcard.earned-2 .verdict-word,.claimcard.earned-2 .earned-points{color:#e6a56f}
@@ -122,6 +119,8 @@
 .claim-row .row-state{font-size:15px;letter-spacing:.06em;color:#c9b994;white-space:nowrap}
 .claim-row .row-state.picked{color:var(--cream);border:1px solid #a99a75;padding:3px 9px}
 .claim-row .row-state.correct{color:#8fc9b5}
+.claim-row .row-state.partial-3{color:#e8d18a}
+.claim-row .row-state.partial-2{color:#e6a56f}
 .claim-row .row-state.wrong{color:#d99e8b}
 .claim-row .row-state.hint{color:var(--cream)}
 .claim-row .row-chevron{font-size:22px;line-height:1;color:#8fc9b5}
@@ -168,7 +167,12 @@
 .bell-plot{position:relative;height:100%}
 .bell-area{fill:rgba(116,181,163,.22)}
 .bell-line{fill:none;stroke:var(--cream);stroke-width:2;vector-effect:non-scaling-stroke}
-.bell-axis{position:absolute;left:8px;right:8px;bottom:11px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.bell-axis{position:absolute;left:8px;right:8px;bottom:11px;height:14px;font-size:12px;color:var(--muted)}
+/* Ticks are placed at their true percentage so the score marker (also a percentage of
+   the same plot) lands exactly above its label, not just near it. */
+.bell-axis span{position:absolute;top:0;transform:translateX(-50%)}
+.bell-axis span:first-child{transform:none}
+.bell-axis span:last-child{transform:translateX(-100%)}
 .distribution-caption{position:absolute;top:3px;left:50%;transform:translateX(-50%);font-size:16px;color:var(--muted);white-space:nowrap}
 .community-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .community-stat{min-width:0;padding:18px 20px;border:1px solid var(--line);background:rgba(16,46,66,.45)}
@@ -197,6 +201,6 @@
 .intro-panel>p:not(.eyebrow){font-size:19px;line-height:1.4;color:#e3d9c8}
 .intro-panel .definitions{margin:18px 0}
 .intro-close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--cream);font-size:22px;line-height:1;padding:6px;cursor:pointer}
-.intro-tools{display:flex;justify-content:flex-end;margin:0 40px 10px 0}
+.intro-tools{display:flex;justify-content:flex-start;margin:0 0 12px}
 .intro-tools .language-toggle{margin-left:0}
 .intro-panel .rules-play{margin-top:30px}

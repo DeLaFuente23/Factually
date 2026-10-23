@@ -1509,8 +1509,8 @@
     "explanation_es": "El alcohol industrial desnaturalizado, manipulado por contrabandistas, envenenaba a quienes lo bebían: un capítulo sombrío de la política de aplicación de la ley.",
     "sources": [
       {
-        "url": "https://www.smithsonianmag.com/",
-        "title": "smithsonianmag.com"
+        "url": "https://www.atlasobscura.com/articles/poison-alcohol-prohibition/",
+        "title": "atlasobscura.com"
       }
     ],
     "replacementEligible": true,
@@ -1528,8 +1528,8 @@
     "explanation_es": "El Día H, el 3 de septiembre de 1967, todo el país pasó de conducir por la izquierda a hacerlo por la derecha mediante un cambio coordinado en un solo día.",
     "sources": [
       {
-        "url": "https://www.trafikverket.se/",
-        "title": "trafikverket.se"
+        "url": "https://www.mentalfloss.com/history/day-everyone-sweden-had-start-driving-other-side-road",
+        "title": "mentalfloss.com"
       }
     ],
     "replacementEligible": true,
@@ -2035,13 +2035,13 @@
   {
     "id": "fact-108",
     "category": "FACT",
-    "claim": "The world's shortest commercial flight lasts about a minute.",
-    "claim_es": "El vuelo comercial más corto del mundo dura aproximadamente un minuto.",
+    "claim": "The world's shortest flight lasts about a minute.",
+    "claim_es": "El vuelo más corto del mundo dura aproximadamente un minuto.",
     "explanation": "Loganair's Westray–Papa Westray hop covers 2.7 km; with a tailwind the scheduled flight takes ~53 seconds.",
     "explanation_es": "El vuelo de Loganair entre Westray y Papa Westray recorre 2,7 km; con viento a favor, el trayecto programado dura unos 53 segundos.",
     "sources": [
       {
-        "url": "https://www.guinnessworldrecords.com/world-records/shortest-commercial-flight",
+        "url": "https://www.guinnessworldrecords.com/world-records/63191-shortest-domestic-scheduled-flight",
         "title": "guinnessworldrecords.com"
       }
     ],
@@ -3618,8 +3618,8 @@
     "explanation_es": "Algunos dinosaurios eran más largos, pero ninguno pesaba más; con unas 150 toneladas o más, el récord de la ballena azul necesita la aclaración «por masa».",
     "sources": [
       {
-        "url": "https://ocean.si.edu/ocean-life/marine-mammals/blue-whale",
-        "title": "ocean.si.edu"
+        "url": "https://www.ucdavis.edu/blog/slimming-down-colossal-fossil-whale",
+        "title": "ucdavis.edu"
       }
     ],
     "replacementEligible": true,
@@ -3903,8 +3903,8 @@
     "explanation_es": "Durante la hibernación bajo el agua, especies como la tortuga del río Fitzroy absorben oxígeno del agua mediante la respiración cloacal; en tierra usan sus pulmones normalmente.",
     "sources": [
       {
-        "url": "https://www.australiangeographic.com.au/",
-        "title": "australiangeographic.com.au"
+        "url": "https://www.mcgill.ca/oss/article/did-you-know/turtles-breathe-out-their-butt",
+        "title": "mcgill.ca"
       }
     ],
     "replacementEligible": true,
@@ -4530,8 +4530,8 @@
     "explanation_es": "El petricor se debe en gran parte a la geosmina, un compuesto liberado en forma de aerosol por bacterias del suelo del género Streptomyces cuando las gotas de lluvia golpean el suelo.",
     "sources": [
       {
-        "url": "https://news.mit.edu/2015/rainfall-smell-0604",
-        "title": "news.mit.edu"
+        "url": "https://www.smithsonianmag.com/science-nature/what-makes-rain-smell-so-good-13806085/",
+        "title": "smithsonianmag.com"
       }
     ],
     "replacementEligible": true,
@@ -5005,7 +5005,7 @@
     "explanation_es": "Ninguna estructura hecha por el ser humano puede verse a simple vista desde la Luna. Incluso desde la órbita terrestre, la muralla se confunde con el terreno. Los astronautas del programa Apolo lo confirmaron.",
     "sources": [
       {
-        "url": "https://www.nasa.gov/vision/space/workinginspace/great_wall.html",
+        "url": "https://www.nasa.gov/image-article/great-wall/",
         "title": "nasa.gov"
       }
     ],
@@ -5917,8 +5917,8 @@
     "explanation_es": "Edison desarrolló la primera bombilla comercialmente viable; Swan, Davy y otros ya habían creado luces eléctricas funcionales décadas antes.",
     "sources": [
       {
-        "url": "https://www.energy.gov/articles/history-light-bulb",
-        "title": "energy.gov"
+        "url": "https://www.smithsonianmag.com/history/how-thomas-edison-tricked-the-press-into-believing-hed-invented-the-light-bulb-180982406/",
+        "title": "smithsonianmag.com"
       }
     ],
     "replacementEligible": true,
