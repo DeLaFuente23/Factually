@@ -56,10 +56,10 @@
    round ends; these carry the same soft green/yellow/orange/red to the desktop cards.
    Only the text is tinted: the card keeps its normal background, so the verdict reads
    as a score, not as a traffic light. */
-.claimcard.earned-6 .verdict-word,.claimcard.earned-6 .earned-points{color:#9ed7c2}
-.claimcard.earned-3 .verdict-word,.claimcard.earned-3 .earned-points{color:#e8d18a}
-.claimcard.earned-2 .verdict-word,.claimcard.earned-2 .earned-points{color:#e6a56f}
-.claimcard.earned-0 .verdict-word,.claimcard.earned-0 .earned-points{color:#d99e8b}
+.claimcard.earned-6 .verdict-word,.claimcard.earned-6 .earned-points,.review.earned-6 .verdict-word{color:#9ed7c2}
+.claimcard.earned-3 .verdict-word,.claimcard.earned-3 .earned-points,.review.earned-3 .verdict-word{color:#e8d18a}
+.claimcard.earned-2 .verdict-word,.claimcard.earned-2 .earned-points,.review.earned-2 .verdict-word{color:#e6a56f}
+.claimcard.earned-0 .verdict-word,.claimcard.earned-0 .earned-points,.review.earned-0 .verdict-word{color:#d99e8b}
 .reveal-summary{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;padding:14px 6px}
 .reveal-summary>b{font-size:clamp(23px,2vw,30px);color:var(--cream)}
 .reveal-summary p{margin:0;font-size:clamp(19px,1.65vw,24px);line-height:1.35}
@@ -108,7 +108,10 @@
 .final>details{display:block;text-align:left;border:0;border-top:1px solid #756d58;padding:12px 8px;margin:0}
 .final>details:last-child{border-bottom:1px solid #756d58}
 .final>details summary{cursor:pointer;font-size:21px}
-.review{border:1px solid #756d58}
+.review{border:1px solid #756d58;padding:12px 14px;margin:10px 0}
+.review-verdict{display:block;font-size:clamp(22px,2vw,27px);letter-spacing:.04em;line-height:1.1;margin-bottom:7px}
+.review>p{margin:10px 0}
+.review>a{font-size:17px}
 @media(max-width:600px){.full-context p{font-size:17px}.truth-category{font-size:29px}}
 /* Mobile: compressed claim rows + full-screen card sheet */
 .mobile-claims{display:flex;flex-direction:column;gap:10px;margin:4px 0 6px}
