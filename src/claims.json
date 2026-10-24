@@ -4393,8 +4393,8 @@
     "category": "KINDA",
     "claim": "It is impossible to hum while pinching your nose shut.",
     "claim_es": "Es imposible tararear mientras te aprietas la nariz para cerrarla.",
-    "explanation": "Humming requires air flowing through the nasal passage; block the exit and your vocal cords can no longer sustain the vibration.",
-    "explanation_es": "Para tararear, el aire debe pasar por las fosas nasales; si bloqueas la salida, las cuerdas vocales ya no pueden mantener la vibración necesaria.",
+    "explanation": "You may produce some sort of sound if you try, but humming requires air flowing through the nasal passage; block the exit and your vocal cords can no longer sustain the vibration.",
+    "explanation_es": "Puede que produzcas algún tipo de sonido si lo intentas, pero para tararear el aire debe pasar por las fosas nasales; si bloqueas la salida, las cuerdas vocales ya no pueden mantener la vibración necesaria.",
     "sources": [
       {
         "url": "https://www.the-standard.org/news/fun-fact-friday-plug-your-hums/article_66eb4552-548d-11ec-b33f-076f9767ca65.html",
