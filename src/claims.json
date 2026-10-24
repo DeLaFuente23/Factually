@@ -331,8 +331,8 @@
     "explanation_es": "Su corazón se detiene y hasta el 65 % del agua de su cuerpo se convierte en hielo; la glucosa actúa como anticongelante hasta que la primavera las revive.",
     "sources": [
       {
-        "url": "https://www.nps.gov/dena/learn/nature/amphibians.htm",
-        "title": "nps.gov"
+        "url": "https://www.smithsonianmag.com/smart-news/these-frogs-turn-nearly-invisible-while-sleeping-180981365/",
+        "title": "smithsonianmag.com"
       }
     ],
     "replacementEligible": true,
@@ -1414,8 +1414,8 @@
     "explanation_es": "En 1814, la rotura de una cuba de la cervecería Horse Shoe envió una ola de cerveza porter por el barrio pobre de St Giles, derribando viviendas: fue un verdadero desastre industrial.",
     "sources": [
       {
-        "url": "https://www.cityoflondon.gov.uk/things-to-do/history-and-heritage/london-metropolitan-archives",
-        "title": "cityoflondon.gov.uk"
+        "url": "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-London-Beer-Flood-of-1814/",
+        "title": "historic-uk.com"
       }
     ],
     "replacementEligible": true,
@@ -2250,8 +2250,8 @@
     "explanation_es": "Los átomos son aproximadamente un 99,9999999 % espacio vacío. Si se eliminara ese espacio, la materia de 8.000 millones de personas ocuparía el volumen de un cubo, aunque pesaría miles de millones de toneladas.",
     "sources": [
       {
-        "url": "https://home.cern/science/physics/standard-model",
-        "title": "home.cern"
+        "url": "https://blog.sciencemuseum.org.uk/10-bonkers-things-about-the-world/",
+        "title": "blog.sciencemuseum.org.uk"
       }
     ],
     "replacementEligible": true,
@@ -3713,8 +3713,8 @@
     "explanation_es": "En los Juegos de Londres de 1908, la carrera fue desde el castillo de Windsor hasta el estadio y terminó frente al palco real. Esa ruta arbitraria se convirtió en el estándar mundial en 1921.",
     "sources": [
       {
-        "url": "https://olympics.com/en/olympic-games/olympic-marathon",
-        "title": "olympics.com"
+        "url": "https://www.britannica.com/sports/marathon-race",
+        "title": "britannica.com"
       }
     ],
     "replacementEligible": true,
@@ -4397,8 +4397,8 @@
     "explanation_es": "Para tararear, el aire debe pasar por las fosas nasales; si bloqueas la salida, las cuerdas vocales ya no pueden mantener la vibración necesaria.",
     "sources": [
       {
-        "url": "https://www.exploratorium.edu/",
-        "title": "exploratorium.edu"
+        "url": "https://www.the-standard.org/news/fun-fact-friday-plug-your-hums/article_66eb4552-548d-11ec-b33f-076f9767ca65.html",
+        "title": "the-standard.org"
       }
     ],
     "replacementEligible": true,
@@ -5854,14 +5854,14 @@
   {
     "id": "bull-59",
     "category": "BULLSHIT",
-    "claim": "Elephants are the only animals that cannot jump.",
-    "claim_es": "Los elefantes son los únicos animales que no pueden saltar.",
+    "claim": "Elephants are the only creatures alive today that cannot jump.",
+    "claim_es": "Los elefantes son las únicas criaturas vivas en la actualidad que no pueden saltar.",
     "explanation": "Sloths, hippos, and rhinos also cannot jump; the limitation is shared physics, not elephant exclusivity.",
     "explanation_es": "Los perezosos, hipopótamos y rinocerontes tampoco pueden saltar; es una limitación física compartida, no exclusiva de los elefantes.",
     "sources": [
       {
-        "url": "https://www.smithsonianmag.com/science-nature/why-elephants-cant-jump-11503944/",
-        "title": "smithsonianmag.com"
+        "url": "https://www.animalsaroundtheglobe.com/animals-that-cant-jump-1-00090/",
+        "title": "animalsaroundtheglobe.com"
       }
     ],
     "replacementEligible": true,
@@ -6126,8 +6126,8 @@
     "explanation_es": "Dorar la carne desarrolla sabor mediante la reacción de Maillard, pero la carne pierde humedad de todos modos: nada queda sellado.",
     "sources": [
       {
-        "url": "https://www.exploratorium.edu/food/searing-meat",
-        "title": "exploratorium.edu"
+        "url": "https://kauf-dein-steak.de/en/blogs/steak-mythen-auf-dem-prufstand/myth-searing-meat-seals-in-the-juices",
+        "title": "kauf-dein-steak.de"
       }
     ],
     "replacementEligible": true,
