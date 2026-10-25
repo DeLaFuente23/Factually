@@ -711,8 +711,8 @@
     "explanation_es": "Los cuervos regañan y se lanzan en picada contra personas específicas durante años; otros que nunca vieron a esa persona se suman después de aprender del grupo.",
     "sources": [
       {
-        "url": "https://royalsocietypublishing.org/doi/10.1098/rspb.2011.0956",
-        "title": "royalsocietypublishing.org"
+        "url": "https://www.discovermagazine.com/grudge-holding-crows-pass-on-their-anger-to-family-and-friends-360",
+        "title": "discovermagazine.com"
       }
     ],
     "replacementEligible": true,
@@ -1124,13 +1124,13 @@
     "id": "fact-60",
     "category": "FACT",
     "claim": "The Polish army officially enlisted a bear.",
-    "claim_es": "El ejército polaco alistó oficialmente a un oso.",
+    "claim_es": "El ejército polaco enlistó oficialmente a un oso.",
     "explanation": "Wojtek the Syrian brown bear held a service rank, drank beer with soldiers, and hauled artillery crates at Monte Cassino.",
     "explanation_es": "Wojtek, un oso pardo sirio, tenía un rango militar, bebía cerveza con los soldados y transportaba cajas de municiones en Montecassino.",
     "sources": [
       {
-        "url": "https://www.si.edu/",
-        "title": "si.edu"
+        "url": "https://www.bbc.com/news/articles/cy4nd3n33yeo",
+        "title": "bbc.com"
       }
     ],
     "replacementEligible": true,
@@ -1262,8 +1262,8 @@
     "explanation_es": "En la guerra anglo-zanzibariana de 1896, los barcos británicos abrieron fuego a las 9:02 a. m.; el sultán se rindió antes de las 9:40. Duró unos 38 a 45 minutos.",
     "sources": [
       {
-        "url": "https://www.guinnessworldrecords.com/world-records/shortest-war",
-        "title": "guinnessworldrecords.com"
+        "url": "https://www.atlasobscura.com/articles/worlds-shortest-war",
+        "title": "atlasobscura.com"
       }
     ],
     "replacementEligible": true,
@@ -4106,14 +4106,14 @@
   {
     "id": "kinda-67",
     "category": "KINDA",
-    "claim": "You can survive a very long time on nothing but potatoes and butter.",
-    "claim_es": "Puedes sobrevivir muchísimo tiempo comiendo solo papas y mantequilla.",
-    "explanation": "Potatoes supply nearly all essential amino acids plus carbs; butter supplies the missing fats and vitamins A and D (molybdenum eventually runs out).",
-    "explanation_es": "Las papas aportan casi todos los aminoácidos esenciales y carbohidratos; la mantequilla aporta las grasas y las vitaminas A y D que faltan (aunque con el tiempo se agota el molibdeno).",
+    "claim": "A human can survive on nothing but potatoes and butter.",
+    "claim_es": "El ser humano puede sobrevivir comiendo solo papas y mantequilla.",
+    "explanation": "While this combination provides basic macronutrients to survive for a period, it is unbalanced and lacks essential vitamins and minerals needed to stay healthy long-term.",
+    "explanation_es": "Aunque esta combinación provee los macronutrientes básicos para sobrevivir un tiempo, es desequilibrada y carece de vitaminas y minerales esenciales para mantenerse sano a largo plazo.",
     "sources": [
       {
-        "url": "https://nutrition.org/",
-        "title": "nutrition.org"
+        "url": "https://www.snopes.com/fact-check/potato-butter-diet/",
+        "title": "snopes.com"
       }
     ],
     "replacementEligible": true,
@@ -4321,8 +4321,8 @@
     "explanation_es": "En Longyearbyen, el permafrost conserva intactos los cuerpos enterrados —y sus virus—, por lo que trasladan al continente a las personas con enfermedades terminales para que fallezcan allí.",
     "sources": [
       {
-        "url": "https://www.bbc.com/news/magazine-26969850",
-        "title": "bbc.com"
+        "url": "https://www.theguardian.com/cities/2015/sep/30/where-in-the-world-is-it-illegal-to-die",
+        "title": "theguardian.com"
       }
     ],
     "replacementEligible": true,
@@ -4676,14 +4676,14 @@
   {
     "id": "kinda-97",
     "category": "KINDA",
-    "claim": "A crocodile is physically incapable of sticking its tongue out.",
-    "claim_es": "Un cocodrilo es físicamente incapaz de sacar la lengua.",
-    "explanation": "A fleshy membrane anchors the tongue to the roof of the mouth — a seal that keeps the airway closed while submerged.",
-    "explanation_es": "Una membrana carnosa fija la lengua al techo de la boca; este sello ayuda a mantener cerradas las vías respiratorias mientras está sumergido.",
+    "claim": "Crocodiles and alligators are physically incapable of sticking their tongue out.",
+    "claim_es": "Los cocodrilos y los caimanes son físicamente incapaces de sacar la lengua.",
+    "explanation": "Although crocodiles and alligators are very similar, only crocodiles have a fleshy membrane anchoring their tongue to the roof of the mouth, which prevents them from sticking it out.",
+    "explanation_es": "Aunque los cocodrilos y los caimanes son muy similares, solo los cocodrilos tienen una membrana carnosa que les une la lengua al paladar, lo que les impide sacarla.",
     "sources": [
       {
-        "url": "https://www.science.org/content/article/why-crocodiles-cant-stick-out-their-tongues",
-        "title": "science.org"
+        "url": "https://www.iflscience.com/there-are-many-differences-between-alligators-and-crocs-but-only-one-can-stick-its-tongue-out-76621",
+        "title": "iflscience.com"
       }
     ],
     "replacementEligible": true,
@@ -5081,8 +5081,8 @@
     "explanation_es": "Las microondas penetran solo hasta unos pocos centímetros y hacen vibrar allí las moléculas de agua. Después, el calor se transmite hacia el interior, igual que en un horno convencional.",
     "sources": [
       {
-        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/microwave-ovens-and-food-safety",
-        "title": "fsis.usda.gov"
+        "url": "https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-ovens",
+        "title": "fda.gov"
       }
     ],
     "replacementEligible": true,
@@ -5176,8 +5176,8 @@
     "explanation_es": "Los pulpos sí tienen tres corazones, y el principal deja de latir mientras nadan —por eso prefieren desplazarse arrastrándose—, pero la idea de que lo detienen al dormir es inventada.",
     "sources": [
       {
-        "url": "https://ocean.si.edu/ocean-life/invertebrates/giant-pacific-octopus",
-        "title": "ocean.si.edu"
+        "url": "https://octonation.com/how-many-hearts-does-an-octopus-have/",
+        "title": "octonation.com"
       }
     ],
     "replacementEligible": true,
@@ -5936,8 +5936,8 @@
     "explanation_es": "El Génesis nunca identifica la fruta; la manzana se asoció con ella por un juego de palabras en latín: *malum* significa tanto «mal» como «manzana».",
     "sources": [
       {
-        "url": "https://www.biblicalarchaeology.org/daily/biblical-topics/bible-interpretation/what-was-the-forbidden-fruit/",
-        "title": "biblicalarchaeology.org"
+        "url": "https://www.compassion.com/blog/forbidden-fruit-and-the-origins-of-poverty/",
+        "title": "compassion.com"
       }
     ],
     "replacementEligible": true,
