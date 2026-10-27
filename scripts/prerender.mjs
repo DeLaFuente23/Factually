@@ -91,11 +91,12 @@ for (const lang of ['EN', 'ES']) {
 }
 write('app.html', page(pageMeta({ name: 'play', lang: 'EN' }), 'EN', ''));
 write('_redirects', [
+  // Rewrite to the extensionless path: Pages answers /app.html itself with a redirect to /app.
   '# Play routes are rendered in the browser from a noindex shell.',
-  '/play /app.html 200',
-  '/es/jugar /app.html 200',
-  '/archive/:date/play /app.html 200',
-  '/es/archivo/:date/jugar /app.html 200',
+  '/play /app 200',
+  '/es/jugar /app 200',
+  '/archive/:date/play /app 200',
+  '/es/archivo/:date/jugar /app 200',
   '',
 ].join('\n'));
 
