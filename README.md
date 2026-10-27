@@ -6,9 +6,29 @@ The world is full of facts so ridiculous they sound made up, half-truths that hi
 
 ## How to play
 
-Each round presents three surprising claims. Assign one FACT!, one KINDA?, and one BULLSH1T. Complete three rounds to earn up to 10 points. Every claim includes an explanation and sources.
+Each round presents three surprising claims. Assign one FACT., one KINDA?, and one NOPE! (in Spanish: FACTO., ¿SUPONGO? and ¡NEL!). Complete three rounds to earn up to 10 points. Every claim includes an explanation and sources.
 
 Daily challenges are selected server-side, once per date, and the same nine claims are served to every player. The claim library is public in the static app and can be inspected by visitors. Game progress and local results are stored in the browser under the versioned `factually.v2` key.
+
+Verdict labels are display-only: `src/verdicts.ts` maps the stored values (`FACT`, `KINDA`, `BULLSHIT`) to what players read in each language. The database, the Edge Function and saved games keep the stored values, so renaming a label needs no migration.
+
+## Pages and URLs
+
+| Page | English | Spanish |
+|---|---|---|
+| Home | `/` | `/es` |
+| How to play | `/how-to-play` | `/es/como-jugar` |
+| Statistics | `/stats` | `/es/estadisticas` |
+| Historical archive | `/archive` | `/es/archivo` |
+| Today's game | `/play` | `/es/jugar` |
+| Play a past day | `/archive/YYYY-MM-DD/play` | `/es/archivo/YYYY-MM-DD/jugar` |
+| A past day's sources | `/archive/YYYY-MM-DD/sources` | `/es/archivo/YYYY-MM-DD/fuentes` |
+| About, Contact | `/about`, `/contact` | `/es/acerca-de`, `/es/contacto` |
+| Privacy, Terms | `/privacy`, `/terms` | `/es/privacidad`, `/es/terminos` |
+
+`src/routes.ts` parses and builds these paths; the language toggle links to the same page in the other language. Site links are plain `<a href>` elements, and a click on one is turned into an in-app navigation.
+
+A day's sources unlock once that day is over (UTC, like the daily challenge). Opening them marks the day in the browser (`factually.sources.viewed.v1`), and from then on that day can no longer be played in that browser unless it was already completed. Only today's game can be submitted to Daily Community Stats, so a game played after seeing the answers never counts.
 
 ## Run locally
 
@@ -236,5 +256,17 @@ The migration creates a private submissions table and a server-only aggregate fu
 ### Deploy to Cloudflare Pages
 
 Build the app with `pnpm build` and deploy the generated `dist` directory. In Cloudflare Pages, use `pnpm build` as the build command and `dist` as the output directory. Configure the two `VITE_SUPABASE_*` public values in the project’s build environment before deploying.
+
+`pnpm build` also prerenders static HTML (`scripts/prerender.mjs`) for home, How to play, About, Contact, Privacy, Terms, the historical archive and the sources page of every finished day, in both languages, plus `sitemap.xml`, `robots.txt` and `_redirects`. The archive comes from the Edge Function's public `archive` action, which lists stored days strictly before today, so **deploy the Edge Function before the first build** that includes this script. The build fails rather than publishing a site without the archive. To build offline, point `PRERENDER_ARCHIVE_JSON` at a file shaped like `{ "YYYY-MM-DD": [[ids], [ids], [ids]] }`.
+
+Pages are written as `about.html`, `es/acerca-de.html` and so on, which Cloudflare Pages serves at `/about` and `/es/acerca-de`. Play routes are rewritten to a `noindex` shell (`app.html`), and any other unknown path falls back to the app (there is deliberately no top-level `404.html`, which would turn that fallback off).
+
+New days are published by a rebuild after midnight UTC. Create a deploy hook in Pages (**Settings → Builds → Deploy hooks**), then deploy the cron Worker in `cloudflare/rebuild-cron`:
+
+```sh
+cd cloudflare/rebuild-cron
+npx wrangler secret put DEPLOY_HOOK_URL
+npx wrangler deploy
+```
 
 Expected brain-trap results use claims with the optional brain-trap editorial tag; until such tags are added, the highlight falls back to the hardest expected claim. In real-results mode both currently use low accuracy, so the same claim may appear in both highlights.

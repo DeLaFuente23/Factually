@@ -14,12 +14,15 @@ const wildcardNames = ["One Off", "Swap", "Lifesaver"] as const;
 // by the original deterministic hash in `makeChallenge()`, and are frozen as
 // historical snapshots rather than regenerated, so the archive keeps reproducing.
 const INVENTORY_START_DATE = "2026-10-21";
+// The first daily challenge, and so the first day of the historical archive.
+const ARCHIVE_START_DATE = "2026-10-13";
+const nextDay = (date: string) => new Date(Date.parse(`${date}T00:00:00Z`) + 86_400_000).toISOString().slice(0, 10);
 
 type WildcardUse = { name: (typeof wildcardNames)[number]; round: number; claimId: string; replacementId?: string };
 type ResultInput = { claims: string[]; answers: (Category | null)[]; life: number | null };
 type StoredRound = { round: number; claim_ids: string[] };
 type Payload = {
-  action: "submit" | "stats" | "challenge" | "swap" | "diagnostics" | "rotation";
+  action: "submit" | "stats" | "challenge" | "swap" | "diagnostics" | "rotation" | "archive";
   challengeDate: string;
   challengeVersion?: string;
   browserToken?: string;
@@ -139,10 +142,41 @@ Deno.serve(async (request) => {
   const parsedDate = new Date(`${body.challengeDate}T00:00:00Z`);
   if (Number.isNaN(parsedDate.valueOf()) || parsedDate.toISOString().slice(0, 10) !== body.challengeDate) return respond({ ok: false, error: "Invalid challenge date." }, 400);
 
+  // "Today" is the server's UTC date, the same rule the client's `dayKey()` uses.
+  const today = new Date().toISOString().slice(0, 10);
+  // A future day has no board until it arrives. Refusing it here stops anyone from
+  // creating days ahead of time (and spending the rotation on them). The admin-only
+  // `rotation` preview is exempt, since inspecting a future day is its purpose.
+  if (body.challengeDate > today && ["challenge", "swap", "stats", "submit"].includes(body.action)) {
+    return respond({ ok: false, error: "That challenge is not available yet." }, 403);
+  }
+
   const secret = Deno.env.get("SUPABASE_SECRET_KEY") ?? Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   const url = Deno.env.get("SUPABASE_URL");
   if (!url || !secret) return respond({ ok: false, error: "Server configuration is incomplete." }, 500);
   const admin = createClient(url, secret, { auth: { persistSession: false, autoRefreshToken: false } });
+
+  // Public, read-only list of finished days for the static site build (source pages
+  // and sitemap). Only days strictly before today, so today's answers are never
+  // published, and it never creates a board: a day nobody opened after the inventory
+  // took over is skipped, while earlier days are reproduced from the original
+  // deterministic selection exactly as the archive would import them.
+  if (body.action === "archive") {
+    const { data, error } = await admin
+      .from("challenge_assignments")
+      .select("challenge_id,rounds")
+      .gte("challenge_id", ARCHIVE_START_DATE)
+      .lt("challenge_id", today);
+    if (error) return respond({ ok: false, error: "The archive is unavailable." }, 503);
+    const days: Record<string, string[][]> = {};
+    for (const row of data ?? []) {
+      days[row.challenge_id as string] = [...(row.rounds as StoredRound[])].sort((a, b) => a.round - b.round).map((round) => round.claim_ids);
+    }
+    for (let date = ARCHIVE_START_DATE; date < today && date < INVENTORY_START_DATE; date = nextDay(date)) {
+      days[date] ??= makeChallenge(date, claims).map((round) => round.map((claim) => claim.id));
+    }
+    return respond({ ok: true, today, days });
+  }
 
   // The authoritative challenge for a date. Generated once, shared by all players.
   if (body.action === "challenge") {
@@ -288,6 +322,10 @@ Deno.serve(async (request) => {
   }
 
   if (body.action !== "submit") return respond({ ok: false, error: "Unknown action." }, 400);
+  // Only today's game counts toward Daily Community Stats. Past days can be replayed
+  // from the archive (and their sources are public once the day is over), so a result
+  // for any other date is refused rather than mixed into the stats.
+  if (body.challengeDate !== today) return respond({ ok: false, error: "Only today's challenge can be submitted." }, 409);
   if (!body.browserToken || !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(body.browserToken)) {
     return respond({ ok: false, error: "Invalid local submission token." }, 400);
   }

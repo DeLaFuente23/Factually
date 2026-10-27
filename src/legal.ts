@@ -1,5 +1,5 @@
 /**
- * Legal documents shown in the "fine print" pop-ups on the How to play page.
+ * Legal documents shown on the Privacy Policy and Terms of Service pages.
  *
  * The wording is kept verbatim from the supplied Privacy Policy and Terms of Service
  * drafts. Each entry is either a heading (`h`), a paragraph (`p`), a bullet list
@@ -25,7 +25,7 @@ export type LegalDoc = {
 };
 
 const PRIVACY: LegalBlock[] = [
-  { p: '**Last updated:** October 20, 2026' },
+  { p: '**Last updated:** October 26, 2026' },
   { p: 'Welcome to **Factually...** — a trivia and deduction game about strange truths, misleading half-truths, and convincing falsehoods.' },
   { h: '1. The short version' },
   { ul: [
@@ -34,7 +34,7 @@ const PRIVACY: LegalBlock[] = [
     '**Local storage:** Some game information may be saved in your browser so your game can work as intended.',
     '**Shared game records:** When you submit a completed game, we store claim-level results in Supabase to calculate scores and shared statistics.',
     '**Public statistics:** Daily Community Stats displays aggregated insights, not a public list of individual players and their answers.',
-    '**No analytics service:** We do not currently use a separate analytics platform.',
+    '**Cloudflare Web Analytics:** We use Cloudflare Web Analytics to measure aggregate traffic and page performance. It does not use cookies or create a persistent identifier.',
     '**Advertising:** Google AdSense is planned, but it is not currently active. This policy will be updated if our advertising practices change.',
   ] },
   { h: '2. Information stored in your browser' },
@@ -79,6 +79,7 @@ const PRIVACY: LegalBlock[] = [
   { p: 'Factually... relies on third-party services to operate.' },
   { p: '**Cloudflare**' },
   { p: 'The live website is hosted through **Cloudflare**. When you visit the site, Cloudflare may process technical information associated with delivering website content, maintaining security, and handling requests. The exact information processed depends on the Cloudflare services and configuration used by the live site.' },
+  { p: 'We also use **Cloudflare Web Analytics**. It processes technical information about page visits, such as pages viewed, referrer, browser, country and page-load performance, to produce aggregate statistics. It does not use cookies or create a persistent identifier.' },
   { p: 'Cloudflare\'s privacy information is available at [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/).' },
   { p: '**Supabase**' },
   { p: 'Supabase provides the database used for shared game records and Daily Community Stats. Information submitted through the game is processed and stored according to the database configuration and the services enabled for the project.' },
@@ -88,7 +89,7 @@ const PRIVACY: LegalBlock[] = [
   { p: 'If the deployment process or any future feature begins sending visitor information to GitHub, this policy should be reviewed and updated accordingly.' },
   { p: 'Third-party providers may process information under their own privacy policies and applicable contractual terms.' },
   { h: '6. Cookies and similar technologies' },
-  { p: 'Factually... does not currently use a separate analytics service. The site may use browser storage and technical mechanisms necessary to run the game.' },
+  { p: 'Factually... uses Cloudflare Web Analytics, which does not use cookies, to measure aggregate traffic and page performance. The site may use browser storage and technical mechanisms necessary to run the game.' },
   { p: 'Our planned Google AdSense integration is **not currently active**. If advertising is introduced, Google and its partners may use cookies or similar technologies to serve and measure ads, subject to the advertising configuration and applicable requirements.' },
   { p: 'Before enabling advertising, we will update this policy to explain the relevant advertising technologies, data practices, and available choices. Where required, we will also implement appropriate consent mechanisms.' },
   { p: 'For information about Google\'s advertising practices, see [How Google uses information from sites or apps that use its services](https://policies.google.com/technologies/partner-sites) and [Google\'s advertising settings](https://adssettings.google.com/).' },
@@ -194,7 +195,7 @@ const TERMS: LegalBlock[] = [
 ];
 
 const PRIVACY_ES: LegalBlock[] = [
-  { p: '**Última actualización:** 20 de octubre de 2026' },
+  { p: '**Última actualización:** 26 de octubre de 2026' },
   { p: 'Bienvenido a **Factually...**, un juego de trivia y deducción sobre verdades extrañas, medias verdades engañosas y falsedades convincentes.' },
   { h: '1. La versión breve' },
   { ul: [
@@ -203,7 +204,7 @@ const PRIVACY_ES: LegalBlock[] = [
     '**Almacenamiento local:** Parte de la información del juego puede guardarse en tu navegador para que el juego funcione como se espera.',
     '**Registros de partidas compartidos:** Cuando envías una partida completada, almacenamos resultados a nivel de afirmación en Supabase para calcular puntuaciones y estadísticas compartidas.',
     '**Estadísticas públicas:** Las Estadísticas Comunitarias Diarias muestran información agregada, no una lista pública de jugadores individuales y sus respuestas.',
-    '**Sin servicio de analítica:** Actualmente no utilizamos una plataforma de analítica separada.',
+    '**Cloudflare Web Analytics:** Usamos Cloudflare Web Analytics para medir el tráfico agregado y el rendimiento de las páginas. No utiliza cookies ni crea un identificador persistente.',
     '**Publicidad:** Google AdSense está previsto, pero actualmente no está activo. Esta política se actualizará si nuestras prácticas publicitarias cambian.',
   ] },
   { h: '2. Información almacenada en tu navegador' },
@@ -248,6 +249,7 @@ const PRIVACY_ES: LegalBlock[] = [
   { p: 'Factually... depende de servicios de terceros para funcionar.' },
   { p: '**Cloudflare**' },
   { p: 'El sitio web en vivo está alojado a través de **Cloudflare**. Cuando visitas el sitio, Cloudflare puede procesar información técnica asociada con la entrega del contenido del sitio, el mantenimiento de la seguridad y la gestión de solicitudes. La información exacta procesada depende de los servicios y la configuración de Cloudflare utilizados por el sitio en vivo.' },
+  { p: 'También usamos **Cloudflare Web Analytics**, que procesa información técnica sobre las visitas a las páginas, como las páginas vistas, el sitio de referencia, el navegador, el país y el rendimiento de carga, para generar estadísticas agregadas. No utiliza cookies ni crea un identificador persistente.' },
   { p: 'La información de privacidad de Cloudflare está disponible en [Política de Privacidad de Cloudflare](https://www.cloudflare.com/privacypolicy/).' },
   { p: '**Supabase**' },
   { p: 'Supabase proporciona la base de datos utilizada para los registros compartidos del juego y las Estadísticas Comunitarias Diarias. La información enviada a través del juego se procesa y almacena según la configuración de la base de datos y los servicios habilitados para el proyecto.' },
@@ -257,7 +259,7 @@ const PRIVACY_ES: LegalBlock[] = [
   { p: 'Si el proceso de despliegue o alguna función futura comienza a enviar información de visitantes a GitHub, esta política deberá revisarse y actualizarse en consecuencia.' },
   { p: 'Los proveedores externos pueden procesar información según sus propias políticas de privacidad y los términos contractuales aplicables.' },
   { h: '6. Cookies y tecnologías similares' },
-  { p: 'Factually... no utiliza actualmente un servicio de analítica separado. El sitio puede usar almacenamiento del navegador y mecanismos técnicos necesarios para ejecutar el juego.' },
+  { p: 'Factually... usa Cloudflare Web Analytics, que no utiliza cookies, para medir el tráfico agregado y el rendimiento de las páginas. El sitio puede usar almacenamiento del navegador y mecanismos técnicos necesarios para ejecutar el juego.' },
   { p: 'Nuestra integración prevista con Google AdSense **no está activa actualmente**. Si se introduce publicidad, Google y sus socios pueden usar cookies o tecnologías similares para mostrar y medir anuncios, según la configuración publicitaria y los requisitos aplicables.' },
   { p: 'Antes de habilitar la publicidad, actualizaremos esta política para explicar las tecnologías publicitarias pertinentes, las prácticas de datos y las opciones disponibles. Cuando sea necesario, también implementaremos mecanismos de consentimiento apropiados.' },
   { p: 'Para obtener información sobre las prácticas publicitarias de Google, consulta [Cómo usa Google la información de sitios o aplicaciones que utilizan sus servicios](https://policies.google.com/technologies/partner-sites) y [la configuración de anuncios de Google](https://adssettings.google.com/).' },

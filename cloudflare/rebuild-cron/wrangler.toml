@@ -1,0 +1,7 @@
+name = "factually-daily-rebuild"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+# 00:10 UTC every day: just after the previous day's challenge ends.
+[triggers]
+crons = ["10 0 * * *"]
