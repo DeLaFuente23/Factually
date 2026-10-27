@@ -247,5 +247,5 @@ a.rules-play{display:block;width:fit-content}
    more room and keep its content centred within the card. */
 .community-highlights>.community-stat:nth-child(n+4){display:flex;flex-direction:column;min-height:220px}
 .community-highlights>.community-stat:nth-child(n+4)>.stat-fact{display:flex;flex:1;align-items:center;justify-content:center;width:100%;padding:26px 0 16px}
-.community-highlights>.community-stat:nth-child(n+4) .stat-big{margin:0 0 10px;font-size:clamp(36px,3.4vw,44px)}
+.community-highlights>.community-stat:nth-child(n+4) .stat-big{margin:0 0 2px;font-size:clamp(36px,3.4vw,44px)}
 @media(max-width:700px){.community-highlights>.community-stat:nth-child(n+4){min-height:190px}}
