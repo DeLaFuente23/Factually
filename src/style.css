@@ -242,3 +242,10 @@ a.rules-play{display:block;width:fit-content}
 
 /* Statistics: the single-figure cards show their answer large and centred. */
 .community-stat .stat-big{margin:6px 0 4px;text-align:center;font-size:clamp(30px,3vw,38px);line-height:1.15}
+
+/* The final three highlight cards have short answers, so give the answer area
+   more room and keep its content centred within the card. */
+.community-highlights>.community-stat:nth-child(n+4){display:flex;flex-direction:column;min-height:220px}
+.community-highlights>.community-stat:nth-child(n+4)>.stat-fact{display:flex;flex:1;align-items:center;justify-content:center;width:100%;padding:16px 0}
+.community-highlights>.community-stat:nth-child(n+4) .stat-big{font-size:clamp(36px,3.4vw,44px)}
+@media(max-width:700px){.community-highlights>.community-stat:nth-child(n+4){min-height:190px}}
