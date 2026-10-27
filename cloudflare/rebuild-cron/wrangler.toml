@@ -1,6 +1,9 @@
 name = "factually-daily-rebuild"
 main = "worker.js"
 compatibility_date = "2026-10-01"
+# Cron-only Worker: it serves no pages, so no public workers.dev or preview URLs.
+workers_dev = false
+preview_urls = false
 
 # 00:10 UTC every day: just after the previous day's challenge ends.
 [triggers]
