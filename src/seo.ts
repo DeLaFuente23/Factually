@@ -61,6 +61,7 @@ export function pageMeta(route: Route): PageMeta {
       break;
     default:
       title = t(`Page not found · ${brand}`, `Página no encontrada · ${brand}`);
+      description = t('Like the legend that 404 is a room at CERN, this page isn’t real.', 'Igual que la leyenda de que el 404 es una sala del CERN, esta página no es real.');
   }
   const en = SITE + routePath({ ...route, lang: 'EN' });
   const esUrl = SITE + routePath({ ...route, lang: 'ES' });

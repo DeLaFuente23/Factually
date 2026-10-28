@@ -259,7 +259,7 @@ Build the app with `pnpm build` and deploy the generated `dist` directory. In Cl
 
 `pnpm build` also prerenders static HTML (`scripts/prerender.mjs`) for home, How to play, About, Contact, Privacy, Terms, the historical archive and the sources page of every finished day, in both languages, plus `sitemap.xml`, `robots.txt` and `_redirects`. The archive comes from the Edge Function's public `archive` action, which lists stored days strictly before today, so **deploy the Edge Function before the first build** that includes this script. The build fails rather than publishing a site without the archive. To build offline, point `PRERENDER_ARCHIVE_JSON` at a file shaped like `{ "YYYY-MM-DD": [[ids], [ids], [ids]] }`.
 
-Pages are written as `about.html`, `es/acerca-de.html` and so on, which Cloudflare Pages serves at `/about` and `/es/acerca-de`. Play routes are rewritten to a `noindex` shell (`app.html`), and any other unknown path falls back to the app (there is deliberately no top-level `404.html`, which would turn that fallback off).
+Pages are written as `about.html`, `es/acerca-de.html` and so on, which Cloudflare Pages serves at `/about` and `/es/acerca-de`. Play routes are rewritten to a `noindex` shell (`app.html`). Any other path without a file gets `404.html` with a real 404 status; it loads the full app, so routes rendered in the browser (such as a day whose sources page has not been prerendered yet) still work, and anything else shows the 404 page.
 
 New days are published by a rebuild after midnight UTC. Create a deploy hook in Pages (**Settings → Builds → Deploy hooks**), then deploy the cron Worker in `cloudflare/rebuild-cron`:
 

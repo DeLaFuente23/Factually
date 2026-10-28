@@ -90,6 +90,12 @@ for (const lang of ['EN', 'ES']) {
   write(fileFor(routeUrl(stats)), page(pageMeta(stats), lang, ''));
 }
 write('app.html', page(pageMeta({ name: 'play', lang: 'EN' }), 'EN', ''));
+// Cloudflare Pages serves 404.html, with a 404 status, for any path without a file.
+// It is the full app, so a route rendered in the browser (such as a day whose sources
+// page has not been prerendered yet) still works; anything else shows the 404 page.
+// A missing page has no canonical or language alternates of its own.
+write('404.html', page(pageMeta({ name: 'notfound', lang: 'EN' }), 'EN', render('/404', archive).html)
+  .replace(/<link rel="(canonical|alternate)"[^>]*>|<meta property="og:url"[^>]*>/g, ''));
 write('_redirects', [
   // Rewrite to the extensionless path: Pages answers /app.html itself with a redirect to /app.
   '# Play routes are rendered in the browser from a noindex shell.',

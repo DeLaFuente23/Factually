@@ -238,7 +238,7 @@ a.rules-play{display:block;width:fit-content}
 @media(max-width:600px){.site-footer{align-items:center;text-align:center}.footer-links{gap:0 18px}.footer-links a{display:inline-flex;align-items:center;min-height:44px}.archive-actions{justify-content:flex-start}.archive-actions a,.archive-locked{display:inline-flex;align-items:center;min-height:44px;padding:0}}
 
 /* How to play: the Let's play button sits close to the footer. */
-.subpage.how-to-play{padding-bottom:0}
+.subpage.how-to-play,.subpage.not-found{padding-bottom:0}
 
 /* Statistics: the single-figure cards show their answer large and centred. */
 .community-stat .stat-big{margin:6px 0 4px;text-align:center;font-size:clamp(30px,3vw,38px);line-height:1.15}
