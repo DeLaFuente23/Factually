@@ -57,7 +57,16 @@ function page(meta, lang, body, extraScript = '') {
     `<meta property="og:title" content="${esc(meta.title)}">`,
     `<meta property="og:description" content="${esc(meta.description)}">`,
     `<meta property="og:url" content="${meta.canonical}">`,
-    `<meta property="og:locale" content="${lang === 'ES' ? 'es_419' : 'en_US'}">`,
+    `<meta property="og:locale" content="${lang === 'ES' ? 'es_ES' : 'en_US'}">`,
+    `<meta property="og:locale:alternate" content="${lang === 'ES' ? 'en_US' : 'es_ES'}">`,
+    `<meta property="og:image" content="${SITE}/${lang === 'ES' ? 'og-image-es.png' : 'og-image.png'}">`,
+    `<meta property="og:image:width" content="1200">`,
+    `<meta property="og:image:height" content="630">`,
+    `<meta property="og:image:alt" content="${esc(lang === 'ES' ? 'Factually... — Tú sabes estas cosas (probablemente). FACTO., ¿SUPONGO?, ¡NEL!' : 'Factually... — You know these things (probably). FACT., KINDA?, NOPE!')}">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${esc(meta.title)}">`,
+    `<meta name="twitter:description" content="${esc(meta.description)}">`,
+    `<meta name="twitter:image" content="${SITE}/${lang === 'ES' ? 'og-image-es.png' : 'og-image.png'}">`,
   ].filter(Boolean).join('');
   const html = template
     .replace(/<html lang="[^"]*">/, `<html lang="${lang === 'ES' ? 'es' : 'en'}">`)
