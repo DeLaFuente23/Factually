@@ -49,9 +49,9 @@ function centeredPath(font, text, centerX, baseline, size, letterSpacing = 0) {
 }
 
 const VERDICTS = [
-  { top: '#50b43a', bottom: '#37912c', edge: '#1f6130', ink: '#ffffff', shadow: 'rgba(10,50,15,.8)' },
-  { top: '#fbc64c', bottom: '#efa92f', edge: '#b67d2b', ink: '#4a2110', shadow: null },
-  { top: '#d04a34', bottom: '#b43423', edge: '#79211a', ink: '#ffffff', shadow: 'rgba(80,15,8,.8)' },
+  { top: '#50b43a', bottom: '#37912c', edge: '#1f6130', ink: '#0b3010' },
+  { top: '#fbc64c', bottom: '#efa92f', edge: '#b67d2b', ink: '#5c3b05' },
+  { top: '#df5a41', bottom: '#c9442f', edge: '#79211a', ink: '#3d0b05' },
 ];
 
 function verdictButton(label, index) {
@@ -63,7 +63,7 @@ function verdictButton(label, index) {
   const text = centeredPath(labelFont, label, x + width / 2, y + 75, 50);
   return `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="15" fill="url(#verdict${index})" stroke="${style.edge}" stroke-width="4" filter="url(#lift)"/>
   <rect x="${x + 4}" y="${y + 4}" width="${width - 8}" height="${height - 8}" rx="11" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
-  ${style.shadow ? `<path d="${text}" fill="${style.shadow}" transform="translate(0 2)"/>` : ''}
+  <path d="${text}" fill="rgba(255,255,255,.28)" transform="translate(0 1.5)"/>
   <path d="${text}" fill="${style.ink}"/>`;
 }
 
