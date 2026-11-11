@@ -105,6 +105,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible,.claimcard:focus-visi
 .timer-track i:first-child::before,.timer-track i:last-child::after{content:'';position:absolute;top:-2px;width:8px;height:8px;border-radius:50%;background:#fff5de;box-shadow:0 0 7px 2px rgba(255,214,150,.9)}
 .timer-track i:first-child::before{left:-3px}
 .timer-track i:last-child::after{right:-3px}
+/* Last 10 seconds: number and bar flash red in step with the countdown tick. */
+.timer.urgent{--timer:#ff6a55;--timer-glow:rgba(255,90,70,.85)}
+.timer.urgent .timer-number{color:#ff6a55}
+.timer.urgent .timer-track i:first-child::before,.timer.urgent .timer-track i:last-child::after{background:#ffd0c8;box-shadow:0 0 7px 2px rgba(255,90,70,.9)}
 
 /* ---- Claim cards ---- */
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2.2vw,30px)}
